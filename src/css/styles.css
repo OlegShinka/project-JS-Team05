@@ -5,21 +5,72 @@
   |============================
 */
 @import url('./reset.css');
-@import url('./vite-promo.css');
 @import url('./header.css');
+@import url('./hero.css');
+@import url('./categories.css');
+@import url('./popular.rec.css');
+@import url('./recipes.css');
+@import url('./modal-rec.css');
+@import url('./favorites.css');
+@import url('./vite-promo.css');
+
+/* підключення шрифтів */
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal, italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/Inter-Regular.woff2") format("woff2"),
+    url("../fonts/Inter-Regular.woff") format("woff"),
+    url("../fonts/Inter-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/Inter-Medium.woff2") format("woff2"),
+    url("../fonts/Inter-Medium.woff") format("woff"),
+    url("../fonts/Inter-Medium.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/Inter-SemiBold.woff2") format("woff2"),
+    url("../fonts/Inter-SemiBold.woff") format("woff"),
+    url("../fonts/Inter-SemiBold.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/Inter-Bold.woff2") format("woff2"),
+    url("../fonts/Inter-Bold.woff") format("woff"),
+    url("../fonts/Inter-Bold.ttf") format("ttf");
+}
 
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+
+
+  --primary-text-color: #050505;
+  --primary-bg-color: #ffff;
+  --secondary-bg-color: #9BB537;
+  --non-active-text-color: #05050580;
+  --description-text-color: #F8F8F8;
+  --star-bg-color: #EEA10C;
+
+}
+
+body {
+  font-family: Inter, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
 }
