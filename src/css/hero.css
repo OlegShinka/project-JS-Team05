@@ -19,26 +19,18 @@
 }
 @media screen and (min-width: 1110px) {
   .hero {
-  }
-}
-
-.div-hero {
-}
-@media screen and (min-width: 1110px) {
-  .div-hero {
     display: flex;
   }
 }
 .hero-title-div {
   width: 335px;
 }
-@media only screen and (min-width: 768px) {
+@media screen and (min-width: 1110px) {
   .hero-title-div {
     width: 446px;
     padding-top: 64px;
   }
 }
-
 .hero-title {
   color: #050505;
   font-family: Inter;
@@ -53,6 +45,7 @@
   .hero-title {
     font-size: 36px;
     margin-bottom: 16px;
+    width: 446px;
   }
 }
 
@@ -77,7 +70,7 @@
 }
 
 .hero-message {
-  width: 335px;
+  /* width: 335px; */
   margin-bottom: 28px;
   color: #050505;
   font-size: 14px;
@@ -95,18 +88,18 @@
   }
 }
 /* Розмітка свайперу !!!!!!!!!!!!!!!*/
-.swiper-container {
+.hero-push-buton {
   margin-top: 48px;
   /* outline: 1px solid red; */
 }
 
 @media only screen and (min-width: 768px) {
-  .swiper-container {
+  .hero-push-buton {
     margin-top: 64px;
   }
 }
 @media screen and (min-width: 1110px) {
-  .swiper-container {
+  .shero-push-buton {
     margin-top: 0;
   }
 }
@@ -118,6 +111,7 @@
   width: 375px;
   display: flex;
   column-gap: 8px;
+  margin-top: 48px;
   /* outline: 1px solid red; */
   overflow: hidden;
 }
