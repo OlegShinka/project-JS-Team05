@@ -1,1 +1,57 @@
 <!-- filters and recepies -->
+<div class="recipes-section">
+
+    <div class="filter">
+        <form class="filter-form js-filter-form">
+            <label for="search" class="form-label">
+                <p class="filter-txt">Search</p>
+                <input class="search-input" type="text" name="search" placeholder="Enter Text">
+                <button type="button" class="clean-search">
+                    <svg class="clean-search-icon" width="16" height="16" value="">
+                        <use href="./img/symbol-defs.svg#icon-x"></use>
+                    </svg>
+                </button>
+            </label>
+            <label for="time" class="form-label">
+                <p class="filter-txt">Time</p>
+                <select name="time">
+                    <option value="" selected>Any</option>
+                    <option value="10">10 хв</option>
+                    <option value="20">20 хв</option>
+                    <option value="30">30 хв</option>
+                    <option value="40">40 хв</option>
+                    <option value="50">50 хв</option>
+                    <option value="60">60 хв</option>
+                    <option value="70">70 хв</option>
+                    <option value="80">80 хв</option>
+                    <option value="90">90 хв</option>
+                    <option value="100">100 хв</option>
+                    <option value="110">110 хв</option>
+                    <option value="120">120 хв</option>
+                </select>
+            </label>
+            <label for="area" class="form-label">
+                <p class="filter-txt">Area</p>
+                <select name="ingredients">
+                    <option value="0">Any region</option>
+                </select>
+            </label>
+            <label for="ingredients" class="form-label">
+                <p class="filter-txt">Ingredients</p>
+                <select name="ingredients">
+                    <option value="0">Any region</option>
+                </select>
+            </label>
+        </form>
+        <div class="reset-filter">
+            <svg class="reset-filter-icon" width="16" height="16">
+                <use href="./img/symbol-defs.svg#icon-x"></use>
+            </svg>
+            <p class="reset-filter-txt">Reset filter</p>
+        </div>
+    </div>
+
+    <div class="recipes-container">
+
+    </div>
+</div>
