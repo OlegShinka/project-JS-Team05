@@ -2,7 +2,7 @@
 <div class="recipes-section">
 
     <div class="filter">
-        <form class="filter-form js-filter-form">
+        <form class="filter-form">
             <label for="search" class="form-label">
                 <p class="filter-txt">Search</p>
                 <input class="search-input" type="text" name="search" placeholder="Enter Text">
@@ -12,9 +12,9 @@
                     </svg>
                 </button>
             </label>
-            <label for="time" class="form-label">
+            <label for="time" class="form-label select-time">
                 <p class="filter-txt">Time</p>
-                <select name="time">
+                <select name="time" class="custom-select ">
                     <option value="" selected>Any</option>
                     <option value="10">10 хв</option>
                     <option value="20">20 хв</option>
@@ -29,18 +29,23 @@
                     <option value="110">110 хв</option>
                     <option value="120">120 хв</option>
                 </select>
+
             </label>
-            <label for="area" class="form-label">
+            <label for="area" class="form-label select-area">
                 <p class="filter-txt">Area</p>
-                <select name="ingredients">
+                <select name="area" class="custom-select ">
                     <option value="0">Any region</option>
+                    <option value="1">Ukraine</option>
                 </select>
+
             </label>
-            <label for="ingredients" class="form-label">
+            <label for="ingredients" class="form-label select-ingredients">
                 <p class="filter-txt">Ingredients</p>
-                <select name="ingredients">
-                    <option value="0">Any region</option>
+                <select name="ingredients" class="custom-select ">
+                    <option value="0">Any</option>
+                    <option value="1">Tomatos</option>
                 </select>
+
             </label>
         </form>
         <div class="reset-filter">
