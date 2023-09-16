@@ -1,5 +1,21 @@
 .recipes-section {
   padding: 20px 40px;
+  max-width: 455px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 768px) {
+  .recipes-section {
+    max-width: 576px;
+  }
+}
+
+@media only screen and (min-width: 1110px) {
+  .recipes-section {
+    max-width: 862px;
+  }
 }
 
 /* FILTER */
@@ -120,9 +136,136 @@ div.custom-select-option.has-focus {
 .reset-filter {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   cursor: pointer;
+  justify-content: flex-end;
+  /* margin-left: auto; */
 }
+
+/* .reset-filter {
+  margin-top: auto;
+  margin-left: auto;
+} */
 .reset-filter-icon {
   stroke: var(--secondary-bg-color);
+}
+
+/* CARDS */
+.recipes-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 0;
+  padding: 20px 0 40px 0;
+  /* justify-content: center; */
+}
+
+@media only screen and (min-width: 768px) {
+  .recipes-container {
+    gap: 16px;
+  }
+}
+
+@media only screen and (min-width: 1110px) {
+  .recipes-container {
+    gap: 32px 16px;
+  }
+}
+
+.thumb {
+  position: relative;
+  width: 100%;
+  height: width;
+  border-radius: 15px;
+  background: linear-gradient(
+      1deg,
+      rgba(5, 5, 5, 0.6) 4.82%,
+      rgba(5, 5, 5, 0) 108.72%
+    ),
+    url(https://www.themealdb.com/images/media/meals/wvqpwt1468339226.jpg),
+    lightgray -25px -10px / 116.716% 114.018% no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  padding: 214px 16px 16px;
+}
+
+@media only screen and (min-width: 768px) {
+  .thumb {
+    width: 240px;
+    padding-top: 143px;
+  }
+}
+
+@media only screen and (min-width: 1110px) {
+  .thumb {
+    width: 240px;
+    padding-top: 143px;
+  }
+}
+
+.card-bg-image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+}
+.rating-icon-orange {
+  fill: var(--star-bg-color);
+}
+
+.rating-icon-gray {
+  fill: rgba(248, 248, 248, 0.1);
+}
+
+.recipe-title {
+  color: var(--description-text-color);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.28; /* 128.571% */
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.recipe-desc {
+  display: block;
+  max-height: 32px;
+  overflow: hidden;
+  /* white-space: pre; */
+  color: var(--description-text-color);
+  text-overflow: ellipsis;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.33; /* 133.333% */
+  margin-bottom: 16px;
+}
+
+.bottom-of-recipe {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rating {
+  color: var(--description-text-color);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.28; /* 128.571% */
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.btn-see-recipe {
+  display: flex;
+  padding: 8px 14px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: var(--secondary-bg-color);
+  border: none;
+  margin-bottom: 0;
 }
