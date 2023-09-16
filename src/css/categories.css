@@ -46,9 +46,16 @@
   color: rgba(5, 5, 5, 0.3);
 }
 .categoris-btn:hover,
-.categoris-btn:focus,
-.categoris-btn.active {
+.categoris-btn:focus
+{
   color: var(--secondary-bg-color);
+
+}
+.categoris-btn.activ{
+  color: var(--secondary-bg-color)
+}
+.categoris-wrapper{
+  padding-top: 40px;
 }
 @media screen and (min-width: 768px) {
 .all-categoris {
