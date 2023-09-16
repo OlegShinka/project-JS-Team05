@@ -1,9 +1,10 @@
-
 const modal = document.querySelector('.modal-rec-window');
 const recipeInfo = document.querySelector('.js-modal-rec');
 const btnClose = document.querySelector('.modal-rec-close');
 const btnAdd = document.querySelector('.modal-rec-btn-add');
 const btnRating = document.querySelector('.modal-rec-btn-rating');
+
+modal.style.display = 'none';
 
 btnClose.addEventListener('click', handlerClose);
 btnAdd.addEventListener('click', handlerAddBtn);
@@ -25,7 +26,6 @@ export function fetchRecipe(recipeId) {
     if (!response.ok) {
       throw new Error(response.status);
     }
-    console.log('YES');
     return response.json();
   });
 }
@@ -96,14 +96,14 @@ export function markupRecipeModal(arr) {
   return card;
 }
 
-
 // import { fetchRecipe } from "../js/modal-rec";
 // import { markupRecipeModal } from "../js/modal-rec";
+// const modal = document.querySelector('.modal-rec-window');
 // const recipeInfo = document.querySelector('.js-modal-rec');
 
 // fetchRecipe('6462a8f74c3d0ddd28897fc1')
 //   .then(data => {
-//     console.log(data);
+//     modal.style.display = 'block';
 //     recipeInfo.innerHTML = markupRecipeModal(data);
 //   })
 //   .catch(err => console.log(err));
