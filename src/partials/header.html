@@ -1,2 +1,45 @@
-<header class="header">
+<link rel="stylesheet" href="../css/header.css" />
+<header id="home" class="header">
+  <div class="header-logo-container">
+    <a href="./index.html" class="logo-header link">
+      tasty<span class="logo-header-span">treats.</span>
+    </a>
+    <!-- Navigation -->
+    <ul class="nav-list list">
+      <li class="nav-item">
+        <a class="nav-link link" href="#home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link link active" href="#favorites">Favorites</a>
+      </li>
+    </ul>
+    <!-- Icons -->
+    <svg class="icons-header cart" height="24" width="24">
+      <use href="../img/symbol-defs.svg#icon-shopping-cart">
+        <a></a>
+      </use>
+    </svg>
+
+    <button
+      class="burger-menu js-open-menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg class="icons-header" width="32" height="32">
+        <use href="../img/symbol-defs.svg#burger-menu"></use>
+      </svg>
+    </button>
+
+    <svg class="icons-header icon-switch" height="20" width="46">
+      <use href="../img/symbol-defs.svg#icon-switch"></use>
+    </svg>
+  </div>
+  <!---- Modal Window (burger menu) 
+  <div class="burger-menu">
+    <svg class="close-burger-menu" id="icon-switch"></svg>
+    <p class="id-burger-menu">Home</p>
+    <p class="id-burger-menu">Favorites</p>
+    <svg class="switcher-burger-menu"></svg>
+  </div>
+  --->
 </header>
