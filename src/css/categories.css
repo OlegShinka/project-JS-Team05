@@ -13,15 +13,15 @@
 }
 
 .all-categoris.activ {
-  background-color: #9bb537;
-  color: #f8f8f8;
-  border: #9bb537;
+  background-color:var(--secondary-bg-color);
+  color: var(--description-text-color);
+  border:var(--secondary-bg-color);
 }
 .all-categoris:hover,
 .all-categoris:focus {
-  background-color: #9bb537;
-  color: #f8f8f8;
-  border: #9bb537;
+  background-color: var(--secondary-bg-color);
+  color: var(--description-text-color);
+  border: var(--secondary-bg-color);
 }
 
 .categoris-list {
@@ -48,7 +48,7 @@
 .categoris-btn:hover,
 .categoris-btn:focus,
 .categoris-btn.active {
-  color: #9bb537;
+  color: var(--secondary-bg-color);
 }
 @media screen and (min-width: 768px) {
 .all-categoris {

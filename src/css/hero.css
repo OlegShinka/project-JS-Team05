@@ -89,18 +89,18 @@
 }
 /* Розмітка свайперу !!!!!!!!!!!!!!!*/
 .hero-push-buton {
-  margin-top: 48px;
+  /* margin-top: 48px; */
   /* outline: 1px solid red; */
 }
 
 @media only screen and (min-width: 768px) {
   .hero-push-buton {
-    margin-top: 64px;
+    /* margin-top: 64px; */
   }
 }
 @media screen and (min-width: 1110px) {
   .shero-push-buton {
-    margin-top: 0;
+    /* margin-top: 0; */
   }
 }
 .hero-slider {
@@ -119,11 +119,13 @@
   .hero-container {
     width: 748px;
     column-gap: 16px;
+    margin-top: 64px;
   }
 }
 @media screen and (min-width: 1110px) {
   .hero-container {
     width: 590px;
+    margin-top: 0px;
   }
 }
 
@@ -171,6 +173,7 @@
   height: 280px;
   object-fit: cover;
   border-radius: 20px;
+  background-color: #050505;
 }
 @media only screen and (min-width: 768px) {
   .hero-tried-img-flll {
@@ -208,4 +211,44 @@
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* markup swiper */
+.image-slider_image {
+  /* text-align: center; */
+}
+
+.image-slider_image {
+  width: 100%;
+}
+.swiper {
+  width: 335px;
+  height: 368px;
+}
+@media only screen and (min-width: 768px) {
+  .swiper {
+    width: 768px;
+    height: 400px;
+  }
+}
+@media screen and (min-width: 1110px) {
+  .swiper {
+    width: 1110px;
+    height: 487px;
+  }
+}
+.swiper-hero .swiper-pagination {
+  bottom: 0;
+}
+
+.swiper-hero .swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  line-height: 20px;
+  font-size: 14px;
+  /* background-color: #050505; */
+  background-color: #9bb537;
+}
+.swiper-hero .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  /* background-color: #9bb537; */
 }
