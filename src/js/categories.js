@@ -51,7 +51,7 @@ async function getAllCategoris() {
   activButton.classList.add('activ');
   try {
     const data = await allCategoris();
-    console.log(data);
+
     const markup = data
       .map(
         cat =>
@@ -73,7 +73,6 @@ async function onCategoryClick(event) {
   activButton.classList.add('activ');
   try {
     const data = await oneCategory(category);
-    console.log(data);
   } catch (error) {
     console.log(error);
   }
@@ -86,7 +85,6 @@ async function onAllCategorisClick() {
   activButton.classList.add('activ');
   try {
     const data = await allRecipes();
-    console.log(data);
   } catch (error) {
     console.log(error);
   }
