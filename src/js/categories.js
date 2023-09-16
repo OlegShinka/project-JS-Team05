@@ -51,7 +51,6 @@ async function getAllCategoris() {
   activButton.classList.add('activ');
   try {
     const data = await allCategoris();
-
     const markup = data
       .map(
         cat =>
