@@ -11,15 +11,23 @@
 <body>
   <load src="partials/header.html" />
   <load src="partials/hero.html" />
-  <load src="partials/categories.html" />
-  <load src="partials/popular-rec.html" />
-  <load src="partials/recipes.html" />
+
+  <section class="recipes">
+    <h2 class="visually-hidden">Recipes</h2>
+    <div class="container">
+      <load src="partials/categories.html" />
+      <load src="partials/popular-rec.html" />
+      <load src="partials/recipes.html" />
+    </div>
+    <div class="container">
+      <load src="partials/pagination.html" />
+    </div>
+  </section>
+
   <load src="partials/modal-rec.html" />
 
 
-
-
-  <script type="module" src="/main.js"></script>
+  <script type="module" src="./main.js"></script>
 </body>
 
 </html>
