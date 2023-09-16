@@ -55,7 +55,7 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
-  stroke: black;
+  stroke: var(--primary-text-color);
 }
 
 .search-input:placeholder-shown + .clean-search {
@@ -73,17 +73,13 @@
 }
 
 .reset-filter-icon {
-  stroke: black;
+  stroke: var(--primary-text-color);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 /* CUSTOM SELECT */
-/* .custom-select-container {
-  color: #050505;
-} */
-
 span.custom-select-container,
 span.custom-select-opener {
   color: rgba(5, 5, 5, 0.5);
@@ -91,7 +87,7 @@ span.custom-select-opener {
   font-style: normal;
   font-weight: 500;
   line-height: 1.25;
-  background-color: #fff;
+  background-color: var(--primary-bg-color);
   padding: 0;
   padding-top: 14px;
   padding-bottom: 14px;
@@ -101,12 +97,13 @@ span.custom-select-opener {
   outline: 1px solid rgba(5, 5, 5, 0.2);
 }
 
-.custom-select-panel {
+div.custom-select-panel {
   border-radius: 15px;
+  overflow-y: scroll;
 }
 
-.custom-select-option.is-open .custom-select-panel {
-  outline: 1px solid rgba(5, 5, 5, 0.2);
+div.custom-select-container.is-open div.custom-select-panel {
+  border: 1px solid rgba(5, 5, 5, 0.2);
 }
 
 div.custom-select-option {
@@ -140,13 +137,8 @@ div.custom-select-option.has-focus {
   justify-content: flex-end;
   padding-right: 10px;
   padding-top: 14px;
-  /* margin-left: auto; */
 }
 
-/* .reset-filter {
-  margin-top: auto;
-  margin-left: auto;
-} */
 .reset-filter-icon {
   stroke: var(--secondary-bg-color);
 }
@@ -157,7 +149,6 @@ div.custom-select-option.has-focus {
   flex-wrap: wrap;
   gap: 24px 0;
   padding: 20px 0 40px 0;
-  /* justify-content: center; */
 }
 
 @media only screen and (min-width: 768px) {
@@ -176,17 +167,18 @@ div.custom-select-option.has-focus {
 .thumb {
   position: relative;
   width: 100%;
-  /* height: width; */
   border-radius: 15px;
-  background: linear-gradient(
+  /* background-attachment: linear-gradient(
       1deg,
       rgba(5, 5, 5, 0.6) 4.82%,
       rgba(5, 5, 5, 0) 108.72%
     ),
     url(https://www.themealdb.com/images/media/meals/wvqpwt1468339226.jpg),
     lightgray -25px -10px / 116.716% 114.018% no-repeat;
+
   background-position: center;
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover; */
   overflow: hidden;
   padding: 214px 16px 16px;
 }
@@ -200,7 +192,7 @@ div.custom-select-option.has-focus {
 
 @media only screen and (min-width: 1110px) {
   .thumb {
-    width: 240px;
+    width: 250px;
     padding-top: 143px;
   }
 }
@@ -212,12 +204,13 @@ div.custom-select-option.has-focus {
   width: 100%;
   z-index: 1;
 }
+
 .rating-icon-orange {
   fill: var(--star-bg-color);
 }
 
-.rating-icon-gray {
-  fill: rgba(248, 248, 248, 0.1);
+.rating-icon-grey {
+  fill: rgba(248, 248, 248, 0.2);
 }
 
 .recipe-title {
@@ -225,7 +218,7 @@ div.custom-select-option.has-focus {
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
-  line-height: 1.28; /* 128.571% */
+  line-height: 1.28;
   text-transform: uppercase;
   margin-bottom: 8px;
 }
@@ -240,7 +233,7 @@ div.custom-select-option.has-focus {
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.33; /* 133.333% */
+  line-height: 1.33;
   margin-bottom: 16px;
 }
 
@@ -255,10 +248,15 @@ div.custom-select-option.has-focus {
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  line-height: 1.28; /* 128.571% */
+  line-height: 1.28;
   display: flex;
-  align-items: center;
-  gap: 4px;
+  /* align-items: center; */
+  /* gap: 4px; */
+}
+
+.rating-num {
+  display: inline-block;
+  padding-right: 4px;
 }
 
 .btn-see-recipe {
