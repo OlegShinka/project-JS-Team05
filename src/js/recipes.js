@@ -77,7 +77,6 @@ elements.catList.addEventListener('click', e => {
 });
 
 function handleChange() {
-  console.log(matchMedia('(max-width: 1109px)').matches);
   currentParams = {
     title: elements.search.value?.trim() || '',
     category: document.querySelector('.categoris-btn.activ')?.textContent || '',
