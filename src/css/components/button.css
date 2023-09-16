@@ -1,0 +1,64 @@
+.btn {
+  min-width: 127px;
+  min-height: 45px;
+  padding: 14px 27px;
+
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  border-radius: 15px;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+/* Heroo button */
+.btn-hero {
+  color: #050505;
+  border-color: #9bb537;
+}
+
+@media (hover: hover) {
+  .btn-hero:hover,
+  .btn-hero:focus,
+  .btn-all-categories:hover,
+  .btn-all-categories:focus {
+    color: #f8f8f8;
+    background-color: #9bb537;
+  }
+}
+@media not (hover: hover) {
+  .btn-hero:active {
+    color: #f8f8f8;
+    background-color: #9bb537;
+  }
+}
+
+.btn-favorites {
+  width: 156px;
+
+  color: #f8f8f8;
+  background-color: #9bb537;
+}
+@media (hover: hover) {
+  .btn-favorites:hover,
+  .btn-favorites:focus {
+    color: #050505;
+    /* background-color: #9bb537; */
+  }
+}
+@media not (hover: hover) {
+  .btn-favorites:active {
+    color: #050505;
+    /* background-color: #9bb537; */
+  }
+}
+
+.btn-all-categories {
+  width: 174px;
+  height: 50px;
+  font-size: 18px;
+  color: #050505;
+  border-color: #9bb537;
+}
