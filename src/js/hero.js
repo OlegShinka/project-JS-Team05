@@ -1,11 +1,13 @@
 // завантажуємо скріпт пагінації
 // console.log('завантажуємо скріпт пагінації');
-import '../api/swiper-lib';
+// import '../api/swiper-lib';
+import { createSwiper } from '../api/swiper-lib';
 
 import { getEvent } from '../api/hero-fetch';
-const swiper = document.querySelector('.swiper-wrapper');
+const swiperConteinerEl = document.querySelector('.swiper-wrapper');
 const btnNewOrder = document.querySelector('.btn-hero');
 btnNewOrder.addEventListener('click', onClick);
+
 function onClick() {
   const phoneNumber = '380730000000';
   window.location.href = 'tel:' + phoneNumber;
@@ -27,7 +29,9 @@ function getMasterClassArray() {
 function addImage(el) {
   const markup = getMarkup(el);
   // console.log(markup);
-  swiper.innerHTML = markup;
+  swiperConteinerEl.innerHTML = markup;
+  // swiper.update();
+  createSwiper();
 }
 //створюєму розмітку майстер класів з отримного масиву даних по кухарям
 function getMarkup(ar) {

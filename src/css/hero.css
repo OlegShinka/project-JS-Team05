@@ -58,7 +58,8 @@
 .hero-title-tasty {
   font-style: italic;
   font-weight: 400;
-  color: #9bb537;
+  /* #9bb537; */
+  color: var(--secondary-bg-color);
 }
 @media only screen and (min-width: 768px) {
   .hero-title-tasty {
@@ -73,7 +74,8 @@
 .hero-message {
   /* width: 335px; */
   margin-bottom: 28px;
-  color: #050505;
+  /* #050505; */
+  color: var(--primary-text-color);
   font-size: 14px;
   font-weight: 400;
   line-height: 1.28; /* 128.571% */
@@ -109,7 +111,7 @@
   min-width: 0;
 }
 .hero-container {
-  /* width: 375px; */
+  width: 115%;
   display: flex;
   column-gap: 8px;
   margin-top: 48px;
@@ -125,7 +127,7 @@
 }
 @media screen and (min-width: 1110px) {
   .hero-container {
-    width: 871px;
+    /* width: 871px; */
     margin-top: 0px;
   }
 }
