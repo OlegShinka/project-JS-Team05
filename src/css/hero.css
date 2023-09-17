@@ -109,7 +109,7 @@
   min-width: 0;
 }
 .hero-container {
-  width: 375px;
+  /* width: 375px; */
   display: flex;
   column-gap: 8px;
   margin-top: 48px;
@@ -118,14 +118,14 @@
 }
 @media only screen and (min-width: 768px) {
   .hero-container {
-    width: 748px;
+    /* width: 748px; */
     column-gap: 16px;
     margin-top: 64px;
   }
 }
 @media screen and (min-width: 1110px) {
   .hero-container {
-    width: 590px;
+    width: 871px;
     margin-top: 0px;
   }
 }
@@ -146,7 +146,8 @@
   width: 200px;
   border-radius: 20px;
   padding-top: 58px;
-  background-color: #050505;
+  /*  #050505; */
+  background-color: var(--primary-text-color);
 }
 @media only screen and (min-width: 768px) {
   .hero-img-div {
@@ -165,7 +166,10 @@
   margin-right: auto;
   margin-bottom: 32px;
   object-fit: cover;
+  /* background-image: linear-gradient(to bottom, black 0%, transparent 100%),
+    url(http://i.imgur.com/Tpn26TW.jpg); */
 }
+
 @media only screen and (min-width: 768px) {
   .hero-tried-img {
     width: 304px;
@@ -181,7 +185,8 @@
   height: 280px;
   object-fit: cover;
   border-radius: 20px;
-  background-color: #050505;
+  /* #050505 */
+  background-color: var(--primary-text-color);
 }
 @media only screen and (min-width: 768px) {
   .hero-tried-img-flll {
@@ -196,7 +201,8 @@
   border-radius: 20px;
 }
 .hero-name-treat {
-  color: #f8f8f899;
+  /* #f8f8f899;  */
+  color: var(--description-text-color);
   text-align: center;
   font-family: Inter;
   font-size: 10px;
@@ -212,7 +218,7 @@
   text-align: center;
 }
 .hero-country-treat {
-  color: #f8f8f833;
+  color: var(--area-color);
   font-size: 8px;
   font-weight: 400;
   line-height: 1.5; /* 150% */
@@ -228,6 +234,10 @@
 
 .image-slider_image {
   width: 100%;
+}
+
+.swiper .swiper-slide.image-slider_image.swiper-slide-active {
+  width: 2000px;
 }
 .swiper {
   width: 335px;
@@ -254,9 +264,10 @@
   height: 6px;
   line-height: 20px;
   font-size: 14px;
-  /* background-color: #050505; */
-  background-color: #9bb537;
+  /* #9bb537 */
+  background-color: var(--secondary-bg-color);
 }
-.swiper-hero .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  /* background-color: #9bb537; */
+
+.swiper-pagination-bullet-active {
+  background: #f00;
 }
