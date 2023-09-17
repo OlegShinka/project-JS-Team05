@@ -1,21 +1,144 @@
+/* Basic styles */
 .header {
-  padding: 20px 0;
+  min-width: 320px;
+  max-width: 375px;
+  padding: 28px 20px;
 }
 
+@media only screen and (min-width: 768px) {
+  .header {
+    max-width: 768px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .header {
+    max-width: 1280px;
+  }
+}
+
+/* header styles */
+
 .nav-list {
-  display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 40px;
+  list-style: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .nav-list {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .nav-list {
+    display: flex;
+  }
 }
 
 .nav-link {
+  text-decoration: blink;
+  color: #050505;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
   font-weight: 500;
-  letter-spacing: 0.02em;
-  line-height: 1.5;
+  line-height: normal;
 }
 
 .nav-link:hover,
 .nav-link:focus {
-  color: #747bff;
+  color: #9bb537;
+}
+
+.logo-header {
+  color: #050505;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: -0.64px;
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .logo-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.logo-header-span {
+  color: #9bb537;
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: -0.64px;
+  /* margin: 0px; */
+}
+
+.header-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.burger-menu {
+  display: flex;
+  background-color: transparent;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-burger {
+  fill: #050505;
+}
+
+@media only screen and (min-width: 768px) {
+  .burger-menu {
+    display: none;
+  }
+}
+
+.cart {
+  display: flex;
+}
+
+.icon-switch {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .icon-switch {
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.cart-switch {
+  gap: 18px;
+  position: absolute;
+  top: 38px;
+  right: 32px;
+  display: flex;
 }
