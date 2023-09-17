@@ -1,60 +1,56 @@
-// import Swiper JS
-// import Swiper, { Navigation, Padination } from 'swiper';
-// // // import Swiper styles
-// //import 'swiper/css';
+// завантажуємо скріпт пагінації
+// console.log('завантажуємо скріпт пагінації');
+import '../api/swiper-lib';
 
-// const swiper = new Swiper('.swiper-container', {
-//   //   // Optional parameters
-//   //direction: 'horizontal',
-//   direction: 'vertical',
-//   loop: true,
-//   spaceBetween: 10,
+import { getEvent } from '../api/hero-fetch';
+const swiper = document.querySelector('.swiper-wrapper');
+console.log('swiper', swiper);
+// console.log('отримуЄмо з бекенда данні');
+//отримуЄмо з бекенда данні для формування масиву мастеркласів
+function getMasterClassArray() {
+  getEvent()
+    .then(arrayCook => {
+      // в data знаходиться масив кухарів;
+      addImage(arrayCook);
+    })
+    .catch(error => {
+      console.log(error);
+    });
+}
+//викликаємо функцію для відмальовки  майстер класів
+function addImage(el) {
+  const markup = getMarkup(el);
+  console.log(markup);
+  swiper.innerHTML = markup;
+}
+//створюєму розмітку майстер класів з отримного масиву даних по кухарям
+function getMarkup(ar) {
+  return ar
+    .map(el => {
+      return `<div class="swiper-slide image-slider_image">
+      <div class="hero-container">
+      <!-- image 1 -->
+          <div class="hero-img-cook-div hero-img-srink">
+            <img class="hero-cook-img" src="${el.cook.imgUrl}"
+              alt="${el.cook.name}" />
+          </div>
+          <!-- image 2 -->
+          <div class="hero-img-div hero-img-srink">
+            <img class="hero-tried-img" src="${el.topic.previewUrl}"
+              alt="${el.topic.name}" />
+            <h2 class="hero-name-treat">${el.topic.name}</h2>
+            <p class="hero-country-treat">ITALI</p>
+          </div>
+          <!-- image 3 -->
+          <div class="hero-img-div-fill hero-img-srink">
+            <img class="hero-tried-img-flll" src="${el.topic.imgUrl}"
+              alt="${el.topic.name}" />
+          </div>
+         </div>    
+          </div> 
+          `;
+    })
+    .join('');
+}
 
-//   //   // If we need pagination
-//   pagination: {
-//     el: '.swiper-pagination',
-//     clickable: true,
-//   },
-
-//   // Navigation arrows
-//   //   navigation: {
-//   //     nextEl: '.swiper-button-next',
-//   //     prevEl: '.swiper-button-prev',
-//   //   },
-
-//   //   // And if we need scrollbar
-//   //   scrollbar: {
-//   //     el: '.swiper-scrollbar',
-//   // },
-// });
-// core version + navigation, pagination modules:
-import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
-// import Swiper and modules styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-Swiper.use([Navigation, Pagination]);
-// init Swiper:
-const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  // direction: 'vertical',
-  loop: true,
-
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  // And if we need scrollbar
-  // scrollbar: {
-  //   el: '.swiper-scrollbar',
-  // },
-});
+getMasterClassArray();
