@@ -11,7 +11,7 @@ function createSwiper() {
   const swiper = new Swiper('.swiper', {
     // Optional parameters
     // direction: 'vertical',
-    spaceBetween: 100,
+    spaceBetween: 300,
     loop: true,
     // If we need pagination
     pagination: {
