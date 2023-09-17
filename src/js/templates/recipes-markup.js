@@ -41,7 +41,7 @@ function addStarsToMarkup(rating) {
   return markup;
 }
 
-function addOptions(arr) {
+function addOptionsIngr(arr) {
   return arr.map(({ _id, name }) => {
     const option = document.createElement('option');
     option.text = name;
@@ -50,4 +50,13 @@ function addOptions(arr) {
   });
 }
 
-export { createRecipesMarkup, addOptions };
+function addOptionsAreas(arr) {
+  return arr.map(({ name }) => {
+    const option = document.createElement('option');
+    option.text = name;
+    option.value = name;
+    return option;
+  });
+}
+
+export { createRecipesMarkup, addOptionsIngr, addOptionsAreas };

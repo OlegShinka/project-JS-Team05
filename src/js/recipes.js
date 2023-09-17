@@ -1,7 +1,11 @@
 import customSelect from 'custom-select';
 import 'custom-select/src/css/custom-select.css';
 import { fetchRecipes, fetchAreas, fetchIngr } from '../api/fetch-recies';
-import { addOptions, createRecipesMarkup } from './templates/recipes-markup';
+import {
+  addOptionsIngr,
+  addOptionsAreas,
+  createRecipesMarkup,
+} from './templates/recipes-markup';
 import debounce from 'lodash.debounce';
 
 const elements = {
@@ -34,14 +38,14 @@ fetchRecipes(currentParams)
 // Add areas
 fetchAreas()
   .then(({ data }) => {
-    elements.cstSel[1].append(addOptions(data));
+    elements.cstSel[1].append(addOptionsAreas(data));
   })
   .catch(e => console.log(e.message));
 
 // Add ingridients
 fetchIngr()
   .then(({ data }) => {
-    elements.cstSel[2].append(addOptions(data));
+    elements.cstSel[2].append(addOptionsIngr(data));
   })
   .catch(e => console.log(e.message));
 
@@ -70,7 +74,7 @@ elements.cstSel.forEach(sel =>
   })
 );
 elements.catList.addEventListener('click', e => {
-  if (!e.target.classList.contains('categoris-btn')) {
+  if (e.target.nodeName !== 'BUTTON') {
     return;
   }
   handleChange();
