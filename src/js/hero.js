@@ -3,6 +3,8 @@
 import '../api/swiper-lib';
 
 import { getEvent } from '../api/hero-fetch';
+const swiper = document.querySelector('.swiper-wrapper');
+console.log('swiper', swiper);
 // console.log('отримуЄмо з бекенда данні');
 //отримуЄмо з бекенда данні для формування масиву мастеркласів
 function getMasterClassArray() {
@@ -18,14 +20,16 @@ function getMasterClassArray() {
 //викликаємо функцію для відмальовки  майстер класів
 function addImage(el) {
   const markup = getMarkup(el);
-  //console.log(markup);
-  //  Slider.innerHTML = markup;
+  console.log(markup);
+  swiper.innerHTML = markup;
 }
 //створюєму розмітку майстер класів з отримного масиву даних по кухарям
 function getMarkup(ar) {
   return ar
     .map(el => {
-      return `<div class="hero-container">
+      return `<div class="swiper-slide image-slider_image">
+      <div class="hero-container">
+      <!-- image 1 -->
           <div class="hero-img-cook-div hero-img-srink">
             <img class="hero-cook-img" src="${el.cook.imgUrl}"
               alt="${el.cook.name}" />
@@ -42,12 +46,11 @@ function getMarkup(ar) {
             <img class="hero-tried-img-flll" src="${el.topic.imgUrl}"
               alt="${el.topic.name}" />
           </div>
-             
+         </div>    
+          </div> 
           `;
     })
     .join('');
 }
 
 getMasterClassArray();
-//робимо markup HERO
-function markupHero(aray) {}
