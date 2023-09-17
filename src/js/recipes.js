@@ -74,7 +74,7 @@ const debounceCallback = debounce(handleChange, 300);
 elements.search.addEventListener('input', debounceCallback);
 elements.cstSel.forEach(sel =>
   sel.select.addEventListener('change', () => {
-    if (sel.value === '0') {
+    if (sel.value === '') {
       sel.opener.style.color = 'rgba(5, 5, 5, 0.5)';
     } else {
       sel.opener.style.color = 'var(--primary-text-color)';
