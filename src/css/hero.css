@@ -111,7 +111,7 @@
   min-width: 0;
 }
 .hero-container {
-  width: 115%;
+  width: 128%;
   display: flex;
   column-gap: 8px;
   margin-top: 48px;
@@ -120,6 +120,7 @@
 }
 @media only screen and (min-width: 768px) {
   .hero-container {
+    width: 110%;
     /* width: 748px; */
     column-gap: 16px;
     margin-top: 64px;
@@ -127,6 +128,7 @@
 }
 @media screen and (min-width: 1110px) {
   .hero-container {
+    width: 115%;
     /* width: 871px; */
     margin-top: 0px;
   }
