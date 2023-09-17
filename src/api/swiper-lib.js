@@ -24,7 +24,11 @@ const swiper = new Swiper('.swiper', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
-
+  touchRatio: 1,
+  //форма курсора
+  // grabCursor: true,
+  slideToClickedSlide: true,
+  //slidesPerView: 1.8,
   // And if we need scrollbar
   // scrollbar: {
   //   el: '.swiper-scrollbar',
