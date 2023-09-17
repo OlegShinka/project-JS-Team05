@@ -26,8 +26,8 @@ function getMasterClassArray() {
 //викликаємо функцію для відмальовки  майстер класів
 function addImage(el) {
   const markup = getMarkup(el);
-  console.log(markup);
-  // swiper.innerHTML = markup;
+  // console.log(markup);
+  swiper.innerHTML = markup;
 }
 //створюєму розмітку майстер класів з отримного масиву даних по кухарям
 function getMarkup(ar) {
@@ -50,7 +50,7 @@ function getMarkup(ar) {
             <p class="hero-country-treat">${el.topic.area}</p>
           </div>
           <!-- image 3 -->
-          <div class="hero-img-div-fill hero-img-srink">
+          <div class="hero-img-div-fill">
             <img class="hero-tried-img-flll" src="${el.topic.imgUrl}"
               alt="${el.topic.name}" />
           </div>
