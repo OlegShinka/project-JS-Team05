@@ -16,6 +16,7 @@
 
 .hero {
   font-size: 36px;
+  margin-bottom: 80px;
 }
 @media screen and (min-width: 1110px) {
   .hero {
@@ -165,6 +166,13 @@
   margin-bottom: 32px;
   object-fit: cover;
 }
+@media only screen and (min-width: 768px) {
+  .hero-tried-img {
+    width: 304px;
+    height: 271px;
+  }
+}
+
 .hero-img-srink {
   flex-shrink: 0;
 }
@@ -228,7 +236,7 @@
 @media only screen and (min-width: 768px) {
   .swiper {
     width: 768px;
-    height: 400px;
+    height: 542px;
   }
 }
 @media screen and (min-width: 1110px) {
