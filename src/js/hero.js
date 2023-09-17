@@ -1,5 +1,5 @@
 // завантажуємо скріпт пагінації
-// console.log('завантажуємо скріпт пагінації');
+
 // import '../api/swiper-lib';
 import { createSwiper } from '../api/swiper-lib';
 
@@ -12,8 +12,7 @@ function onClick() {
   const phoneNumber = '380730000000';
   window.location.href = 'tel:' + phoneNumber;
 }
-// console.log('swiper', swiper);
-// console.log('отримуЄмо з бекенда данні');
+
 //отримуЄмо з бекенда данні для формування масиву мастеркласів
 function getMasterClassArray() {
   getEvent()
@@ -28,7 +27,6 @@ function getMasterClassArray() {
 //викликаємо функцію для відмальовки  майстер класів
 function addImage(el) {
   const markup = getMarkup(el);
-  // console.log(markup);
   swiperConteinerEl.innerHTML = markup;
   // swiper.update();
   createSwiper();

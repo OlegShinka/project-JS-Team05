@@ -1,9 +1,7 @@
 // core version + navigation, pagination modules:
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
-// import Swiper and modules styles
 import 'swiper/css';
-// import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 Swiper.use([Navigation, Pagination]);
 
@@ -11,7 +9,7 @@ function createSwiper() {
   const swiper = new Swiper('.swiper', {
     // Optional parameters
     // direction: 'vertical',
-    spaceBetween: 100,
+    spaceBetween: 300,
     loop: true,
     // If we need pagination
     pagination: {

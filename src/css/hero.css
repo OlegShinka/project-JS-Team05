@@ -72,7 +72,6 @@
 }
 
 .hero-message {
-  /* width: 335px; */
   margin-bottom: 28px;
   /* #050505; */
   color: var(--primary-text-color);
@@ -91,45 +90,27 @@
   }
 }
 /* Розмітка свайперу !!!!!!!!!!!!!!!*/
-.hero-push-buton {
-  /* margin-top: 48px; */
-  /* outline: 1px solid red; */
-}
 
-@media only screen and (min-width: 768px) {
-  .hero-push-buton {
-    /* margin-top: 64px; */
-  }
-}
-@media screen and (min-width: 1110px) {
-  .shero-push-buton {
-    /* margin-top: 0; */
-  }
-}
 .hero-slider {
   display: flex;
   min-width: 0;
 }
 .hero-container {
-  width: 128%;
+  width: 150%;
   display: flex;
   column-gap: 8px;
   margin-top: 48px;
-  /* outline: 1px solid red; */
+
   overflow: hidden;
 }
 @media only screen and (min-width: 768px) {
   .hero-container {
-    width: 110%;
-    /* width: 748px; */
     column-gap: 16px;
     margin-top: 64px;
   }
 }
 @media screen and (min-width: 1110px) {
   .hero-container {
-    width: 115%;
-    /* width: 871px; */
     margin-top: 0px;
   }
 }
@@ -137,7 +118,6 @@
 .hero-img-cook-div {
   width: 80px;
   height: 280px;
-  /* outline: 1px solid green; */
 }
 @media only screen and (min-width: 768px) {
   .hero-img-cook-div {
@@ -146,7 +126,6 @@
   }
 }
 .hero-img-div {
-  /* outline: 1px solid blue; */
   width: 200px;
   border-radius: 20px;
   padding-top: 58px;
@@ -215,7 +194,6 @@
   line-height: 1.4; /* 140% */
   text-transform: uppercase;
 
-  /* width: 276px; */
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 8px;
@@ -232,9 +210,6 @@
 }
 
 /* markup swiper */
-.image-slider_image {
-  /* text-align: center; */
-}
 
 .image-slider_image {
   width: 100%;
