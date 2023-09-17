@@ -1,21 +1,24 @@
-const modal = document.querySelector('.modal-rec-window');
+// const modalRecipe = require('basiclightbox');
+// import * as basicLightbox from 'basiclightbox';
+
+const modal = document.querySelector('.modal-rec-backdrop');
 const recipeInfo = document.querySelector('.js-modal-rec');
 const btnClose = document.querySelector('.modal-rec-close');
 const btnAdd = document.querySelector('.modal-rec-btn-add');
 const btnRating = document.querySelector('.modal-rec-btn-rating');
 
-modal.style.display = 'none';
+const modalRecipe = basicLightbox.create(modal);
 
 btnClose.addEventListener('click', handlerClose);
 btnAdd.addEventListener('click', handlerAddBtn);
 btnRating.addEventListener('click', handlerRatingBtn);
 
 function handlerClose() {
-  modal.style.display = 'none';
-  btnClose.removeEventListener('click', handlerClose);
+  modalRecipe.close();
 }
 
 function handlerAddBtn() {}
+
 function handlerRatingBtn() {}
 
 export function fetchRecipe(recipeId) {
@@ -31,11 +34,10 @@ export function fetchRecipe(recipeId) {
 }
 
 export function markupRecipeModal(arr) {
-  let preview = `<img src="" alt="" />`;
-  // let preview = `<img src="${arr.thumb}" alt="${arr.title}" class="recipe-img" />`;
+  let preview = `<img src="${arr.thumb}" alt="${arr.title}" class="recipe-img" />`;
   // if (arr.youtube) {
   //   console.log(arr.youtube);
-  //   preview = `<video src="${arr.youtube}"></video>`;
+  //   preview = `<iframe class="recipe-img" src="${arr.youtube}" name="instruction-video" frameborder="0"></iframe>`;
   // }
 
   let tags = `<div class="modal-rec-tag-text">#${arr.tags[0]}</div>`;
@@ -96,14 +98,19 @@ export function markupRecipeModal(arr) {
   return card;
 }
 
-// import { fetchRecipe } from "../js/modal-rec";
-// import { markupRecipeModal } from "../js/modal-rec";
-// const modal = document.querySelector('.modal-rec-window');
-// const recipeInfo = document.querySelector('.js-modal-rec');
+// function handlerSeeRecipeBtn() {
+//   fetchRecipe('recipeId')
+//     .then(data => {
+//       recipeInfo.innerHTML = markupRecipeModal(data);
+//     })
+//     .catch(err => console.log(err));
 
-// fetchRecipe('6462a8f74c3d0ddd28897fc1')
-//   .then(data => {
-//     modal.style.display = 'block';
-//     recipeInfo.innerHTML = markupRecipeModal(data);
-//   })
-//   .catch(err => console.log(err));
+//   modalRecipe.show();
+//   if (modalRecipe.show()) {
+//     document.addEventListener('keydown', evt => {
+//       if (evt.code === 'Escape') {
+//         modalRecipe.close();
+//       }
+//     });
+//   }
+// }
