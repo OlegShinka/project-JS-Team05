@@ -110,7 +110,7 @@
 }
 
 .icon-burger {
-  fill: #050505;
+  stroke: #050505;
 }
 
 @media only screen and (min-width: 768px) {
