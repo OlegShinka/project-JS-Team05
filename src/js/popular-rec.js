@@ -3,18 +3,14 @@ import { getPopularRecipes } from "../api/popular-rec-fetch";
 const popularItems = document.querySelector(".popular-items");
 
 getPopularRecipes()
-    .then(data => createMarkUp(data))
+    .then(data => {createMarkUp(data);
+      const popularRecItem = document.querySelectorAll(".popular-item");
+        for (const item of popularRecItem) {
+          // console.log("item", item)
+          item.addEventListener("click", showRecipeDitails);
+        }
+    })
     .catch(error => console.log(error.message));
-
-
-// const popularRecItems = document.querySelector(".popular-items");
-// console.log(popularRecItems);
-
-// popularRecItems.addEventListener("click", showRecipeDitails);
-
-// function showRecipeDitails(evt){
-//     console.log(evt.target)
-// }
 
 function createMarkUp(arr) {
     const markup = arr.map(({description, title, preview, _id}) => `<div id=${_id} class="popular-item">
@@ -31,3 +27,6 @@ function createMarkUp(arr) {
   popularItems.insertAdjacentHTML('beforeend', markup);
   }
   
+function showRecipeDitails(evt){
+    console.log(evt.currentTarget.id)
+}
