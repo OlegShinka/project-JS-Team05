@@ -7,6 +7,8 @@ import {
   createRecipesMarkup,
 } from './templates/recipes-markup';
 import debounce from 'lodash.debounce';
+// import Pagination from 'tui-pagination';
+import { createPagination } from './pagination';
 
 const elements = {
   form: document.querySelector('.filter-form'),
@@ -16,6 +18,8 @@ const elements = {
   cstSel: customSelect('.custom-select'),
   recipesCont: document.querySelector('.recipes-container'),
   catList: document.querySelector('.categoris-list'),
+  // paginationCont: document.querySelector('#tui-pagination-container'),
+  pagination: undefined,
 };
 
 let currentParams = {
@@ -32,6 +36,8 @@ let currentParams = {
 fetchRecipes(currentParams)
   .then(({ data }) => {
     elements.recipesCont.innerHTML = createRecipesMarkup(data.results);
+    elements.pagination = createPagination(data);
+    elements.pagination.on('afterMove', handleMove);
   })
   .catch(e => console.log(e.message));
 
@@ -56,7 +62,10 @@ elements.clearSearch.addEventListener('click', function () {
 });
 elements.clearForm.addEventListener('click', function () {
   elements.search.value = '';
-  elements.cstSel.forEach(sel => (sel.value = '0'));
+  elements.cstSel.forEach(sel => {
+    sel.value = '0';
+    sel.opener.style.color = 'rgba(5, 5, 5, 0.5)';
+  });
   handleChange();
 });
 
@@ -90,6 +99,22 @@ function handleChange() {
     area: elements.cstSel[1].value,
     ingredient: elements.cstSel[2].value,
   };
+  fetchRecipes(currentParams)
+    .then(({ data }) => {
+      if (!data.results.length) {
+        elements.recipesCont.innerHTML = '<p class="empty">Nothing found.</p>';
+        return;
+      }
+      elements.recipesCont.innerHTML = createRecipesMarkup(data.results);
+      elements.pagination = createPagination(data);
+      elements.pagination.on('afterMove', handleMove);
+    })
+    .catch(e => console.log(e.message));
+}
+
+// Pagination
+function handleMove({ page }) {
+  currentParams.page = page;
   fetchRecipes(currentParams)
     .then(({ data }) => {
       elements.recipesCont.innerHTML = createRecipesMarkup(data.results);
