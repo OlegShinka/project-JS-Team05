@@ -1,0 +1,130 @@
+/* POPULAR RECIPES */
+
+.container-popular-recipes {
+  margin-top: 64px;
+  width: 235px;
+}
+.popular-recipes-title {
+  margin: 0 auto;
+  font-family: Inter, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+  text-transform: uppercase;
+}
+.popular-item {
+  display: flex;
+  margin-top: 32px;
+  overflow: auto;
+}
+.popular-item-img {
+  max-width: 64px;
+  max-height: 64px;
+  border-radius: 5px;
+}
+.popular-item-text-content {
+  margin-left: 16px;
+}
+.popular-item-title {
+  font-family: Inter, sans-serif;
+  text-transform: uppercase;
+  margin: 0;
+  width: 155px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  height: 18px;
+  color: #050505;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; /*не відображається*/
+}
+.popular-item-descr {
+  margin: 8px 0px 0px 0px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  height: 41px;
+  width: 155px;
+  color: #050505;
+  opacity: 0.8;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; /*не відображається*/
+}
+
+@media only screen and (max-width: 768px) {
+  .container-popular-recipes {
+    margin: 64px 0;
+    width: 176px;
+  }
+  .popular-recipes-title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .popular-item {
+    margin-top: 32px;
+  }
+  .popular-item + .popular-item {
+    margin-top: 16px;
+  }
+  .popular-item-img {
+    width: 48px;
+    height: 48px;
+  }
+  .popular-item-text-content {
+    margin-left: 8px;
+  }
+  .popular-item-title {
+    width: 120px;
+    font-size: 14px;
+    line-height: 18px;
+    height: 18px;
+  }
+  .popular-item-descr {
+    width: 120px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .container-popular-recipes {
+    margin: 40px 0;
+    width: 332px;
+    height: 202px;
+    overflow: hidden;
+  }
+  .popular-recipes-title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .popular-item {
+    margin-top: 20px;
+  }
+  .popular-item + .popular-item {
+    margin-top: 24px;
+  }
+  .popular-item-img {
+    width: 64px;
+    height: 64px;
+  }
+  .popular-item-text-content {
+    margin-left: 16px;
+  }
+  .popular-item-title {
+    width: 252px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .popular-item-descr {
+    height: 34px;
+    width: 252px;
+    font-size: 12px;
+    line-height: 16px;
+    -webkit-line-clamp: 2;
+  }
+}
