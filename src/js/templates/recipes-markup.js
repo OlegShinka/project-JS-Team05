@@ -35,13 +35,13 @@ function addStarsToMarkup(rating) {
     markup += `<svg class="rating-icon rating-icon-${
       i <= goldStars ? 'orange' : 'grey'
     }" width="14" height="14">
-                        <use href="./img/symbol-defs.svg#icon-star"></use>
+                        <use href="./img/symbol-defs.svg#icon-Star-4"></use>
                     </svg>`;
   }
   return markup;
 }
 
-function addOptions(arr) {
+function addOptionsIngr(arr) {
   return arr.map(({ _id, name }) => {
     const option = document.createElement('option');
     option.text = name;
@@ -50,4 +50,13 @@ function addOptions(arr) {
   });
 }
 
-export { createRecipesMarkup, addOptions };
+function addOptionsAreas(arr) {
+  return arr.map(({ name }) => {
+    const option = document.createElement('option');
+    option.text = name;
+    option.value = name;
+    return option;
+  });
+}
+
+export { createRecipesMarkup, addOptionsIngr, addOptionsAreas };
