@@ -25,9 +25,6 @@ function createRecipesMarkup(arr) {
     .join('');
 }
 
-// <svg class="fav-icon" width="22" height="22">
-//     <use href="./img/symbol-defs.svg#icon-heart"></use>
-// </svg>
 function addStarsToMarkup(rating) {
   const goldStars = Math.round(Number(rating));
   let markup = '';
