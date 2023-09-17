@@ -166,6 +166,13 @@
   margin-bottom: 32px;
   object-fit: cover;
 }
+@media only screen and (min-width: 768px) {
+  .hero-tried-img {
+    width: 304px;
+    height: 271px;
+  }
+}
+
 .hero-img-srink {
   flex-shrink: 0;
 }

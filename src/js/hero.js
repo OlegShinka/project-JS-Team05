@@ -39,7 +39,7 @@ function getMarkup(ar) {
             <img class="hero-tried-img" src="${el.topic.previewUrl}"
               alt="${el.topic.name}" />
             <h2 class="hero-name-treat">${el.topic.name}</h2>
-            <p class="hero-country-treat">ITALI</p>
+            <p class="hero-country-treat">${el.topic.area}</p>
           </div>
           <!-- image 3 -->
           <div class="hero-img-div-fill hero-img-srink">
