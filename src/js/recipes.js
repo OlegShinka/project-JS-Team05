@@ -17,7 +17,7 @@ const elements = {
   clearForm: document.querySelector('.reset-filter'),
   cstSel: customSelect('.custom-select'),
   recipesCont: document.querySelector('.recipes-container'),
-  catList: document.querySelector('.categoris-list'),
+  catList: document.querySelector('.categoris-wrapper'),
   // paginationCont: document.querySelector('#tui-pagination-container'),
   pagination: undefined,
 };
@@ -90,9 +90,13 @@ elements.catList.addEventListener('click', e => {
 });
 
 function handleChange() {
+  let category = document.querySelector('.activ').textContent;
+  if (category === 'All categories') {
+    category = '';
+  }
   currentParams = {
     title: elements.search.value?.trim() || '',
-    category: document.querySelector('.categoris-btn.activ')?.textContent || '',
+    category: category,
     page: '1',
     limit: matchMedia('(max-width: 1109px)').matches ? '8' : '9',
     time: elements.cstSel[0].value,
