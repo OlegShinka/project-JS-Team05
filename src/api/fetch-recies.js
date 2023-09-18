@@ -16,6 +16,11 @@ async function fetchRecipes(params = {}) {
   return await axios.get(`${BASE_URL}${END_POINT}?${currentParams}`);
 }
 
+async function fetchRecipeById(id) {
+  const END_POINT = '/recipes';
+  return await axios.get(`${BASE_URL}${END_POINT}/${id}`);
+}
+
 async function fetchAreas() {
   const END_POINT = '/areas';
   return await axios.get(`${BASE_URL}${END_POINT}`);
@@ -26,4 +31,4 @@ async function fetchIngr() {
   return await axios.get(`${BASE_URL}${END_POINT}`);
 }
 
-export { fetchRecipes, fetchAreas, fetchIngr };
+export { fetchRecipes, fetchAreas, fetchIngr, fetchRecipeById };

@@ -120,6 +120,9 @@
 .cart {
   display: flex;
   margin-top: 2px;
+  stroke: #050505;
+
+  cursor: pointer;
 }
 
 .icon-switch {
@@ -131,8 +134,7 @@
     display: flex;
     width: 56px;
     height: 30px;
-    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
-      0px 2px 2px rgba(0, 0, 0, 0.12);
+    box-shadow: #050505;
   }
 }
 
@@ -149,6 +151,8 @@
     position: absolute;
     top: 32px;
     right: 32px;
+    width: 56px;
+    height: 30px;
   }
 }
 

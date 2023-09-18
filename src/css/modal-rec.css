@@ -1,13 +1,43 @@
+.modal-rec-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 80;
+
+  width: 100%;
+  height: 100%;
+  background: rgba(46, 47, 66, 0.4);
+  transition: opacity 0.4s ease;
+
+  overflow-y: scroll;
+}
+
+.modal-rec-backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .modal-rec-window {
-  position: relative;
+  position: absolute;
+  z-index: 100;
+  top: 60px;
+  left: 50%;
+  transform: translate(-50%) scale(1);
+  transition: transform 0.4s ease;
+
   width: 531px;
   min-height: 600px;
   padding: 32px;
-
   border-radius: 15px;
-  background: #fff;
+  background: var(--primary-bg-color);
+}
 
-  border: 1px solid red;
+@media screen and (max-width: 570px) {
+  .modal-rec-window {
+    max-width: 335px;
+    padding: 40px 20px;
+  }
 }
 
 .modal-rec-close {
@@ -22,11 +52,11 @@
 }
 
 .modal-close-icon {
-  stroke: #050505;
+  stroke: var(--primary-text-color);
 }
 
 .modal-rec-title {
-  color: #050505;
+  color: var(--primary-text-color);
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
@@ -38,7 +68,6 @@
 .modal-rec-img {
   width: 467px;
   height: 250px;
-  flex-shrink: 0;
   margin-bottom: 16px;
 
   border-radius: 8px;
@@ -47,16 +76,34 @@
       rgba(5, 5, 5, 0.4) 0%,
       rgba(5, 5, 5, 0.4) 100%
     ),
-    url(<path-to-image>), lightgray -34.64px -20px / 109.993% 120% no-repeat;
+    lightgray -34.64px -20px / 109.993% 120% no-repeat;
+}
+
+@media screen and (max-width: 570px) {
+  .modal-rec-img {
+    width: 295px;
+    height: 295px;
+  }
 }
 
 .recipe-img {
+  width: 467px;
+  height: 250px;
+  border-radius: 8px;
   object-fit: cover;
-  object-position: center;
+}
+
+@media screen and (max-width: 570px) {
+  .recipe-img {
+    width: 295px;
+    height: 295px;
+  }
 }
 
 .modal-rec-flex {
   display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
   margin-bottom: 32px;
   align-items: center;
 }
@@ -66,7 +113,7 @@
   gap: 4px;
   margin-right: auto;
 
-  color: #050505;
+  color: var(--primary-text-color);
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -74,7 +121,7 @@
 }
 
 .modal-rec-tag-text {
-  color: #050505;
+  color: var(--primary-text-color) 5;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -100,9 +147,8 @@
 }
 
 .modal-star-icon {
-  fill: #eea10c;
-  stroke: #eea10c;
-  background-color: black;
+  fill: var(--star-bg-color);
+  stroke: var(--star-bg-color);
 }
 
 .modal-rec-rat-text,
@@ -130,18 +176,14 @@
   margin: 9px 0 7px;
 }
 
-/* .modal-rec-ingr-one::after {
-      content: "";
-      
-      width: 467px;
-      height: 1px;
-      border: 1px solid rgba(5, 5, 5, 0.1);
-    
-      margin: 10px 0 8px;
-    } */
+@media screen and (max-width: 570px) {
+  .modal-rec-ingr-line {
+    width: 295px;
+  }
+}
 
 .modal-rec-ingr-name {
-  color: #050505;
+  color: var(--primary-text-color);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -178,16 +220,29 @@
 
   padding: 14px 28px;
   border-radius: 15px;
+  margin: 0;
+}
+
+@media screen and (max-width: 570px) {
+  .modal-rec-btn {
+    padding: 12px 24px;
+  }
 }
 
 .modal-rec-btn-add {
-  color: #f8f8f8;
-  background: #9bb537;
+  color: var(--description-text-color);
+  background: var(--secondary-bg-color);
   border: 0px;
-  margin-right: 16px;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 570px) {
+  .modal-rec-btn-add {
+    margin-right: 8px;
+  }
 }
 
 .modal-rec-btn-rating {
-  color: #050505;
-  border: 1px solid #9bb537;
+  color: var(--primary-text-color);
+  border: 1px solid var(--secondary-bg-color);
 }
