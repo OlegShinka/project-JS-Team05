@@ -1,10 +1,10 @@
-.modal-rec-backdrop {
+.mobile-menu-backdrop {
   position: fixed;
   top: 0;
   right: 0;
   z-index: 80;
 
-  width: 50%;
+  width: 100%;
   height: 100%;
   background: rgba(46, 47, 66, 0.4);
   transition: opacity 0.4s ease;
@@ -18,41 +18,47 @@
   pointer-events: none;
 }
 
-.modal-rec-window {
+.mobile-menu-window {
   position: absolute;
   z-index: 100;
-  top: 60px;
+  /* top: 60px; */
   left: 50%;
   transform: translate(-50%) scale(1);
   transition: transform 0.4s ease;
 
-  width: 531px;
+  width: 200px;
   min-height: 600px;
-  padding: 32px;
+  height: 80%;
+  /* padding: 32px; */
+  padding-top: 200px;
+  padding-left: 73px;
   border-radius: 15px;
-  background: var(--primary-bg-color);
+  background: var(--secondary-bg-color);
 }
 
-@media screen and (max-width: 570px) {
-  .modal-rec-window {
-    max-width: 335px;
+/* @memodal-menu-windowdia screen and (max-width: 570px) {
+  .mobile-menu-window {
+    max-width: 335px; 
     padding: 40px 20px;
   }
-}
+} */
 
-.modal-rec-close {
+.mob-menu-close {
   padding: 0;
 
   position: absolute;
   z-index: 10;
   top: 16px;
   right: 16px;
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
+  background-color: var(--secondary-bg-color);
+  /* border-color: var(--secondary-bg-color); */
+  border: none;
 }
 
-.modal-close-icon {
-  stroke: var(--primary-text-color);
+.mob-menu-svg {
+  stroke: var(--primary-bg-color);
 }
 
 .modal-rec-title {
