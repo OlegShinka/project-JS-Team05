@@ -43,7 +43,7 @@ function onClickBurger() {
   <div class="mobile-menu-window">
     <button type="button" class="mob-menu-close" data-modal-rec-close>
       <svg class="mob-menu-svg" width="32" height="32" fill = "red">
-        <use href="./img/symbol-defs.svg#icon-x2"></use>
+        <use href="../img/symbol-defs.svg#icon-x2"></use>
       </svg>
     </button>
     <div class="js-modal-rec"></div>
