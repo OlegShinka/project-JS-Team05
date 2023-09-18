@@ -1,10 +1,5 @@
-import * as basicLightbox from 'basiclightbox';
-// import "../css/modal-rec.css"
-import {
-  getPopularRecipes,
-  getOnePopularRecipe,
-} from '../api/popular-rec-fetch';
-import { markupRecipeModal } from './templates/recipe-modal-markup';
+import { getPopularRecipes } from '../api/popular-rec-fetch';
+import { createModal } from './modal-rec';
 
 const popularItems = document.querySelector('.popular-items');
 
@@ -18,7 +13,7 @@ getPopularRecipes()
   })
   .catch(error => console.log(error.message));
 
-//відмальовка списку популярних рецептів
+//відмальовування списку популярних рецептів
 function createMarkUp(arr) {
   const markup = arr
     .map(
@@ -43,18 +38,8 @@ function createMarkUp(arr) {
   popularItems.insertAdjacentHTML('beforeend', markup);
 }
 
-//по запиту на бекенд по ID викликає модальне вікно з детальною інфо
+//виклик модального вікна по кліку на рецепт
 function showRecipeDitails(evt) {
-  getOnePopularRecipe(evt.currentTarget.id)
-    .then(data => {
-      const cardRec = markupRecipeModal(data);
-      const instance = basicLightbox.create(cardRec);
-      instance.show();
-      document.addEventListener("keydown", (event) => {
-        if (event.code === "Escape") {
-          instance.close();
-        }
-      });
-    })
-    .catch(error => console.log(error.message));
+  const id = evt.currentTarget.id;
+  createModal(id);
 }
