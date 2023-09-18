@@ -28,7 +28,6 @@ function getMasterClassArray() {
 function addImage(el) {
   const markup = getMarkup(el);
   swiperConteinerEl.innerHTML = markup;
-  // swiper.update();
   //після отримання данних з беку підгружаємо бібліотеку Swiper
   createSwiper();
 }
@@ -36,6 +35,31 @@ function addImage(el) {
 function getMarkup(ar) {
   return ar
     .map((el, ind) => {
+      // return `
+      //  <!-- Slide ${ind + 1} -->
+      // <div class="swiper-slide image-slider_image">
+      // <div class="hero-container">
+      // <!-- image 1 -->
+      //     <div class="hero-img-cook-div hero-img-srink">
+      //       <img class="hero-cook-img" src="${el.cook.imgUrl}"
+      //         alt="${el.cook.name}" />
+      //     </div>
+      //     <!-- image 2 -->
+      //     <div class="hero-img-div hero-img-srink">
+      //       <img class="hero-tried-img" src="${el.topic.previewUrl}"
+      //         alt="${el.topic.name}" />
+      //       <h2 class="hero-name-treat">${el.topic.name}</h2>
+      //       <p class="hero-country-treat">${el.topic.area}</p>
+      //     </div>
+      //     <!-- image 3 -->
+      //     <div class="hero-img-div-fill">
+      //       <img class="hero-tried-img-flll" src="${el.topic.imgUrl}"
+      //         alt="${el.topic.name}" />
+      //     </div>
+      //    </div>
+      //     </div>
+      //      <!-- END Slide ${ind + 1}-->
+      //     `;
       return `
        <!-- Slide ${ind + 1} -->
       <div class="swiper-slide image-slider_image">
