@@ -2,7 +2,10 @@ import * as basicLightbox from 'basiclightbox';
 import Notiflix from 'notiflix';
 
 import { fetchInfoRecipe } from '../api/recipe-info-fetch';
-import { markupRecipeModal } from './templates/recipe-modal-markup';
+import {
+  markupRecipeModal,
+  markupRecipeModalMobile,
+} from './templates/recipe-modal-markup';
 import { addToFav, isFav } from '../api/fav-localStarage';
 
 const modal = document.querySelector('.modal-rec-backdrop');
@@ -20,13 +23,9 @@ btnClose.addEventListener('click', handlerClose);
 btnAdd.addEventListener('click', handlerAddBtn);
 btnRating.addEventListener('click', handlerRatingBtn);
 
-function toggleModal() {
-  modal.classList.toggle('is-hidden');
-}
-
 function handlerClose() {
   modalRecipe.close();
-  toggleModal();
+  modal.classList.toggle('is-hidden');
 }
 
 let recipeId = '';
@@ -37,10 +36,12 @@ function handlerRecipeCont(evt) {
     recipeId = evt.target.dataset.id;
     window.dataset.id = evt.target.dataset.id;
 
-    toggleModal();
+    modal.classList.toggle('is-hidden');
     fetchInfoRecipe(recipeId)
       .then(data => {
-        recipeInfo.innerHTML = markupRecipeModal(data);
+        if (matchMedia('(max-width: 570px)').matches) {
+          recipeInfo.innerHTML = markupRecipeModalMobile(data);
+        } else recipeInfo.innerHTML = markupRecipeModal(data);
       })
       .catch(err => console.log(err));
 
@@ -49,12 +50,12 @@ function handlerRecipeCont(evt) {
       document.addEventListener('keydown', evt => {
         if (evt.code === 'Escape') {
           modalRecipe.close();
-          toggleModal();
+          modal.classList.toggle('is-hidden');
         }
       });
       modal.addEventListener('click', () => {
         modalRecipe.close();
-        toggleModal();
+        modal.classList.toggle('is-hidden');
       });
     }
   }
@@ -68,7 +69,8 @@ function handlerAddBtn(evt) {
     Notiflix.Notify.success('Recipe added to Favorites!');
     // e.target.parentElement.classList.add('is-fav');
   }
-  // }
+  // console.log(evt.target.parentNode.dataset.id);
+  // console.log(recipesCont);
 }
 
 function handlerRatingBtn() {}
