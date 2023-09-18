@@ -323,6 +323,20 @@ div.custom-select-option.has-focus {
   line-height: 1.5;
 }
 
+.fav-icon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  stroke: rgba(248, 248, 248, 0.5);
+  fill: none;
+  cursor: pointer;
+}
+
+.fav-icon:hover,
+.fav-icon.is-fav {
+  fill: var(--description-text-color);
+}
+
 /* PAGINATION */
 .tui-pagination {
   display: flex;

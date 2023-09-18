@@ -1,3 +1,5 @@
+import { isFav } from '../../api/fav-localStarage';
+
 const hrefIco = document.querySelector('.href-ico');
 
 function createRecipesMarkup(arr) {
@@ -6,12 +8,9 @@ function createRecipesMarkup(arr) {
       ({
         _id,
         preview,
-        area,
-        category,
         description,
         title,
         rating,
-        time,
       }) => `<div class="thumb" data-id=${_id} style="background: linear-gradient(1deg, rgba(5, 5, 5, 0.6) 4.82%, rgba(5, 5, 5, 0) 108.72%),
     url(${preview}), lightgray -25px -10px / 116.716% 114.018% no-repeat; background-size: cover;">
             <h3 class="recipe-title">${title}</h3>
@@ -22,6 +21,13 @@ function createRecipesMarkup(arr) {
       )}</p>
                 <button class="btn-see-recipe js-see-recipe recipe-desc" type="button" data-id=${_id}>See recipe</button>
             </div>
+            <svg class="fav-icon ${
+              isFav(_id) ? 'is-fav' : ''
+            }" width="22" height="22">
+                <use href="${
+                  hrefIco.href.baseVal
+                }#icon-heart" data-id=${_id} class="js-fav"></use>
+            </svg>
             </div>`
     )
     .join('');
