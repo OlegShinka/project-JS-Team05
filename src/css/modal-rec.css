@@ -42,6 +42,8 @@
 
 .modal-rec-close {
   padding: 0;
+  border: none;
+  background-color: var(--primary-bg-color);
 
   position: absolute;
   z-index: 10;
@@ -236,6 +238,11 @@
   margin-right: 10px;
 }
 
+.modal-rec-btn-add:hover,
+.modal-rec-btn-add:focus {
+  color: var(--primary-text-color);
+}
+
 @media screen and (max-width: 570px) {
   .modal-rec-btn-add {
     margin-right: 8px;
@@ -245,4 +252,10 @@
 .modal-rec-btn-rating {
   color: var(--primary-text-color);
   border: 1px solid var(--secondary-bg-color);
+}
+
+.modal-rec-btn-rating:hover,
+.modal-rec-btn-rating:focus {
+  color: var(--description-text-color);
+  background: var(--secondary-bg-color);
 }

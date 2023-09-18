@@ -15,10 +15,10 @@ function addStarsToMarkup(rating) {
 
 export function markupRecipeModal(arr) {
     let preview = `<img src="${arr.thumb}" alt="${arr.title}" class="recipe-img" />`;
-    if (arr.youtube) {
-      console.log(arr.youtube);
-      preview = `<iframe class="recipe-img" src="${arr.youtube}" name="instruction-video" frameborder="0"></iframe>`;
-    }
+    // if (arr.youtube) {
+    //   console.log(arr.youtube);
+    //   preview = `<iframe class="recipe-img" src="${arr.youtube}" name="instruction-video" frameborder="0"></iframe>`;
+    // }
   
     let tags = `<div class="modal-rec-tag-text">#${arr.tags[0]}</div>`;
     for (let i = 1; i < 3; i += 1) {
