@@ -22,7 +22,7 @@
   position: absolute;
   z-index: 100;
   /* top: 60px; */
-  left: 50%;
+  left: calc((100% - 100px) / 2);
   transform: translate(-50%) scale(1);
   transition: transform 0.4s ease;
 
@@ -60,7 +60,22 @@
 .mob-menu-svg {
   stroke: var(--primary-bg-color);
 }
-
+.nav-item-mob-menu {
+  margin-bottom: 16px;
+}
+.nav-link-mob-menu {
+  color: var(--primary-bg-color);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.icon-switch-mob-menu {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}
 .modal-rec-title {
   color: var(--primary-text-color);
   font-size: 18px;
