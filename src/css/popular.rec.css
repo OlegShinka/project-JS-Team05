@@ -20,6 +20,7 @@
   display: flex;
   margin-top: 32px;
   overflow: auto;
+  cursor: pointer;
 }
 .popular-item-img {
   max-width: 64px;
