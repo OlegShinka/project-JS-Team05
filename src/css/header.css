@@ -93,13 +93,12 @@
   font-weight: 600;
   line-height: 18px;
   letter-spacing: -0.64px;
-  /* margin: 0px; */
 }
 
 .header-logo-container {
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
+
   column-gap: 203px;
   position: relative;
 }
@@ -107,7 +106,6 @@
 .burger-menu {
   background-color: transparent;
   position: absolute;
-  /* top: 20px; */
   right: 20px;
   margin: 0;
   padding: 0;
@@ -151,7 +149,6 @@
 .cart-switch {
   gap: 18px;
   position: absolute;
-  /* top: 26px; */
   right: 66px;
   display: flex;
 }
@@ -159,7 +156,6 @@
 @media only screen and (min-width: 768px) {
   .cart-switch {
     position: absolute;
-    /* top: 32px; */
     right: 32px;
   }
 }

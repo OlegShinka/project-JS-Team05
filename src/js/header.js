@@ -1,28 +1,52 @@
-// (() => {
-//   const mobileMenu = document.querySelector('.js-menu-container');
-//   const openMenuBtn = document.querySelector('.js-open-menu');
-//   const closeMenuBtn = document.querySelector('.js-close-menu');
+import * as basicLightbox from 'basiclightbox';
+const btnBurger = document.querySelector('.js-open-menu');
+let backdrop;
+let instAb;
+btnBurger.addEventListener('click', onClickBurger);
+function onClickBurger() {
+  const instance = basicLightbox.create(
+    `<!-- modbile menu-->
+<div class="mobile-menu-backdrop">
+  <div class="mobile-menu-window">
+    <button type="button" class="mob-menu-close" data-modal-rec-close>
+      <svg class="mob-menu-svg" width="32" height="32" fill = "red">
+        <use href="./img/symbol-defs.svg#icon-x"></use>
+      </svg>
+    </button>
+    <div class="js-modal-rec"></div>
+    <!-- Navigation -->
+    <ul class="nav-list-mob-menu list">
+      <li class="nav-item-mob-menu">
+        <a class="nav-link-mob-menu link" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link-mob-menu link active" href="favorites.html">Favorites</a>
+      </li>
+    </ul>
+     <svg class="icon-switch-mob-menu" height="20" width="46">
+      <use href="./img/symbol-defs.svg#icon-switch"></use>
+    </svg>
+  </div>
+</div>
+`,
+    {
+      onClose: instance => {
+        document.removeEventListener('click', onClickCloseMenu, instance);
+        return true;
+      },
+      onShow: instance => {
+        instAb = instance;
+        setTimeout(() => {
+          const btnCloseMenu = document.querySelector('.mob-menu-close');
+          backdrop = document.querySelector('.mobile-menu-backdrop');
+          btnCloseMenu.addEventListener('click', onClickCloseMenu);
+        });
+      },
+    }
+  );
+  instance.show();
+}
 
-//   const toggleMenu = () => {
-//     const isMenuOpen =
-//       openMenuBtn.getAttribute('aria-expanded') === 'true' || false;
-//     openMenuBtn.setAttribute('aria-expanded', !isMenuOpen);
-//     mobileMenu.classList.toggle('is-open');
-
-//     const scrollLockMethod = !isMenuOpen
-//       ? 'disableBodyScroll'
-//       : 'enableBodyScroll';
-//     bodyScrollLock[scrollLockMethod](document.body);
-//   };
-
-//   openMenuBtn.addEventListener('click', toggleMenu);
-//   closeMenuBtn.addEventListener('click', toggleMenu);
-
-//   // Close the mobile menu on wider screens if the device orientation changes
-//   window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
-//     if (!e.matches) return;
-//     mobileMenu.classList.remove('is-open');
-//     openMenuBtn.setAttribute('aria-expanded', false);
-//     bodyScrollLock.enableBodyScroll(document.body);
-//   });
-// })();
+function onClickCloseMenu() {
+  instAb.close();
+}
