@@ -34,7 +34,7 @@ function addStarsToMarkup(rating) {
     markup += `<svg class="rating-icon rating-icon-${
       i <= goldStars ? 'orange' : 'grey'
     }" width="14" height="14">
-                        <use href="${hrefIco.href.baseVal}"></use>
+                        <use href="${hrefIco.href.baseVal}#icon-Star"></use>
                     </svg>`;
   }
   return markup;

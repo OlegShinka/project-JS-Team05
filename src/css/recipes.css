@@ -1,14 +1,15 @@
 .recipes-section {
   padding: 20px;
+  padding-right: 0;
   max-width: 455px;
   display: flex;
-  align-items: center;
   flex-direction: column;
 }
 
 @media only screen and (min-width: 768px) {
   .recipes-section {
     max-width: 576px;
+    padding-left: 44px;
   }
 }
 
@@ -19,7 +20,6 @@
 }
 
 /* FILTER */
-
 .filter-form {
   display: flex;
   flex-wrap: wrap;
@@ -27,12 +27,18 @@
 }
 
 .search-input {
-  width: 278px;
+  max-width: 370px;
   border-radius: 15px;
   border: 1px solid rgba(5, 5, 5, 0.2);
   padding: 14px 0;
-  padding-left: 18px;
+  padding-left: 48px;
   display: block;
+}
+
+@media only screen and (min-width: 768px) {
+  .search-input {
+    width: 278px;
+  }
 }
 
 .search-input::placeholder {
@@ -42,6 +48,29 @@
 
 .form-label {
   position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  bottom: 16px;
+  left: 18px;
+  fill: rgba(5, 5, 5, 0.5);
+}
+
+.search-input:not(:placeholder-shown) ~ .search-icon {
+  fill: var(--secondary-bg-color);
+}
+
+.select-down-icon {
+  position: absolute;
+  top: 40px;
+  right: 15px;
+  fill: var(--primary-text-color);
+  fill-opacity: 0.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
 }
 
 .clean-search {
@@ -58,7 +87,7 @@
   stroke: var(--primary-text-color);
 }
 
-.search-input:placeholder-shown + .clean-search {
+.search-input:placeholder-shown ~ .clean-search {
   display: none;
 }
 
@@ -126,8 +155,18 @@ div.custom-select-option.has-focus {
   width: 160px;
 }
 
+@media only screen and (min-width: 1110px) {
+  .select-time {
+    width: 140px;
+  }
+
+  .select-area {
+    width: 150px;
+  }
+}
+
 .select-ingredients {
-  width: 188px;
+  width: 180px;
 }
 
 .reset-filter {
@@ -153,7 +192,7 @@ div.custom-select-option.has-focus {
 
 @media only screen and (min-width: 768px) {
   .recipes-container {
-    gap: 16px 12px;
+    gap: 16px 10px;
   }
 }
 
@@ -184,7 +223,7 @@ div.custom-select-option.has-focus {
 
 @media only screen and (min-width: 768px) {
   .thumb {
-    width: 240px;
+    width: 238px;
     padding-top: 143px;
   }
 }
