@@ -9,7 +9,6 @@ import {
 import { addToFav, isFav } from '../api/fav-localStarage';
 
 const modal = document.querySelector('.modal-rec-backdrop');
-const window = document.querySelector('.modal-rec-window');
 const recipeInfo = document.querySelector('.js-modal-rec');
 const recipesCont = document.querySelector('.recipes-container');
 const btnClose = document.querySelector('.modal-rec-close');
@@ -33,10 +32,8 @@ function handlerRecipeCont(evt) {
   if (!evt.target.classList.contains('js-see-recipe')) {
     return;
   } else {
-    recipeId = evt.target.dataset.id;
-    window.dataset.id = evt.target.dataset.id;
-
     modal.classList.toggle('is-hidden');
+    recipeId = evt.target.dataset.id;
     fetchInfoRecipe(recipeId)
       .then(data => {
         if (matchMedia('(max-width: 570px)').matches) {
@@ -67,10 +64,11 @@ function handlerAddBtn(evt) {
   } else {
     addToFav(recipeId);
     Notiflix.Notify.success('Recipe added to Favorites!');
-    // e.target.parentElement.classList.add('is-fav');
+    const cardHeart = document.querySelector(
+      `.thumb[data-id="${evt.target.parentNode.dataset.id}"] .fav-icon`
+    );
+    cardHeart.classList.add('is-fav');
   }
-  // console.log(evt.target.parentNode.dataset.id);
-  // console.log(recipesCont);
 }
 
 function handlerRatingBtn() {}
