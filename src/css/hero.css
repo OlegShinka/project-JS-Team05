@@ -58,7 +58,8 @@
 .hero-title-tasty {
   font-style: italic;
   font-weight: 400;
-  color: #9bb537;
+  /* #9bb537; */
+  color: var(--secondary-bg-color);
 }
 @media only screen and (min-width: 768px) {
   .hero-title-tasty {
@@ -71,9 +72,9 @@
 }
 
 .hero-message {
-  /* width: 335px; */
   margin-bottom: 28px;
-  color: #050505;
+  /* #050505; */
+  color: var(--primary-text-color);
   font-size: 14px;
   font-weight: 400;
   line-height: 1.28; /* 128.571% */
@@ -89,43 +90,27 @@
   }
 }
 /* Розмітка свайперу !!!!!!!!!!!!!!!*/
-.hero-push-buton {
-  /* margin-top: 48px; */
-  /* outline: 1px solid red; */
-}
 
-@media only screen and (min-width: 768px) {
-  .hero-push-buton {
-    /* margin-top: 64px; */
-  }
-}
-@media screen and (min-width: 1110px) {
-  .shero-push-buton {
-    /* margin-top: 0; */
-  }
-}
 .hero-slider {
   display: flex;
   min-width: 0;
 }
 .hero-container {
-  width: 375px;
+  width: 150%;
   display: flex;
   column-gap: 8px;
   margin-top: 48px;
-  /* outline: 1px solid red; */
+
   overflow: hidden;
 }
 @media only screen and (min-width: 768px) {
   .hero-container {
-    width: 748px;
     column-gap: 16px;
     margin-top: 64px;
   }
 }
 @media screen and (min-width: 1110px) {
   .hero-container {
-    width: 590px;
     margin-top: 0px;
   }
 }
@@ -133,7 +118,6 @@
 .hero-img-cook-div {
   width: 80px;
   height: 280px;
-  /* outline: 1px solid green; */
 }
 @media only screen and (min-width: 768px) {
   .hero-img-cook-div {
@@ -142,11 +126,11 @@
   }
 }
 .hero-img-div {
-  /* outline: 1px solid blue; */
   width: 200px;
   border-radius: 20px;
   padding-top: 58px;
-  background-color: #050505;
+  /*  #050505; */
+  background-color: var(--primary-text-color);
 }
 @media only screen and (min-width: 768px) {
   .hero-img-div {
@@ -165,7 +149,17 @@
   margin-right: auto;
   margin-bottom: 32px;
   object-fit: cover;
+  /* background-image: linear-gradient(to bottom, black 0%, transparent 100%),
+    url(http://i.imgur.com/Tpn26TW.jpg); */
 }
+
+@media only screen and (min-width: 768px) {
+  .hero-tried-img {
+    width: 304px;
+    height: 271px;
+  }
+}
+
 .hero-img-srink {
   flex-shrink: 0;
 }
@@ -174,7 +168,8 @@
   height: 280px;
   object-fit: cover;
   border-radius: 20px;
-  background-color: #050505;
+  /* #050505 */
+  background-color: var(--primary-text-color);
 }
 @media only screen and (min-width: 768px) {
   .hero-tried-img-flll {
@@ -189,7 +184,8 @@
   border-radius: 20px;
 }
 .hero-name-treat {
-  color: #f8f8f899;
+  /* #f8f8f899;  */
+  color: var(--description-text-color);
   text-align: center;
   font-family: Inter;
   font-size: 10px;
@@ -198,14 +194,13 @@
   line-height: 1.4; /* 140% */
   text-transform: uppercase;
 
-  /* width: 276px; */
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 8px;
   text-align: center;
 }
 .hero-country-treat {
-  color: #f8f8f833;
+  color: var(--area-color);
   font-size: 8px;
   font-weight: 400;
   line-height: 1.5; /* 150% */
@@ -215,12 +210,13 @@
 }
 
 /* markup swiper */
-.image-slider_image {
-  /* text-align: center; */
-}
 
 .image-slider_image {
   width: 100%;
+}
+
+.swiper .swiper-slide.image-slider_image.swiper-slide-active {
+  width: 2000px;
 }
 .swiper {
   width: 335px;
@@ -247,9 +243,10 @@
   height: 6px;
   line-height: 20px;
   font-size: 14px;
-  /* background-color: #050505; */
-  background-color: #9bb537;
+  /* #9bb537 */
+  background-color: var(--secondary-bg-color);
 }
-.swiper-hero .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  /* background-color: #9bb537; */
+
+.swiper-pagination-bullet-active {
+  background: #f00;
 }

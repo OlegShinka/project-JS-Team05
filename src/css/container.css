@@ -18,3 +18,23 @@
     padding: 0 15px 0 15px;
   }
 }
+.container-hero {
+  min-width: 320px;
+  max-width: 375px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 768px) {
+  .container-hero {
+    max-width: 768px;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 1110px) {
+  .container-hero {
+    max-width: 1110px;
+
+    padding: 0 0 0 15px;
+  }
+}

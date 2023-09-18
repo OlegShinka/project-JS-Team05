@@ -1,0 +1,56 @@
+.favorites-txt {
+  max-width: 335px;
+  height: 72px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.28;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.favorites-img {
+  background-image: url(../img/favorites-img/favorites_mob.jpg);
+  background-size: contain;
+  height: 516px;
+  max-width: 335px;
+  background-repeat: no-repeat;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  margin-bottom: 40px;
+  margin-top: 50px;
+  border-radius: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .favorites-img {
+    margin-top: 44px;
+    background-image: url(../img/favorites-img/favorites_tab.jpg);
+    height: 356px;
+    max-width: 704px;
+    margin-bottom: 64px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .favorites-txt {
+    max-width: 481px;
+    height: 72px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .favorites-img {
+    margin-top: 34px;
+    background-image: url(../img/favorites-img/favorites_PC.jpg);
+    max-width: 1080px;
+  }
+}
+
+.favorites-icon {
+  display: flex;
+  width: 97px;
+  height: 83px;
+  margin-bottom: 32px;
+  margin-left: auto;
+  margin-right: auto;
+}

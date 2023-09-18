@@ -15,8 +15,10 @@
 }
 /* Heroo button */
 .btn-hero {
-  color: #050505;
-  border-color: #9bb537;
+  /* #050505; */
+  color: var(--primary-text-color);
+  /* #9bb537 */
+  border-color: var(--secondary-bg-color);
 }
 
 @media (hover: hover) {
@@ -24,33 +26,44 @@
   .btn-hero:focus,
   .btn-all-categories:hover,
   .btn-all-categories:focus {
-    color: #f8f8f8;
-    background-color: #9bb537;
+    /* #f8f8f8 */
+    color: var(--description-text-color);
+
+    /* #9bb537 */
+    background-color: var(--secondary-bg-color);
   }
 }
 @media not (hover: hover) {
   .btn-hero:active {
-    color: #f8f8f8;
-    background-color: #9bb537;
+    /* #f8f8f8 */
+    color: var(--description-text-color);
+
+    /* #9bb537 */
+    background-color: var(--secondary-bg-color);
   }
 }
 
 .btn-favorites {
   width: 156px;
 
-  color: #f8f8f8;
-  background-color: #9bb537;
+  /* #f8f8f8 */
+  color: var(--description-text-color);
+
+  /* #9bb537 */
+  background-color: var(--secondary-bg-color);
 }
 @media (hover: hover) {
   .btn-favorites:hover,
   .btn-favorites:focus {
-    color: #050505;
+    /* color: #050505; */
+    color: var(--primary-text-color);
     /* background-color: #9bb537; */
   }
 }
 @media not (hover: hover) {
   .btn-favorites:active {
-    color: #050505;
+    /* #050505; */
+    color: var(--primary-text-color);
     /* background-color: #9bb537; */
   }
 }
@@ -59,6 +72,8 @@
   width: 174px;
   height: 50px;
   font-size: 18px;
-  color: #050505;
-  border-color: #9bb537;
+  /*  #050505; */
+  color: var(--primary-text-color);
+  /* #9bb537 */
+  border-color: var(--secondary-bg-color);
 }
