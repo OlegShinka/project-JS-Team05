@@ -52,6 +52,10 @@ function handlerRecipeCont(evt) {
           toggleModal();
         }
       });
+      modal.addEventListener('click', () => {
+        modalRecipe.close();
+        toggleModal();
+      });
     }
   }
 }
