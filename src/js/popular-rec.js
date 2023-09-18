@@ -1,5 +1,5 @@
 import * as basicLightbox from 'basiclightbox';
-// import '/node_modules/basiclightbox/dist/basicLightbox.min.css';
+// import "../css/modal-rec.css"
 import {
   getPopularRecipes,
   getOnePopularRecipe,
@@ -44,19 +44,17 @@ function createMarkUp(arr) {
 }
 
 //по запиту на бекенд по ID викликає модальне вікно з детальною інфо
-// function showRecipeDitails(evt) {
-//   getOnePopularRecipe(evt.currentTarget.id)
-//     .then(data => {
-//       // console.log(data);
-//       const cardRec = markupRecipeModal(data);
-//       // console.log(cardRec);
-//       const instance = basicLightbox.create(cardRec);
-//       instance.show();
-//       document.addEventListener("keydown", (event) => {
-//         if (event.code === "Escape") {
-//           instance.close();
-//         }
-//       });
-//     })
-//     .catch(error => console.log(error.message));
-// }
+function showRecipeDitails(evt) {
+  getOnePopularRecipe(evt.currentTarget.id)
+    .then(data => {
+      const cardRec = markupRecipeModal(data);
+      const instance = basicLightbox.create(cardRec);
+      instance.show();
+      document.addEventListener("keydown", (event) => {
+        if (event.code === "Escape") {
+          instance.close();
+        }
+      });
+    })
+    .catch(error => console.log(error.message));
+}
