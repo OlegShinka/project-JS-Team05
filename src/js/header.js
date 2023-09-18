@@ -4,14 +4,13 @@ let backdrop;
 let instAb;
 btnBurger.addEventListener('click', onClickBurger);
 function onClickBurger() {
-  console.log('кликнули на бургер');
   const instance = basicLightbox.create(
     `<!-- modbile menu-->
 <div class="mobile-menu-backdrop">
   <div class="mobile-menu-window">
     <button type="button" class="mob-menu-close" data-modal-rec-close>
       <svg class="mob-menu-svg" width="32" height="32" fill = "red">
-        <use href="./img/symbol-defs.svg#icon-x2"></use>
+        <use href="./img/symbol-defs.svg#icon-x"></use>
       </svg>
     </button>
     <div class="js-modal-rec"></div>
@@ -33,7 +32,6 @@ function onClickBurger() {
     {
       onClose: instance => {
         document.removeEventListener('click', onClickCloseMenu, instance);
-        console.log('remove even listener keyboard');
         return true;
       },
       onShow: instance => {
@@ -50,6 +48,5 @@ function onClickBurger() {
 }
 
 function onClickCloseMenu() {
-  console.log('close menu');
   instAb.close();
 }
