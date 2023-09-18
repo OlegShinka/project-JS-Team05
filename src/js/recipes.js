@@ -9,6 +9,7 @@ import {
 import debounce from 'lodash.debounce';
 // import Pagination from 'tui-pagination';
 import { createPagination } from './pagination';
+import { addToFav, deleteFromFav, isFav } from '../api/fav-localStarage';
 
 const elements = {
   form: document.querySelector('.filter-form'),
@@ -124,4 +125,21 @@ function handleMove({ page }) {
       elements.recipesCont.innerHTML = createRecipesMarkup(data.results);
     })
     .catch(e => console.log(e.message));
+}
+
+// Favorites
+elements.recipesCont.addEventListener('click', handleFav);
+
+function handleFav(e) {
+  if (!e.target.classList.contains('js-fav')) {
+    return;
+  }
+  const { id } = e.target.dataset;
+  if (isFav(id)) {
+    deleteFromFav(id);
+    e.target.parentElement.classList.remove('is-fav');
+  } else {
+    addToFav(id);
+    e.target.parentElement.classList.add('is-fav');
+  }
 }
