@@ -1,40 +1,8 @@
-// (() => {
-//   const mobileMenu = document.querySelector('.js-menu-container');
-//   const openMenuBtn = document.querySelector('.js-open-menu');
-//   const closeMenuBtn = document.querySelector('.js-close-menu');
-
-//   const toggleMenu = () => {
-//     const isMenuOpen =
-//       openMenuBtn.getAttribute('aria-expanded') === 'true' || false;
-//     openMenuBtn.setAttribute('aria-expanded', !isMenuOpen);
-//     mobileMenu.classList.toggle('is-open');
-
-//     const scrollLockMethod = !isMenuOpen
-//       ? 'disableBodyScroll'
-//       : 'enableBodyScroll';
-//     bodyScrollLock[scrollLockMethod](document.body);
-//   };
-
-//   openMenuBtn.addEventListener('click', toggleMenu);
-//   closeMenuBtn.addEventListener('click', toggleMenu);
-
-//   // Close the mobile menu on wider screens if the device orientation changes
-//   window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
-//     if (!e.matches) return;
-//     mobileMenu.classList.remove('is-open');
-//     openMenuBtn.setAttribute('aria-expanded', false);
-//     bodyScrollLock.enableBodyScroll(document.body);
-//   });
-// })();
 import * as basicLightbox from 'basiclightbox';
-// const basicLightbox = require('basiclightbox');
 const btnBurger = document.querySelector('.js-open-menu');
 let backdrop;
 let instAb;
-//const markup = <load src="partials/header.html" />;
-//console.log(markup);
 btnBurger.addEventListener('click', onClickBurger);
-
 function onClickBurger() {
   console.log('кликнули на бургер');
   const instance = basicLightbox.create(
@@ -53,9 +21,12 @@ function onClickBurger() {
         <a class="nav-link-mob-menu link" href="index.html">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link link active" href="favorites.html">Favorites</a>
+        <a class="nav-link-mob-menu link active" href="favorites.html">Favorites</a>
       </li>
     </ul>
+     <svg class="icon-switch-mob-menu" height="20" width="46">
+      <use href="../img/symbol-defs.svg#icon-switch"></use>
+    </svg>
   </div>
 </div>
 `,
@@ -80,6 +51,5 @@ function onClickBurger() {
 
 function onClickCloseMenu() {
   console.log('close menu');
-  //   backdrop.classList.add('is-hidden');
   instAb.close();
 }
