@@ -29,6 +29,7 @@ function addImage(el) {
   const markup = getMarkup(el);
   swiperConteinerEl.innerHTML = markup;
   // swiper.update();
+  //після отримання данних з беку підгружаємо бібліотеку Swiper
   createSwiper();
 }
 //створюєму розмітку майстер класів з отримного масиву даних по кухарям
