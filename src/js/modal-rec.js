@@ -33,7 +33,6 @@ function handlerRecipeCont(evt) {
   if (!evt.target.classList.contains('js-see-recipe')) {
     return;
   } else {
-    modal.classList.remove('is-hidden');
     recipeId = evt.target.dataset.id;
     recipeModal.dataset.id = recipeId;
     createModal(recipeId);
@@ -49,6 +48,7 @@ export function createModal(recipeId) {
     })
     .catch(err => console.log(err));
 
+  modal.classList.remove('is-hidden');
   modalRecipe.show();
   if (modalRecipe.show()) {
     document.addEventListener('keydown', evt => {
