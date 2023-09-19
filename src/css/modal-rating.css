@@ -1,0 +1,90 @@
+.modal-rating-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 180;
+
+  width: 100%;
+  height: 100%;
+  background: rgba(46, 47, 66, 0.4);
+  transition: opacity 300ms linear, visibility 300ms linear;
+}
+
+.modal-rating-backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal-rating-window {
+  z-index: 200;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: opacity 300ms linear, visibility 300ms linear;
+
+  width: 424px;
+  height: 254px;
+  padding: 32px;
+  border-radius: 15px;
+  background: var(--primary-bg-color);
+}
+
+@media screen and (max-width: 768px) {
+  .modal-rating-window {
+    width: 335px;
+    height: 216px;
+    padding: 20px;
+  }
+}
+
+.modal-rating-text {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 128.6%;
+  margin-bottom: 4px;
+}
+
+.modal-rating-number {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  margin-bottom: 32px;
+}
+
+.modal-rating-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.modal-rating-input {
+  width: 100%;
+  height: 48px;
+  margin-bottom: 32px;
+  background-color: red;
+}
+
+.modal-rating-btn-send {
+  color: var(--description-text-color);
+  background: var(--secondary-bg-color);
+  border: 0px;
+  margin-right: 10px;
+  width: 100%;
+  padding: 14px auto;
+}
+
+@media screen and (max-width: 768px) {
+  .modal-rating-btn-send {
+    padding: 15px auto;
+  }
+}
+
+.modal-rating-btn-send:hover,
+.modal-rating-btn-send:focus {
+  color: var(--primary-text-color);
+}

@@ -5,5 +5,6 @@ import './js/categories.js';
 import './js/popular-rec.js';
 import './js/recipes.js';
 import './js/modal-rec.js';
+import './js/modal-rating.js'
 // import './js/favorites.js';
 import './js/pagination.js';
