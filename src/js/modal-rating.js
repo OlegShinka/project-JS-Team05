@@ -1,13 +1,22 @@
 import debounce from 'lodash.debounce';
+import { modalRating } from './modal-rec';
 
+const modalBackdropRating = document.querySelector('.modal-rating-backdrop');
 const form = document.querySelector('.js-modal-rating-form');
+const btnClose = document.querySelector('.modal-rating-close');
 const inputEmail = document.querySelector('.modal-rating-input');
 const radioStars = document.querySelector('.js-modal-rating-stars');
 const number = document.querySelector('.modal-rating-number');
 
 form.addEventListener('submit', handlerSend);
+btnClose.addEventListener('click', handlerClose);
 inputEmail.addEventListener('input', debounce(handlerInput, 300));
 radioStars.addEventListener('change', hahdlerRadio);
+
+function handlerClose() {
+  modalRating.close();
+  modalBackdropRating.classList.add('is-hidden');
+}
 
 const STORAGE_KEY = 'input-email';
 let storageData = {
@@ -50,3 +59,22 @@ function handlerSend(evt) {
 }
 
 function fetchRating() {}
+
+export function showModalRating() {
+  modalBackdropRating.classList.remove('is-hidden');
+  modalRating.show();
+  if (modalRating.show()) {
+    document.addEventListener('keydown', evt => {
+      if (evt.code === 'Escape') {
+        modalRating.close();
+        modalBackdropRating.classList.add('is-hidden');
+      }
+    });
+    modalBackdropRating.addEventListener('click', evt => {
+      if (evt.target === evt.currentTarget) {
+        modalRating.close();
+        modalBackdropRating.classList.add('is-hidden');
+      }
+    });
+  }
+}
