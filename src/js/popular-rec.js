@@ -1,23 +1,28 @@
-import { getPopularRecipes } from "../api/popular-rec-fetch";
+import { getPopularRecipes } from '../api/popular-rec-fetch';
+import { createModal } from './modal-rec';
 
-const popularItems = document.querySelector(".popular-items");
+const popularItems = document.querySelector('.popular-items');
 
 getPopularRecipes()
-    .then(data => createMarkUp(data))
-    .catch(error => console.log(error.message));
+  .then(data => {
+    createMarkUp(data);
+    const popularRecItem = document.querySelectorAll('.popular-item');
+    for (const item of popularRecItem) {
+      item.addEventListener('click', showRecipeDitails);
+    }
+  })
+  .catch(error => console.log(error.message));
 
-
-// const popularRecItems = document.querySelector(".popular-items");
-// console.log(popularRecItems);
-
-// popularRecItems.addEventListener("click", showRecipeDitails);
-
-// function showRecipeDitails(evt){
-//     console.log(evt.target)
-// }
-
+//відмальовування списку популярних рецептів
 function createMarkUp(arr) {
-    const markup = arr.map(({description, title, preview, _id}) => `<div id=${_id} class="popular-item">
+  const markup = arr
+    .map(
+      ({
+        description,
+        title,
+        preview,
+        _id,
+      }) => `<div id=${_id} class="popular-item">
     <img
       class="popular-item-img"
       src="${preview}"
@@ -27,7 +32,14 @@ function createMarkUp(arr) {
       <h3 class="popular-item-title">${title}</h3>
       <p  class="popular-item-descr">${description}</p>
     </div>
-  </div>`).join("");
+  </div>`
+    )
+    .join('');
   popularItems.insertAdjacentHTML('beforeend', markup);
-  }
-  
+}
+
+//виклик модального вікна по кліку на рецепт
+function showRecipeDitails(evt) {
+  const id = evt.currentTarget.id;
+  createModal(id);
+}
