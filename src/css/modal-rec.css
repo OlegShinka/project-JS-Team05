@@ -9,7 +9,7 @@
   background: rgba(46, 47, 66, 0.4);
   transition: opacity 300ms linear, visibility 300ms linear;
 
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 .modal-rec-backdrop.is-hidden {
@@ -22,7 +22,7 @@
   z-index: 100;
   position: absolute;
   top: 800px;
-  left: 50%;
+  left: 60%;
   transform: translate(-50%) scale(1);
   transition: opacity 300ms linear, visibility 300ms linear;
 
@@ -33,9 +33,10 @@
   background: var(--primary-bg-color);
 }
 
-@media screen and (min-width: 769px) and (max-width: 1280px) {
+@media screen and (min-width: 769px) and (max-width: 1110px) {
   .modal-rec-window {
-    top: 1200px;
+    top: 1240px;
+    left: 65%;
   }
 }
 
@@ -43,7 +44,8 @@
   .modal-rec-window {
     max-width: 335px;
     padding: 40px 20px;
-    top: 2000px;
+    top: 1600px;
+    left: 50%;
   }
 }
 
@@ -58,6 +60,13 @@
   right: 16px;
   width: 24px;
   height: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .modal-rec-close {
+    top: 14px;
+    right: 14px;
+  }
 }
 
 .modal-close-icon {
@@ -77,6 +86,12 @@
   line-height: 122.2%;
   text-transform: uppercase;
   margin-bottom: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .modal-rec-title {
+    margin-bottom: 14px;
+  }
 }
 
 .modal-rec-img {
@@ -140,7 +155,6 @@
 
 @media screen and (max-width: 768px) {
   .modal-rec-tags {
-    margin-top: 40px;
     margin-bottom: 24px;
   }
 }
@@ -193,6 +207,12 @@
 
 .modal-rec-ingr {
   margin-bottom: 32px;
+}
+
+@media screen and (max-width: 768px) {
+  .modal-rec-ingr {
+    margin-bottom: 40px;
+  }
 }
 
 .modal-rec-ingr-one {

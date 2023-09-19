@@ -39,6 +39,7 @@ function handleFav(e) {
 function startRecipes() {
   let fav = getFavArray();
   if (!fav || fav.length === 0) {
+    elements.recipesCont.innerHTML = '';
     elements.noFav.classList.remove('visually-hidden');
     elements.paginationCont.classList.add('visually-hidden');
     return;

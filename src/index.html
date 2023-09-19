@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./img/treats-favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/styles.css" />
-  </head>
 
-  <body>
-    <load src="partials/header.html" />
-    <load src="partials/hero.html" />
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./img/treats-favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tastytreats</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
 
-    <div class="container wrapper-all">
-      <section class="categories-popularrec">
-        <load src="partials/categories.html" />
-        <load src="partials/popular-rec.html" />
-      </section>
+<body>
+  <load src="partials/header.html" />
+  <load src="partials/hero.html" />
 
-      <section class="recipes">
-        <h2 class="visually-hidden">Recipes</h2>
+  <div class="container wrapper-all">
+    <section class="categories-popularrec">
+      <load src="partials/categories.html" />
+      <load src="partials/popular-rec.html" />
+    </section>
+    <section class="recipes">
+      <h2 class="visually-hidden">Recipes</h2>
 
-        <load src="partials/recipes.html" />
-        <div class="container">
-          <load src="partials/pagination.html" />
-        </div>
-      </section>
-    </div>
+      <load src="partials/recipes.html" />
+      <div class="container">
+        <load src="partials/pagination.html" />
+      </div>
+    </section>
+  </div>
 
-    <load src="partials/modal-rec.html" />
-    <load src="partials/mobile-menu.html" />
-    <load src="partials/ordernow-modal.html" />
-    <script type="module" src="./main.js"></script>
-  </body>
+  <load src="partials/modal-rec.html" />
+  <load src="partials/mobile-menu.html" />
+  <load src="partials/ordernow-modal.html" />
+  <script type="module" src="./main.js"></script>
+</body>
+
 </html>
