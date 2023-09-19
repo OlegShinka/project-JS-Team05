@@ -7,41 +7,43 @@ function addStarsToMarkup(rating) {
     markup += `<svg class="rating-icon rating-icon-${
       i <= goldStars ? 'orange' : 'grey'
     }" width="14" height="14">
-        <use href="${hrefIco.href.baseVal}"></use>
+        <use href="${hrefIco.href.baseVal}#icon-Star"></use>
       </svg>`;
   }
   return markup;
 }
 
 export function markupRecipeModal(arr) {
-    let preview = `<img src="${arr.thumb}" alt="${arr.title}" class="recipe-img" />`;
-    // if (arr.youtube) {
-    //   console.log(arr.youtube);
-    //   preview = `<iframe class="recipe-img" src="${arr.youtube}" name="instruction-video" frameborder="0"></iframe>`;
-    // }
-  
-    let tags = `<div class="modal-rec-tag-text">#${arr.tags[0]}</div>`;
-    for (let i = 1; i < 3; i += 1) {
+  let preview = `<img src="${arr.thumb}" alt="${arr.title}" class="recipe-img" />`;
+  if (arr.youtube) {
+    let youtubeId = arr.youtube.slice(32);
+    preview = `<iframe class="recipe-img" src="https://www.youtube.com/embed/${youtubeId}" frameborder="0"></iframe>`;
+  }
+
+  let tags = `<div class="modal-rec-tag-text">#${arr.tags[0]}</div>`;
+  if (arr.tags.length) {
+    for (let i = 1; i < arr.tags.length; i += 1) {
       tags += `<div class="modal-rec-tag-text">#${arr.tags[i]}</div>`;
     }
-  
-    let ingredients = `
+  } else tags = `<div class="modal-rec-tag-text">#notags</div>`;
+
+  let ingredients = `
           <div class="modal-rec-ingr-one">
             <div class="modal-rec-ingr-name">${arr.ingredients[0].name}</div>
             <div class="modal-rec-ingr-qnt">${arr.ingredients[0].measure}</div>
           </div>
           <div class="modal-rec-ingr-line"></div>`;
-    for (let i = 1; i < arr.ingredients.length; i += 1) {
-      ingredients += `<div class="modal-rec-ingr-one">
+  for (let i = 1; i < arr.ingredients.length; i += 1) {
+    ingredients += `<div class="modal-rec-ingr-one">
             <div class="modal-rec-ingr-name">${arr.ingredients[i].name}</div>
             <div class="modal-rec-ingr-qnt">${arr.ingredients[i].measure}</div>
           </div>
           <div class="modal-rec-ingr-line"></div>`;
-    }
-  
-    let stars = addStarsToMarkup(`${arr.rating}`);
-  
-    const card = `
+  }
+
+  let stars = addStarsToMarkup(`${arr.rating}`);
+
+  const card = `
         <h2 class="modal-rec-title">${arr.title}</h2>
         <div class="modal-rec-img">
           ${preview}
@@ -60,5 +62,55 @@ export function markupRecipeModal(arr) {
           ${ingredients}
         </div>
         <div class="modal-rec-instr">${arr.instructions}</div>`;
-    return card;
+  return card;
+}
+
+export function markupRecipeModalMobile(arr) {
+  let preview = `<img src="${arr.thumb}" alt="${arr.title}" class="recipe-img" />`;
+  // if (arr.youtube) {
+  //   let youtubeId = arr.youtube.slice(32);
+  //   preview = `<iframe class="recipe-img" src="https://www.youtube.com/embed/${youtubeId}" frameborder="0"></iframe>`;
+  // }
+
+  let tags = `<div class="modal-rec-tag-text">#${arr.tags[0]}</div>`;
+  if (arr.tags.length) {
+    for (let i = 1; i < arr.tags.length; i += 1) {
+      tags += `<div class="modal-rec-tag-text">#${arr.tags[i]}</div>`;
+    }
+  } else tags = `<div class="modal-rec-tag-text">#notags</div>`;
+
+  let ingredients = `
+          <div class="modal-rec-ingr-one">
+            <div class="modal-rec-ingr-name">${arr.ingredients[0].name}</div>
+            <div class="modal-rec-ingr-qnt">${arr.ingredients[0].measure}</div>
+          </div>
+          <div class="modal-rec-ingr-line"></div>`;
+  for (let i = 1; i < arr.ingredients.length; i += 1) {
+    ingredients += `<div class="modal-rec-ingr-one">
+            <div class="modal-rec-ingr-name">${arr.ingredients[i].name}</div>
+            <div class="modal-rec-ingr-qnt">${arr.ingredients[i].measure}</div>
+          </div>
+          <div class="modal-rec-ingr-line"></div>`;
   }
+
+  let stars = addStarsToMarkup(`${arr.rating}`);
+
+  const card = `
+        <div class="modal-rec-img">
+          ${preview}
+        </div>
+        <h2 class="modal-rec-title">${arr.title}</h2>           
+        <div class="modal-rec-rating">
+          <div class="modal-rec-rat-text">${arr.rating}</div>
+          <div class="modal-rec-rat-stars">${stars}</div>
+          <div class="modal-rec-rat-time">${arr.time}</div>
+        </div>
+        <div class="modal-rec-ingr">
+          ${ingredients}
+        </div>
+        <div class="modal-rec-tags">
+            ${tags}        
+          </div>
+        <div class="modal-rec-instr">${arr.instructions}</div>`;
+  return card;
+}
