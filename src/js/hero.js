@@ -4,8 +4,17 @@ import { getEvent } from '../api/hero-fetch';
 const swiperConteinerEl = document.querySelector('.swiper-wrapper');
 const btnNewOrder = document.querySelector('.btn-hero');
 const modal = document.querySelector('[data-modal-overnow]');
-btnNewOrder.addEventListener('click', onClick);
 
+const closeWindowMob = document.querySelector('[data-modal-close]');
+const sendWindowModal = document.querySelector('.btn-send');
+console.log(sendWindowModal);
+sendWindowModal.addEventListener('submit', onSabmit);
+btnNewOrder.addEventListener('click', onClick);
+closeWindowMob.addEventListener('click', onClick);
+function onSabmit(e) {
+  e.preventDefault();
+  console.log('submit');
+}
 function onClick() {
   modal.classList.toggle('is-hidden');
 }

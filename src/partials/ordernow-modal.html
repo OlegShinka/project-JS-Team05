@@ -9,28 +9,31 @@
           <legend>Leave your contacts and we will call you back</legend> -->
     <strong class="mod-title">ORDER NOW</strong>
     <form name="subscreibe_mod">
-      <label class="name-mod-label" for="name-mod">Name</label>
+      <label class="name-mod label-ordernow" for="name-mod">Name</label>
 
-      <div class="wrap-div-iconsvg">
-        <input
-          class="name-mod-inp mod-inp"
-          type="text"
-          name="name-mod"
-          id="name-mod"
-          autofocus
-        />
-      </div>
+      <!-- <div class="wrap-div-iconsvg"> -->
+      <input
+        class="name-mod-inp mod-inp"
+        type="text"
+        name="name-mod"
+        id="name-mod"
+        autofocus
+      />
+      <!-- </div> -->
 
-      <label class="tel-mod-label" for="tel-mod">Phone</label>
-      <div class="wrap-div-iconsvg">
-        <input class="tel-mod mod-inp" type="tel" name="tel-mod" id="tel-mod" />
-      </div>
+      <label class="tel-mod label-ordernow" for="tel-mod">Phone</label>
 
-      <label class="email-mod-label mod-label" for="email-mod">Email</label>
-      <div class="wrap-div-iconsvg">
-        <input class="email-mod mod-inp" type="email" id="email-mod" />
-      </div>
-      <label class="comment-mod-label mod-label" for="comment">Comment</label>
+      <input class="tel-mod mod-inp" type="tel" name="tel-mod" id="tel-mod" />
+
+      <label class="email-mod-label label-ordernow" for="email-mod"
+        >Email</label
+      >
+
+      <input class="email-mod mod-inp" type="email" id="email-mod" />
+
+      <label class="comment-mod-label label-ordernow" for="comment"
+        >Comment</label
+      >
       <textarea
         class="mod-txtar-com mod-inp"
         name="comment-mod"
@@ -40,8 +43,12 @@
         placeholder="Text input"
       ></textarea>
       <!-- visually-hidden -->
-
-      <button type="submit" class="btn-hero" data-modal-open>Send</button>
+      <load
+        src="partials/components/button.html"
+        btn-class="btn-send"
+        btn-type="submit"
+        btn-text="Send"
+      />
     </form>
     <!-- </fieldset> -->
   </div>

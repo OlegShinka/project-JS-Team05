@@ -42,7 +42,7 @@
 
 .mod-title {
   display: block;
-  margin-bottom: 16px;
+  margin-bottom: 28px;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
@@ -63,4 +63,29 @@
 }
 .close-modwin-icon {
   stroke: var(--primary-text-color);
+}
+
+.mod-inp {
+  display: block;
+  margin: auto;
+  border-radius: 20px;
+  width: 100%;
+  height: 46px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(5, 5, 5, 0.2);
+}
+
+.mod-txtar-com.mod-inp {
+  height: 100px;
+  margin-bottom: 40px;
+}
+
+.label-ordernow {
+  display: block;
+  font-size: 14px;
+
+  font-weight: 500;
+
+  line-height: 1.28;
+  margin-bottom: 8px;
 }
