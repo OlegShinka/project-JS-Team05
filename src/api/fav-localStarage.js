@@ -1,4 +1,4 @@
-import { fetchRecipeById, fetchRecipes } from './fetch-recies';
+import { fetchRecipeById } from './fetch-recies';
 
 const FAV_KEY = 'favorites';
 

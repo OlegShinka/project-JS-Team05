@@ -2,11 +2,14 @@ import * as basicLightbox from 'basiclightbox';
 import Notiflix from 'notiflix';
 
 import { fetchInfoRecipe } from '../api/recipe-info-fetch';
-import { markupRecipeModal } from './templates/recipe-modal-markup';
+import {
+  markupRecipeModal,
+  markupRecipeModalMobile,
+} from './templates/recipe-modal-markup';
 import { addToFav, isFav } from '../api/fav-localStarage';
 
 const modal = document.querySelector('.modal-rec-backdrop');
-const window = document.querySelector('.modal-rec-window');
+const recipeModal = document.querySelector('.modal-rec-window');
 const recipeInfo = document.querySelector('.js-modal-rec');
 const recipesCont = document.querySelector('.recipes-container');
 const btnClose = document.querySelector('.modal-rec-close');
@@ -20,13 +23,9 @@ btnClose.addEventListener('click', handlerClose);
 btnAdd.addEventListener('click', handlerAddBtn);
 btnRating.addEventListener('click', handlerRatingBtn);
 
-function toggleModal() {
-  modal.classList.toggle('is-hidden');
-}
-
 function handlerClose() {
   modalRecipe.close();
-  toggleModal();
+  modal.classList.add('is-hidden');
 }
 
 let recipeId = '';
@@ -35,40 +34,71 @@ function handlerRecipeCont(evt) {
     return;
   } else {
     recipeId = evt.target.dataset.id;
-    window.dataset.id = evt.target.dataset.id;
+    recipeModal.dataset.id = recipeId;
+    createModal(recipeId);
+  }
+}
 
-    toggleModal();
-    fetchInfoRecipe(recipeId)
-      .then(data => {
-        recipeInfo.innerHTML = markupRecipeModal(data);
-      })
-      .catch(err => console.log(err));
+export function createModal(recipeId) {
+  fetchInfoRecipe(recipeId)
+    .then(data => {
+      if (matchMedia('(max-width: 768px)').matches) {
+        recipeInfo.innerHTML = markupRecipeModalMobile(data);
+      } else recipeInfo.innerHTML = markupRecipeModal(data);
+    })
+    .catch(err => console.log(err));
 
-    modalRecipe.show();
-    if (modalRecipe.show()) {
-      document.addEventListener('keydown', evt => {
-        if (evt.code === 'Escape') {
-          modalRecipe.close();
-          toggleModal();
-        }
-      });
-      modal.addEventListener('click', () => {
+  modal.classList.remove('is-hidden');
+  modalRecipe.show();
+  if (modalRecipe.show()) {
+    document.addEventListener('keydown', evt => {
+      if (evt.code === 'Escape') {
         modalRecipe.close();
-        toggleModal();
-      });
-    }
+        modal.classList.add('is-hidden');
+      }
+    });
+    modal.addEventListener('click', () => {
+      modalRecipe.close();
+      modal.classList.add('is-hidden');
+    });
   }
 }
 
 function handlerAddBtn(evt) {
   if (isFav(recipeId)) {
-    Notiflix.Notify.info('Recipe is already in Favorites!');
+    Notiflix.Notify.info('Recipe is already in Favorites!', {
+      width: '300px',
+      distance: '40px',
+      cssAnimationStyle: 'from-top',
+      borderRadius: '15px',
+      fontFamily: 'Inter',
+      fontSize: '14px',
+      info: {
+        background: '#9BB537',
+        textColor: '#fff',
+        notiflixIconColor: '#000',
+      },
+    });
   } else {
     addToFav(recipeId);
-    Notiflix.Notify.success('Recipe added to Favorites!');
-    // e.target.parentElement.classList.add('is-fav');
+    Notiflix.Notify.info('Recipe added to Favorites!', {
+      width: '300px',
+      distance: '40px',
+      cssAnimationStyle: 'from-top',
+      borderRadius: '15px',
+      fontFamily: 'Inter',
+      fontSize: '14px',
+      info: {
+        background: '#9BB537',
+        textColor: '#fff',
+        notiflixIconColor: '#000',
+      },
+    });
+    const cardHeart = document.querySelector(
+      `.thumb[data-id="${evt.target.parentNode.dataset.id}"] .fav-icon`
+    );
+    cardHeart.classList.add('is-fav');
   }
-  // }
 }
 
 function handlerRatingBtn() {}

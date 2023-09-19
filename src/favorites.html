@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./img/treats-favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Favorites</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/svg+xml" href="./img/treats-favicon.svg" />
-  <link rel="stylesheet" href="./css/styles.css" />
-</head>
+  <body>
+    <load src="partials/header.html" />
+    <main>
+      <div class="container">
+        <div class="favorites-img"></div>
+        <!-- Categories -->
+        <div class="categories-filter">
+          <button type="button" class="category-btn active" data-cat="all">
+            All categories
+          </button>
+        </div>
+        <div class="recipes-container"></div>
 
-<body>
-  <load src="partials/header.html" />
-  <main>
-    <div class="container">
-      <div class="favorites-img"></div>
-      <div class="">
-        <svg class="favorites-icon">
-          <use href="/img/symbol-defs.svg#icon-hat-cook"></use>
+        <svg class="visually-hidden" width="14" height="14">
+          <use href="./img/recipes.svg" class="href-ico"></use>
         </svg>
-        <p class="favorites-txt">
-          It appears that you haven't added any recipes to your favorites yet.
-          To get started, you can add recipes that you like to your favorites
-          for easier access in the future.
-        </p>
+        <div class="no-fav visually-hidden">
+          <svg class="favorites-icon">
+            <use href="/img/symbol-defs.svg#icon-hat-cook"></use>
+          </svg>
+          <p class="favorites-txt">
+            It appears that you haven't added any recipes to your favorites yet.
+            To get started, you can add recipes that you like to your favorites
+            for easier access in the future.
+          </p>
+        </div>
       </div>
-    </div>
-  </main>
-</body>
-
+      <div class="container">
+        <load src="partials/pagination.html" />
+      </div>
+    </main>
+    <load src="partials/modal-rec.html" />
+    <load src="partials/mobile-menu.html" />
+    <script type="module" src="./main-favorites.js"></script>
+  </body>
 </html>

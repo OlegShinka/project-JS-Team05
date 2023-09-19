@@ -143,3 +143,5 @@ function handleFav(e) {
     e.target.parentElement.classList.add('is-fav');
   }
 }
+
+export { handleChange };
