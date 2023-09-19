@@ -1,5 +1,6 @@
 import * as basicLightbox from 'basiclightbox';
 const btnBurger = document.querySelector('.js-open-menu');
+console.log(btnBurger);
 let backdrop;
 let instAb;
 btnBurger.addEventListener('click', onClickBurger);
