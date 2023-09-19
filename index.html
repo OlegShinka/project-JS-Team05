@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>tastytreats</title>
   
-  <script type="module" crossorigin src="/project-JS-Team05/assets/index-14f08804.js"></script>
-  <link rel="modulepreload" crossorigin href="/project-JS-Team05/assets/pagination-14fb8775.js">
-  <link rel="stylesheet" href="/project-JS-Team05/assets/pagination-31fd3d69.css">
+  <script type="module" crossorigin src="/project-JS-Team05/assets/index-6ec112d1.js"></script>
+  <link rel="modulepreload" crossorigin href="/project-JS-Team05/assets/pagination-96caa0c9.js">
+  <link rel="stylesheet" href="/project-JS-Team05/assets/pagination-46c2d418.css">
   <link rel="stylesheet" href="/project-JS-Team05/assets/index-6cd154f5.css">
 </head>
 
@@ -198,6 +198,31 @@
     <div class="js-modal-rec"></div>
     <button class="modal-rec-btn modal-rec-btn-add">Add to favorite</button>
     <button class="modal-rec-btn modal-rec-btn-rating">Give a rating</button>
+  </div>
+</div>
+
+    <!-- modal window add rating -->
+<div class="modal-rating-backdrop is-hidden">
+  <div class="modal-rating-window">
+    <button type="button" class="modal-rec-close" data-modal-rec-close>
+      <svg class="modal-close-icon" width="24" height="24">
+        <use href="/project-JS-Team05/assets/symbol-defs-a0105c02.svg#icon-x"></use>
+      </svg>
+    </button>
+    <h4 class="modal-rating-text">Rating</h4>
+    <div class="js-modal-rating">
+      <h3 class="modal-rating-number">0.0</h3>
+      <!-- radiobutton -->
+    </div>
+    <form action="submit" class="modal-rating-form">
+      <input
+        type="text"
+        name="modal-rating-input"
+        id="modal-rating-input"
+        placeholder="Enter email"
+      />
+      <button class="modal-rec-btn modal-rating-btn-send">Send</button>
+    </form>
   </div>
 </div>
 
