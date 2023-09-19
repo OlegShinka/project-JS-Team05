@@ -1,5 +1,6 @@
 import * as basicLightbox from 'basiclightbox';
 const btnBurger = document.querySelector('.js-open-menu');
+console.log(btnBurger);
 let backdrop;
 let instAb;
 btnBurger.addEventListener('click', onClickBurger);
@@ -41,7 +42,7 @@ function onClickBurger() {
           const btnCloseMenu = document.querySelector('.mob-menu-close');
           backdrop = document.querySelector('.mobile-menu-backdrop');
           btnCloseMenu.innerHTML =
-            '<svg class="mob-menu-svg" width="32" height="32" > <use href="../img/symbol-defs.svg#icon-x"></use> </svg>';
+            '<svg class="mob-menu-svg" width="32" height="32" > <use href="./img/symbol-defs.svg#icon-x-modal"></use> </svg>';
           btnCloseMenu.addEventListener('click', onClickCloseMenu);
         });
       },
