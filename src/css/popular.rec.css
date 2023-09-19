@@ -3,6 +3,8 @@
 .container-popular-recipes {
   margin-top: 64px;
   width: 235px;
+  height: 424px;
+  overflow: hidden;
 }
 .popular-recipes-title {
   margin: 0 auto;
@@ -18,6 +20,7 @@
   display: flex;
   margin-top: 32px;
   overflow: auto;
+  cursor: pointer;
 }
 .popular-item-img {
   max-width: 64px;
@@ -36,10 +39,10 @@
   font-size: 14px;
   line-height: 18px;
   height: 18px;
-  color: #050505;
+  color: var(--primary-text-color);
   overflow: hidden;
   white-space: nowrap;
-  text-overflow: ellipsis; /*не відображається*/
+  text-overflow: ellipsis;
 }
 .popular-item-descr {
   margin: 8px 0px 0px 0px;
@@ -49,19 +52,21 @@
   line-height: 14px;
   height: 41px;
   width: 155px;
-  color: #050505;
+  color: var(--primary-text-color);
   opacity: 0.8;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis; /*не відображається*/
+  text-overflow: ellipsis;
 }
 
 @media only screen and (max-width: 768px) {
   .container-popular-recipes {
     margin: 64px 0;
     width: 176px;
+    height: 372px;
+    overflow: hidden;
   }
   .popular-recipes-title {
     font-size: 18px;
@@ -121,7 +126,7 @@
     line-height: 18px;
   }
   .popular-item-descr {
-    height: 34px;
+    height: 32px;
     width: 252px;
     font-size: 12px;
     line-height: 16px;
