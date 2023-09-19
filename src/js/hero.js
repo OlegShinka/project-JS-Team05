@@ -3,11 +3,11 @@ import { createSwiper } from '../api/swiper-lib';
 import { getEvent } from '../api/hero-fetch';
 const swiperConteinerEl = document.querySelector('.swiper-wrapper');
 const btnNewOrder = document.querySelector('.btn-hero');
+const modal = document.querySelector('[data-modal-overnow]');
 btnNewOrder.addEventListener('click', onClick);
 
 function onClick() {
-  const phoneNumber = '380730000000';
-  window.location.href = 'tel:' + phoneNumber;
+  modal.classList.toggle('is-hidden');
 }
 //отримуЄмо з бекенда данні для формування масиву мастеркласів
 function getMasterClassArray() {
