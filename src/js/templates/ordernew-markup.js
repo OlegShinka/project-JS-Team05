@@ -1,13 +1,9 @@
-<!-- modbile menu-->
-<!-- modbile menu-->
-<div class="mobile-menu-backdrop is-hidden" data-menu>
-  <div class="mobile-menu-window">
-    <button type="button" class="mob-menu-close" data-menu-close>
-      <svg class="mob-menu-svg" width="32" height="32">
-        <use href="./img/symbol-defs.svg#icon-x-modal"></use>
-      </svg>
-    </button>
-    <div class="js-modal-rec"></div>
+function markupOrderNow() {
+  return `<!-- modbile menu-->
+<div class="ordernow-backdrop">
+  <div class="ordernow-window">
+    <button type="button" class="ordernow-close" data-modal-rec-close></button>
+    <div class="ordernow-rec"></div>
     <!-- Navigation -->
     <ul class="nav-list-mob-menu list">
       <li class="nav-item-mob-menu">
@@ -24,3 +20,6 @@
     </svg>
   </div>
 </div>
+`;
+}
+export { markupOrderNow };
