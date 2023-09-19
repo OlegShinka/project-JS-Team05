@@ -9,6 +9,7 @@ import {
 import { addToFav, isFav } from '../api/fav-localStarage';
 
 const modal = document.querySelector('.modal-rec-backdrop');
+const recipeModal = document.querySelector('.modal-rec-window');
 const recipeInfo = document.querySelector('.js-modal-rec');
 const recipesCont = document.querySelector('.recipes-container');
 const btnClose = document.querySelector('.modal-rec-close');
@@ -22,13 +23,9 @@ btnClose.addEventListener('click', handlerClose);
 btnAdd.addEventListener('click', handlerAddBtn);
 btnRating.addEventListener('click', handlerRatingBtn);
 
-function toggleModal() {
-  modal.classList.toggle('is-hidden');
-}
-
 function handlerClose() {
   modalRecipe.close();
-  toggleModal();
+  modal.classList.add('is-hidden');
 }
 
 let recipeId = '';
@@ -36,8 +33,9 @@ function handlerRecipeCont(evt) {
   if (!evt.target.classList.contains('js-see-recipe')) {
     return;
   } else {
-    toggleModal();
+    modal.classList.remove('is-hidden');
     recipeId = evt.target.dataset.id;
+    recipeModal.dataset.id = recipeId;
     createModal(recipeId);
   }
 }
@@ -56,22 +54,46 @@ export function createModal(recipeId) {
     document.addEventListener('keydown', evt => {
       if (evt.code === 'Escape') {
         modalRecipe.close();
-        toggleModal();
+        modal.classList.add('is-hidden');
       }
     });
     modal.addEventListener('click', () => {
       modalRecipe.close();
-      toggleModal();
+      modal.classList.add('is-hidden');
     });
   }
 }
 
 function handlerAddBtn(evt) {
   if (isFav(recipeId)) {
-    Notiflix.Notify.info('Recipe is already in Favorites!');
+    Notiflix.Notify.info('Recipe is already in Favorites!', {
+      width: '300px',
+      distance: '40px',
+      cssAnimationStyle: 'from-top',
+      borderRadius: '15px',
+      fontFamily: 'Inter',
+      fontSize: '14px',
+      info: {
+        background: '#9BB537',
+        textColor: '#fff',
+        notiflixIconColor: '#000',
+      },
+    });
   } else {
     addToFav(recipeId);
-    Notiflix.Notify.success('Recipe added to Favorites!');
+    Notiflix.Notify.info('Recipe added to Favorites!', {
+      width: '300px',
+      distance: '40px',
+      cssAnimationStyle: 'from-top',
+      borderRadius: '15px',
+      fontFamily: 'Inter',
+      fontSize: '14px',
+      info: {
+        background: '#9BB537',
+        textColor: '#fff',
+        notiflixIconColor: '#000',
+      },
+    });
     const cardHeart = document.querySelector(
       `.thumb[data-id="${evt.target.parentNode.dataset.id}"] .fav-icon`
     );
