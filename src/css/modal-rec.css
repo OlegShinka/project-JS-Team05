@@ -66,6 +66,8 @@
   .modal-rec-close {
     top: 14px;
     right: 14px;
+    width: 20px;
+    height: 20px;
   }
 }
 
