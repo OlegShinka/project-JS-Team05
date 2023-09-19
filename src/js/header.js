@@ -10,9 +10,7 @@ function onClickBurger() {
 <div class="mobile-menu-backdrop">
   <div class="mobile-menu-window">
     <button type="button" class="mob-menu-close" data-modal-rec-close>
-      <svg class="mob-menu-svg" width="32" height="32" fill = "red">
-        <use href="./img/symbol-defs.svg#icon-x"></use>
-      </svg>
+      
     </button>
     <div class="js-modal-rec"></div>
     <!-- Navigation -->
@@ -42,6 +40,8 @@ function onClickBurger() {
         setTimeout(() => {
           const btnCloseMenu = document.querySelector('.mob-menu-close');
           backdrop = document.querySelector('.mobile-menu-backdrop');
+          btnCloseMenu.innerHTML =
+            '<svg class="mob-menu-svg" width="32" height="32" > <use href="./img/symbol-defs.svg#icon-x"></use> </svg>';
           btnCloseMenu.addEventListener('click', onClickCloseMenu);
         });
       },
