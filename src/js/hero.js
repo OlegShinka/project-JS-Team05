@@ -1,8 +1,5 @@
 // завантажуємо скріпт пагінації
-
-// import '../api/swiper-lib';
 import { createSwiper } from '../api/swiper-lib';
-
 import { getEvent } from '../api/hero-fetch';
 const swiperConteinerEl = document.querySelector('.swiper-wrapper');
 const btnNewOrder = document.querySelector('.btn-hero');
@@ -12,7 +9,6 @@ function onClick() {
   const phoneNumber = '380730000000';
   window.location.href = 'tel:' + phoneNumber;
 }
-
 //отримуЄмо з бекенда данні для формування масиву мастеркласів
 function getMasterClassArray() {
   getEvent()
@@ -35,55 +31,48 @@ function addImage(el) {
 function getMarkup(ar) {
   return ar
     .map((el, ind) => {
-      // return `
-      //  <!-- Slide ${ind + 1} -->
-      // <div class="swiper-slide image-slider_image">
-      // <div class="hero-container">
-      // <!-- image 1 -->
-      //     <div class="hero-img-cook-div hero-img-srink">
-      //       <img class="hero-cook-img" src="${el.cook.imgUrl}"
-      //         alt="${el.cook.name}" />
-      //     </div>
-      //     <!-- image 2 -->
-      //     <div class="hero-img-div hero-img-srink">
-      //       <img class="hero-tried-img" src="${el.topic.previewUrl}"
-      //         alt="${el.topic.name}" />
-      //       <h2 class="hero-name-treat">${el.topic.name}</h2>
-      //       <p class="hero-country-treat">${el.topic.area}</p>
-      //     </div>
-      //     <!-- image 3 -->
-      //     <div class="hero-img-div-fill">
-      //       <img class="hero-tried-img-flll" src="${el.topic.imgUrl}"
-      //         alt="${el.topic.name}" />
-      //     </div>
-      //    </div>
-      //     </div>
-      //      <!-- END Slide ${ind + 1}-->
-      //     `;
       return `
-       <!-- Slide ${ind + 1} -->
+      <!-- Slide ${ind + 1} -->
       <div class="swiper-slide image-slider_image">
-      <div class="hero-container">
-      <!-- image 1 -->
+        <div class="hero-container">
+          <!-- image 1 -->
           <div class="hero-img-cook-div hero-img-srink">
-            <img class="hero-cook-img" src="${el.cook.imgUrl}"
-              alt="${el.cook.name}" />
+            <picture>
+              <source srcset="${el.cook.imgWebpUrl}" type="image/webp" />
+              <img
+                class="hero-cook-img"
+                src="${el.cook.imgUrl}"
+                alt="${el.cook.name}"
+              />
+            </picture>
           </div>
           <!-- image 2 -->
           <div class="hero-img-div hero-img-srink">
-            <img class="hero-tried-img" src="${el.topic.previewUrl}"
-              alt="${el.topic.name}" />
+            <picture>
+              <source srcset="${el.topic.previewWebpUrl} "type="image/webp" />
+              <img
+                class="hero-tried-img"
+                src="${el.topic.previewUrl}"
+                alt="${el.topic.name}"
+              />
+            </picture>
             <h2 class="hero-name-treat">${el.topic.name}</h2>
             <p class="hero-country-treat">${el.topic.area}</p>
           </div>
           <!-- image 3 -->
           <div class="hero-img-div-fill">
-            <img class="hero-tried-img-flll" src="${el.topic.imgUrl}"
-              alt="${el.topic.name}" />
+            <picture>
+              <source srcset="${el.topic.imgWebpUrl} "type="image/webp" />
+              <img
+                class="hero-tried-img-flll"
+                src="${el.topic.imgUrl}"
+                alt="${el.topic.name}"
+              />
+            </picture>
           </div>
-         </div>    
-          </div> 
-           <!-- END Slide ${ind + 1}-->
+        </div>
+      </div>
+      <!-- END Slide ${ind + 1}-->
           `;
     })
     .join('');
