@@ -1,5 +1,4 @@
 .recipes-section {
-  padding: 20px;
   padding-right: 0;
   max-width: 455px;
   display: flex;
@@ -27,7 +26,7 @@
 }
 
 .search-input {
-  max-width: 370px;
+  width: 100%;
   border-radius: 15px;
   border: 1px solid rgba(5, 5, 5, 0.2);
   padding: 14px 0;
@@ -48,6 +47,12 @@
 
 .form-label {
   position: relative;
+}
+
+@media only screen and (max-width: 767px) {
+  .form-label {
+    width: 100%;
+  }
 }
 
 .search-icon {
@@ -206,17 +211,6 @@ div.custom-select-option.has-focus {
   position: relative;
   width: 100%;
   border-radius: 15px;
-  /* background-attachment: linear-gradient(
-      1deg,
-      rgba(5, 5, 5, 0.6) 4.82%,
-      rgba(5, 5, 5, 0) 108.72%
-    ),
-    url(https://www.themealdb.com/images/media/meals/wvqpwt1468339226.jpg),
-    lightgray -25px -10px / 116.716% 114.018% no-repeat;
-
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */
   overflow: hidden;
   padding: 214px 16px 16px;
 }
@@ -265,7 +259,6 @@ div.custom-select-option.has-focus {
   display: block;
   max-height: 32px;
   overflow: hidden;
-  /* white-space: pre; */
   color: var(--description-text-color);
   text-overflow: ellipsis;
   font-size: 12px;
@@ -288,8 +281,6 @@ div.custom-select-option.has-focus {
   font-weight: 500;
   line-height: 1.28;
   display: flex;
-  /* align-items: center; */
-  /* gap: 4px; */
 }
 
 .rating-num {
@@ -376,8 +367,3 @@ div.custom-select-option.has-focus {
 .tui-is-disabled {
   background-color: var(--primary-text-color) !important;
 }
-
-/* .tui-first,
-.tui-prev {
-  background-color: var(--primary-text-color);
-} */
