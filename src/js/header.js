@@ -5,6 +5,7 @@ let instAb;
 btnBurger.addEventListener('click', onClickBurger);
 function onClickBurger() {
   const instance = basicLightbox.create(
+    //створюємо розмітку модального вікна
     `<!-- modbile menu-->
 <div class="mobile-menu-backdrop">
   <div class="mobile-menu-window">
@@ -30,12 +31,14 @@ function onClickBurger() {
 </div>
 `,
     {
+      //при закритті видаляємо прослуховувач подій створених при відкритти екземпляру бібліотеки
       onClose: instance => {
         document.removeEventListener('click', onClickCloseMenu, instance);
         return true;
       },
       onShow: instance => {
         instAb = instance;
+        //забезпечуємо  пошук селектора та створення прослуховувача подій після відображення вікна меню
         setTimeout(() => {
           const btnCloseMenu = document.querySelector('.mob-menu-close');
           backdrop = document.querySelector('.mobile-menu-backdrop');
