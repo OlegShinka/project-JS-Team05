@@ -1,17 +1,17 @@
 import * as basicLightbox from 'basiclightbox';
 const btnBurger = document.querySelector('.js-open-menu');
+console.log(btnBurger);
 let backdrop;
 let instAb;
 btnBurger.addEventListener('click', onClickBurger);
 function onClickBurger() {
   const instance = basicLightbox.create(
+    //створюємо розмітку модального вікна
     `<!-- modbile menu-->
 <div class="mobile-menu-backdrop">
   <div class="mobile-menu-window">
     <button type="button" class="mob-menu-close" data-modal-rec-close>
-      <svg class="mob-menu-svg" width="32" height="32" fill = "red">
-        <use href="./img/symbol-defs.svg#icon-x"></use>
-      </svg>
+      
     </button>
     <div class="js-modal-rec"></div>
     <!-- Navigation -->
@@ -30,15 +30,19 @@ function onClickBurger() {
 </div>
 `,
     {
+      //при закритті видаляємо прослуховувач подій створених при відкритти екземпляру бібліотеки
       onClose: instance => {
         document.removeEventListener('click', onClickCloseMenu, instance);
         return true;
       },
       onShow: instance => {
         instAb = instance;
+        //забезпечуємо  пошук селектора та створення прослуховувача подій після відображення вікна меню
         setTimeout(() => {
           const btnCloseMenu = document.querySelector('.mob-menu-close');
           backdrop = document.querySelector('.mobile-menu-backdrop');
+          btnCloseMenu.innerHTML =
+            '<svg class="mob-menu-svg" width="32" height="32" > <use href="./img/symbol-defs.svg#icon-x-modal"></use> </svg>';
           btnCloseMenu.addEventListener('click', onClickCloseMenu);
         });
       },
