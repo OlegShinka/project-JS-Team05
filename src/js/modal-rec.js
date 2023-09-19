@@ -22,9 +22,13 @@ btnClose.addEventListener('click', handlerClose);
 btnAdd.addEventListener('click', handlerAddBtn);
 btnRating.addEventListener('click', handlerRatingBtn);
 
+function toggleModal() {
+  modal.classList.toggle('is-hidden');
+}
+
 function handlerClose() {
   modalRecipe.close();
-  modal.classList.toggle('is-hidden');
+  toggleModal();
 }
 
 let recipeId = '';
@@ -32,29 +36,33 @@ function handlerRecipeCont(evt) {
   if (!evt.target.classList.contains('js-see-recipe')) {
     return;
   } else {
-    modal.classList.toggle('is-hidden');
+    toggleModal();
     recipeId = evt.target.dataset.id;
-    fetchInfoRecipe(recipeId)
-      .then(data => {
-        if (matchMedia('(max-width: 570px)').matches) {
-          recipeInfo.innerHTML = markupRecipeModalMobile(data);
-        } else recipeInfo.innerHTML = markupRecipeModal(data);
-      })
-      .catch(err => console.log(err));
+    createModal(recipeId);
+  }
+}
 
-    modalRecipe.show();
-    if (modalRecipe.show()) {
-      document.addEventListener('keydown', evt => {
-        if (evt.code === 'Escape') {
-          modalRecipe.close();
-          modal.classList.toggle('is-hidden');
-        }
-      });
-      modal.addEventListener('click', () => {
+export function createModal(recipeId) {
+  fetchInfoRecipe(recipeId)
+    .then(data => {
+      if (matchMedia('(max-width: 768px)').matches) {
+        recipeInfo.innerHTML = markupRecipeModalMobile(data);
+      } else recipeInfo.innerHTML = markupRecipeModal(data);
+    })
+    .catch(err => console.log(err));
+
+  modalRecipe.show();
+  if (modalRecipe.show()) {
+    document.addEventListener('keydown', evt => {
+      if (evt.code === 'Escape') {
         modalRecipe.close();
-        modal.classList.toggle('is-hidden');
-      });
-    }
+        toggleModal();
+      }
+    });
+    modal.addEventListener('click', () => {
+      modalRecipe.close();
+      toggleModal();
+    });
   }
 }
 
