@@ -44,7 +44,7 @@
 
 .nav-link {
   text-decoration: blink;
-  color: #050505;
+  color: var(--primary-text-color);
   font-family: Inter;
   font-size: 12px;
   font-style: normal;
@@ -54,11 +54,11 @@
 
 .nav-link:hover,
 .nav-link:focus {
-  color: #9bb537;
+  color: var(--secondary-bg-color);
 }
 
 .logo-header {
-  color: #9bb537;
+  color: var(--secondary-bg-color);
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
@@ -71,7 +71,7 @@
 }
 
 .logo-header-span {
-  color: #050505;
+  color: var(--primary-text-color);
   text-align: center;
   font-family: Inter;
   font-size: 16px;
@@ -104,7 +104,7 @@
 }
 
 .icon-burger {
-  stroke: #050505;
+  stroke: var(--primary-text-color);
 }
 
 @media only screen and (min-width: 768px) {
@@ -129,7 +129,7 @@
     display: flex;
     width: 56px;
     height: 30px;
-    box-shadow: #050505;
+    box-shadow: var(--primary-text-color);
   }
 }
 
@@ -156,7 +156,7 @@
 }
 
 .id-burger-menu {
-  color: #fff;
+  color: var(--primary-bg-color);
   font-family: Inter;
   font-size: 12px;
   font-style: normal;
