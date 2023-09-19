@@ -1,0 +1,91 @@
+.backdrop-ordernow {
+  position: fixed;
+  top: 1px;
+  left: 1px;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(46, 47, 66, 0.4);
+  backdrop-filter: blur(2px);
+  z-index: 10;
+  transition-property: opacity, visibility;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: scroll;
+}
+
+.backdrop-ordernow.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.mobile-menu-backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.modal-ordernow {
+  padding: 28px 20px 28px 20px;
+  position: absolute;
+  transform: translateY(-50%) translateX(-50%);
+  top: calc(50%);
+  left: calc(50%);
+  width: 335px;
+  min-height: 582px;
+  background: var(--primary-bg-color);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 15px;
+}
+
+.mod-title {
+  display: block;
+  margin-bottom: 28px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  /* NAVY BLUE */
+  color: #2e2f42;
+}
+
+.close-modwin-btn {
+  background-color: var(--primary-bg-color);
+  border: none;
+  position: absolute;
+  right: 14px;
+  top: 14px;
+}
+.close-modwin-icon {
+  stroke: var(--primary-text-color);
+}
+
+.mod-inp {
+  display: block;
+  margin: auto;
+  border-radius: 20px;
+  width: 100%;
+  height: 46px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(5, 5, 5, 0.2);
+}
+
+.mod-txtar-com.mod-inp {
+  height: 100px;
+  margin-bottom: 40px;
+}
+
+.label-ordernow {
+  display: block;
+  font-size: 14px;
+
+  font-weight: 500;
+
+  line-height: 1.28;
+  margin-bottom: 8px;
+}
