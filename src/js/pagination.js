@@ -7,7 +7,7 @@ function createPagination({ page, perPage, totalPages }) {
   return new Pagination(pagContainer, {
     totalItems: Number(totalPages) * Number(perPage),
     itemsPerPage: Number(perPage),
-    visiblePages: 3,
+    visiblePages: matchMedia('(min-width: 768px)').matches ? 3 : 2,
     page: Number(page),
     centerAlign: true,
   });
