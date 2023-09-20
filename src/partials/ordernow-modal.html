@@ -2,50 +2,62 @@
   <div class="modal-ordernow">
     <button type="button" class="close-modwin-btn" data-modal-close>
       <svg class="close-modwin-icon" width="20" height="20">
-        <use href="../img/symbol-defs.svg#icon-x"></use>
+        <use href="./img/symbol-defs.svg#icon-x"></use>
       </svg>
     </button>
     <!-- <fieldset>
           <legend>Leave your contacts and we will call you back</legend> -->
-    <strong class="mod-title">ORDER NOW</strong>
-    <form name="subscreibe_mod">
+    <h2 class="mod-title">ORDER NOW</h2>
+    <form name="subscribe-orderNow">
       <label class="name-mod label-ordernow" for="name-mod">Name</label>
 
       <!-- <div class="wrap-div-iconsvg"> -->
       <input
         class="name-mod-inp mod-inp"
         type="text"
-        name="name-mod"
+        name="name_customers"
         id="name-mod"
+        required
         autofocus
       />
       <!-- </div> -->
 
-      <label class="tel-mod label-ordernow" for="tel-mod">Phone</label>
+      <label class="tel-mod label-ordernow" for="tel-mod">Phone number</label>
 
-      <input class="tel-mod mod-inp" type="tel" name="tel-mod" id="tel-mod" />
+      <input
+        class="tel-mod mod-inp"
+        type="tel"
+        name="tel_customers"
+        id="tel-mod"
+        required
+      />
 
       <label class="email-mod-label label-ordernow" for="email-mod"
         >Email</label
       >
 
-      <input class="email-mod mod-inp" type="email" id="email-mod" />
+      <input
+        class="email-mod mod-inp"
+        type="email"
+        id="email-mod"
+        name="email_customers"
+        required
+      />
 
       <label class="comment-mod-label label-ordernow" for="comment"
         >Comment</label
       >
       <textarea
         class="mod-txtar-com mod-inp"
-        name="comment-mod"
+        name="comment_customers"
         id="comment"
         cols="30"
         rows="10"
-        placeholder="Text input"
       ></textarea>
       <!-- visually-hidden -->
       <load
         src="partials/components/button.html"
-        btn-class="btn-send"
+        btn-class="btn-send btn-modal"
         btn-type="submit"
         btn-text="Send"
       />

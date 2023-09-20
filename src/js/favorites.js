@@ -7,8 +7,7 @@ import {
 } from '../api/fav-localStarage';
 import { createPagination } from './pagination';
 import { Notify } from 'notiflix';
-
-createRecipesMarkup;
+import { postOrderNow } from '../api/ordernow-modal-fetch';
 
 const elements = {
   recipesCont: document.querySelector('.recipes-container'),
@@ -96,4 +95,30 @@ function handleCatChange(e) {
     perPage: perPage,
     totalPages: fav.length / Number(perPage),
   });
+}
+
+//Order now modal
+
+const modal = document.querySelector('[data-modal-overnow]');
+const closeWindowMob = document.querySelector('[data-modal-close]');
+const form = document.querySelector('[name = subscribe-orderNow]');
+
+closeWindowMob.addEventListener('click', onClick);
+form.addEventListener('submit', onSabmit);
+function onSabmit(event) {
+  event.preventDefault();
+  const data = event.currentTarget;
+  const order = {
+    name: data.name_customers.value,
+    phone: data.tel_customers.value,
+    email: data.email_customers.value,
+    comment: data.comment_customers.value,
+  };
+
+  postOrderNow(order).catch(error => {
+    Notify.failure('Error order now!');
+  });
+}
+function onClick() {
+  modal.classList.toggle('is-hidden');
 }

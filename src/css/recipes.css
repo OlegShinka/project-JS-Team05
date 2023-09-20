@@ -338,6 +338,12 @@ div.custom-select-option.has-focus {
   justify-content: center;
 }
 
+@media only screen and (max-width: 767px) {
+  .tui-pagination {
+    gap: 4px;
+  }
+}
+
 .tui-pagination a.tui-page-btn,
 .tui-is-selected,
 .tui-next,

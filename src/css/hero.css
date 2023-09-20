@@ -33,7 +33,7 @@
   }
 }
 .hero-title {
-  color: #050505;
+  color: var(--primary-text-color);
   font-family: Inter;
   font-size: 26px;
   font-style: normal;
