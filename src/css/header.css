@@ -22,7 +22,10 @@
 }
 
 /* header styles */
-
+.btn-cart-header {
+  border: none;
+  background-color: var(--primary-bg-color);
+}
 .nav-list {
   align-items: center;
   justify-content: flex-end;
