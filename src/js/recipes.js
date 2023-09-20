@@ -135,6 +135,15 @@ function handleMove({ page }) {
     .catch(e => Notify.failure(e.message));
 }
 
+matchMedia('(min-width: 768px)').addEventListener('change', () => {
+  const { totalItems, itemsPerPage, page } = elements.pagination._options;
+  elements.pagination = createPagination({
+    page,
+    perPage: itemsPerPage,
+    totalPages: totalItems / itemsPerPage,
+  });
+});
+
 // Favorites
 elements.recipesCont.addEventListener('click', handleFav);
 
