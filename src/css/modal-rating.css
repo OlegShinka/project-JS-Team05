@@ -20,7 +20,7 @@
   z-index: 200;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 60%;
   transform: translate(-50%, -50%) scale(1);
   transition: opacity 300ms linear, visibility 300ms linear;
 
@@ -31,11 +31,18 @@
   background: var(--primary-bg-color);
 }
 
+@media screen and (min-width: 769px) and (max-width: 1110px) {
+  .modal-rating-window {
+    left: 65%;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .modal-rating-window {
     width: 335px;
     height: 216px;
     padding: 20px;
+    left: 50%;
   }
 }
 

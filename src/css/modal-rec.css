@@ -21,7 +21,7 @@
 .modal-rec-window {
   z-index: 100;
   position: absolute;
-  top: 800px;
+  top: 814px;
   left: 60%;
   transform: translate(-50%) scale(1);
   transition: opacity 300ms linear, visibility 300ms linear;
@@ -35,7 +35,7 @@
 
 @media screen and (min-width: 769px) and (max-width: 1110px) {
   .modal-rec-window {
-    top: 1240px;
+    top: 1210px;
     left: 65%;
   }
 }
@@ -44,7 +44,7 @@
   .modal-rec-window {
     max-width: 335px;
     padding: 40px 20px;
-    top: 1600px;
+    top: 1560px;
     left: 50%;
   }
 }
