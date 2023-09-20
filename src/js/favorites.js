@@ -16,6 +16,7 @@ const elements = {
   pagination: undefined,
   noFav: document.querySelector('.no-fav'),
   categoriesFilter: document.querySelector('.categories-filter'),
+  otherCat: document.querySelector('.other-categories'),
 };
 
 startRecipes();
@@ -43,8 +44,9 @@ function startRecipes() {
   let fav = getFavArray();
   if (!fav || fav.length === 0) {
     elements.recipesCont.innerHTML = '';
-    elements.noFav.classList.remove('visually-hidden');
-    elements.paginationCont.classList.add('visually-hidden');
+    elements.otherCat.innerHTML = '';
+    elements.noFav.classList.remove('hidden');
+    elements.paginationCont.classList.add('hidden');
     return;
   }
   const categories = fav.map((el, idx, arr) => {
@@ -52,10 +54,7 @@ function startRecipes() {
       return el.category;
     }
   });
-  elements.categoriesFilter.insertAdjacentHTML(
-    'beforeend',
-    categoryFilterMarkup(categories)
-  );
+  elements.otherCat.innerHTML = categoryFilterMarkup(categories);
   const perPage = matchMedia('(max-width: 1109px)').matches ? '8' : '9';
   elements.recipesCont.innerHTML = createRecipesMarkup(fav);
   elements.pagination = createPagination({
@@ -67,10 +66,11 @@ function startRecipes() {
 
 function categoryFilterMarkup(arr) {
   return arr
-    .map(
-      el =>
-        `<button type="button" class="category-btn" data-cat="${el}">${el}</button>`
-    )
+    .map(el => {
+      if (el) {
+        return `<button type="button" class="category-btn" data-cat="${el}">${el}</button>`;
+      }
+    })
     .join('');
 }
 

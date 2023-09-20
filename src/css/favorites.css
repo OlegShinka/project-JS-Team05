@@ -64,6 +64,11 @@
   padding-bottom: 12px;
 }
 
+.other-categories {
+  display: flex;
+  gap: 12px;
+}
+
 @media only screen and (min-width: 768px) {
   .categories-filter {
     gap: 15px;
@@ -93,4 +98,8 @@
   background-color: var(--secondary-bg-color);
   color: var(--description-text-color);
   border-color: var(--secondary-bg-color);
+}
+
+.hidden {
+  display: none;
 }
