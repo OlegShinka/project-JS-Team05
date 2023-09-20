@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <title>Favorites</title>
-    <script type="module" crossorigin src="/project-JS-Team05/assets/favorites-ff1fff2a.js"></script>
-    <link rel="modulepreload" crossorigin href="/project-JS-Team05/assets/pagination-91c070ae.js">
-    <link rel="stylesheet" href="/project-JS-Team05/assets/pagination-eac625c7.css">
+    <script type="module" crossorigin src="/project-JS-Team05/assets/favorites-e94084ff.js"></script>
+    <link rel="modulepreload" crossorigin href="/project-JS-Team05/assets/pagination-d61d56e7.js">
+    <link rel="stylesheet" href="/project-JS-Team05/assets/pagination-5fcc9a4d.css">
   </head>
 
   <body>
@@ -32,11 +32,13 @@
     </div>
     <!-- Icons -->
     <div class="cart-switch">
-      <a class="contact link" href="tel:+110001111111"
-        ><svg class="cart" height="24" width="24">
-          <use href="/project-JS-Team05/assets/symbol-defs-a0105c02.svg#icon-shopping-cart02"></use>
-        </svg>
-      </a>
+      <button type="button" class="btn-cart-header">
+        <div>
+          <svg class="cart" height="24" width="24">
+            <use href="/project-JS-Team05/assets/symbol-defs-a0105c02.svg#icon-shopping-cart02"></use>
+          </svg>
+        </div>
+      </button>
 
       <svg class="icon-switch" height="20" width="46">
         <use href="/project-JS-Team05/assets/symbol-defs-a0105c02.svg#icon-switch"></use>
@@ -188,43 +190,55 @@
     </button>
     <!-- <fieldset>
           <legend>Leave your contacts and we will call you back</legend> -->
-    <strong class="mod-title">ORDER NOW</strong>
-    <form name="subscreibe_mod">
+    <h2 class="mod-title">ORDER NOW</h2>
+    <form name="subscribe-orderNow">
       <label class="name-mod label-ordernow" for="name-mod">Name</label>
 
       <!-- <div class="wrap-div-iconsvg"> -->
       <input
         class="name-mod-inp mod-inp"
         type="text"
-        name="name-mod"
+        name="name_customers"
         id="name-mod"
+        required
         autofocus
       />
       <!-- </div> -->
 
-      <label class="tel-mod label-ordernow" for="tel-mod">Phone</label>
+      <label class="tel-mod label-ordernow" for="tel-mod">Phone number</label>
 
-      <input class="tel-mod mod-inp" type="tel" name="tel-mod" id="tel-mod" />
+      <input
+        class="tel-mod mod-inp"
+        type="tel"
+        name="tel_customers"
+        id="tel-mod"
+        required
+      />
 
       <label class="email-mod-label label-ordernow" for="email-mod"
         >Email</label
       >
 
-      <input class="email-mod mod-inp" type="email" id="email-mod" />
+      <input
+        class="email-mod mod-inp"
+        type="email"
+        id="email-mod"
+        name="email_customers"
+        required
+      />
 
       <label class="comment-mod-label label-ordernow" for="comment"
         >Comment</label
       >
       <textarea
         class="mod-txtar-com mod-inp"
-        name="comment-mod"
+        name="comment_customers"
         id="comment"
         cols="30"
         rows="10"
-        placeholder="Text input"
       ></textarea>
       <!-- visually-hidden -->
-      <button class="btn btn-send" type="submit">Send</button>
+      <button class="btn btn-send btn-modal" type="submit">Send</button>
 
     </form>
     <!-- </fieldset> -->
