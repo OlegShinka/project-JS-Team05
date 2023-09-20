@@ -3,6 +3,7 @@ import { modalRating } from './modal-rec';
 import { patchRating } from '../api/rating-patch';
 
 const modalBackdropRating = document.querySelector('.modal-rating-backdrop');
+const recipeModal = document.querySelector('.modal-rec-window');
 const form = document.querySelector('.js-modal-rating-form');
 const btnClose = document.querySelector('.modal-rating-close');
 const inputEmail = document.querySelector('.modal-rating-input');
@@ -29,10 +30,15 @@ if (storage) {
 }
 
 let num = 0;
+let star = form.querySelector('.star-radio-label');
 function hahdlerRadio(evt) {
+  clearStars();
   num = evt.target.value;
   number.textContent = `${num}.0`;
+  fillStars(num);
+}
 
+function clearStars() {
   let star = form.querySelector('.star-radio-label');
   for (let i = 1; i <= 5; i += 1) {
     if (
@@ -44,7 +50,9 @@ function hahdlerRadio(evt) {
     }
     star = star.nextElementSibling;
   }
+}
 
+function fillStars(num) {
   star = form.querySelector('.star-radio-label');
   for (let i = 1; i <= num; i += 1) {
     if (star.querySelector('.star-radio').value == i) {
@@ -53,7 +61,6 @@ function hahdlerRadio(evt) {
     star = star.nextElementSibling;
   }
 }
-
 let email = '';
 function handlerInput() {
   email = inputEmail.value;
@@ -65,7 +72,7 @@ function handlerInput() {
 function handlerSend(evt) {
   evt.preventDefault();
 
-  // const recipeId = '6462a8f74c3d0ddd28897fc1';
+  const recipeId = recipeModal.dataset.id;
 
   if (!num) {
     alert('Rate this recipe!');
@@ -73,17 +80,19 @@ function handlerSend(evt) {
     if (!inputEmail.value) {
       alert('Enter your email!');
     } else {
-      // patchRating(recipeId, num)
-      //   .then(data => {
-      //     console.log(data);
-      //     return data;
-      //   })
-      //   .catch(err => console.log(err));
+      patchRating(recipeId, num)
+        .then(data => {
+          return data;
+        })
+        .catch(err => console.error(err));
+      modalRating.close();
+      modalBackdropRating.classList.add('is-hidden');
+      localStorage.removeItem(STORAGE_KEY);
+      evt.currentTarget.reset();
+      number.textContent = `0.0`;
+      clearStars();
     }
   }
-
-  evt.currentTarget.reset();
-  localStorage.removeItem(STORAGE_KEY);
 }
 
 export function showModalRating() {
