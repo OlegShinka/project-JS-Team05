@@ -1,24 +1,50 @@
 <!-- modal window add rating -->
 <div class="modal-rating-backdrop is-hidden">
   <div class="modal-rating-window">
-    <button type="button" class="modal-rec-close" data-modal-rec-close>
+    <button type="button" class="modal-rating-close">
       <svg class="modal-close-icon" width="24" height="24">
         <use href="./img/symbol-defs.svg#icon-x"></use>
       </svg>
     </button>
-    <h4 class="modal-rating-text">Rating</h4>
-    <div class="js-modal-rating">
-      <h3 class="modal-rating-number">0.0</h3>
-      <!-- radiobutton -->
-    </div>
-    <form action="submit" class="modal-rating-form">
-      <input
-        type="text"
-        name="modal-rating-input"
-        id="modal-rating-input"
-        placeholder="Enter email"
-      />
-      <button class="modal-rec-btn modal-rating-btn-send">Send</button>
+    <form action="submit" class="js-modal-rating-form">
+      <p class="modal-rating-text">Rating</p>
+      <div class="modal-rating-flex">
+        <p class="modal-rating-number">0.0</p>
+        <div class="js-modal-rating-stars" name="radiostars">
+          <label>
+            <input type="radio" name="stars-qnt" value="1" />
+            1
+          </label>
+          <label>
+            <input type="radio" name="stars-qnt" value="2" />
+            2
+          </label>
+          <label>
+            <input type="radio" name="stars-qnt" value="3" />
+            3
+          </label>
+          <label>
+            <input type="radio" name="stars-qnt" value="4" />
+            4
+          </label>
+          <label>
+            <input type="radio" name="stars-qnt" value="5" />
+            5
+          </label>
+        </div>
+      </div>
+      <div class="modal-rating-input-flex">
+        <input
+          class="modal-rating-input"
+          type="email"
+          name="input"
+          id="modal-rating-input"
+          placeholder="Enter email"
+        />
+        <button type="submit" class="modal-rec-btn modal-rating-btn-send">
+          Send
+        </button>
+      </div>
     </form>
   </div>
 </div>

@@ -7,6 +7,7 @@ import {
   markupRecipeModalMobile,
 } from './templates/recipe-modal-markup';
 import { addToFav, isFav } from '../api/fav-localStarage';
+import { showModalRating } from './modal-rating';
 
 const modal = document.querySelector('.modal-rec-backdrop');
 const recipeModal = document.querySelector('.modal-rec-window');
@@ -101,4 +102,7 @@ function handlerAddBtn(evt) {
   }
 }
 
-function handlerRatingBtn() {}
+export const modalRating = basicLightbox.create(modal);
+function handlerRatingBtn() {
+  showModalRating();
+}
