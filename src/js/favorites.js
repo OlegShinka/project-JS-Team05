@@ -6,6 +6,7 @@ import {
   addToFav,
 } from '../api/fav-localStarage';
 import { createPagination } from './pagination';
+import { Notify } from 'notiflix';
 
 createRecipesMarkup;
 
@@ -30,9 +31,11 @@ function handleFav(e) {
   if (isFav(id)) {
     deleteFromFav(id);
     startRecipes();
+    Notify.success('Recipe deleted from favotites');
   } else {
     addToFav(id);
     e.target.parentElement.classList.add('is-fav');
+    Notify.success('Recipe added to favotites');
   }
 }
 
@@ -49,7 +52,6 @@ function startRecipes() {
       return el.category;
     }
   });
-  console.log(categories);
   elements.categoriesFilter.insertAdjacentHTML(
     'beforeend',
     categoryFilterMarkup(categories)

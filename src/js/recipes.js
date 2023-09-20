@@ -10,6 +10,7 @@ import debounce from 'lodash.debounce';
 // import Pagination from 'tui-pagination';
 import { createPagination } from './pagination';
 import { addToFav, deleteFromFav, isFav } from '../api/fav-localStarage';
+import { Notify } from 'notiflix';
 
 const elements = {
   form: document.querySelector('.filter-form'),
@@ -40,21 +41,21 @@ fetchRecipes(currentParams)
     elements.pagination = createPagination(data);
     elements.pagination.on('afterMove', handleMove);
   })
-  .catch(e => console.log(e.message));
+  .catch(e => Notify.failure(e.message));
 
 // Add areas
 fetchAreas()
   .then(({ data }) => {
     elements.cstSel[1].append(addOptionsAreas(data));
   })
-  .catch(e => console.log(e.message));
+  .catch(e => Notify.failure(e.message));
 
 // Add ingridients
 fetchIngr()
   .then(({ data }) => {
     elements.cstSel[2].append(addOptionsIngr(data));
   })
-  .catch(e => console.log(e.message));
+  .catch(e => Notify.failure(e.message));
 
 //Forms cleaners
 elements.clearSearch.addEventListener('click', function () {
@@ -107,6 +108,7 @@ function handleChange() {
   fetchRecipes(currentParams)
     .then(({ data }) => {
       if (!data.results.length) {
+        Notify.failure('Nothing found.');
         elements.recipesCont.innerHTML = '<p class="empty">Nothing found.</p>';
         return;
       }
@@ -114,7 +116,7 @@ function handleChange() {
       elements.pagination = createPagination(data);
       elements.pagination.on('afterMove', handleMove);
     })
-    .catch(e => console.log(e.message));
+    .catch(e => Notify.failure(e.message));
 }
 
 // Pagination
@@ -124,7 +126,7 @@ function handleMove({ page }) {
     .then(({ data }) => {
       elements.recipesCont.innerHTML = createRecipesMarkup(data.results);
     })
-    .catch(e => console.log(e.message));
+    .catch(e => Notify.failure(e.message));
 }
 
 // Favorites
@@ -138,9 +140,11 @@ function handleFav(e) {
   if (isFav(id)) {
     deleteFromFav(id);
     e.target.parentElement.classList.remove('is-fav');
+    Notify.success('Recipe deleted from favotites');
   } else {
     addToFav(id);
     e.target.parentElement.classList.add('is-fav');
+    Notify.success('Recipe added to favotites');
   }
 }
 
