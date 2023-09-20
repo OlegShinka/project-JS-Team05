@@ -22,6 +22,7 @@ const elements = {
   catList: document.querySelector('.categoris-wrapper'),
   // paginationCont: document.querySelector('#tui-pagination-container'),
   pagination: undefined,
+  loader: document.querySelector('.loader-wrapper'),
 };
 
 let currentParams = {
@@ -41,7 +42,8 @@ fetchRecipes(currentParams)
     elements.pagination = createPagination(data);
     elements.pagination.on('afterMove', handleMove);
   })
-  .catch(e => Notify.failure(e.message));
+  .catch(e => Notify.failure(e.message))
+  .finally(() => elements.loader.classList.add('hidden'));
 
 // Add areas
 fetchAreas()
@@ -105,6 +107,9 @@ function handleChange() {
     area: elements.cstSel[1].value,
     ingredient: elements.cstSel[2].value,
   };
+
+  elements.recipesCont.innerHTML = '';
+  elements.loader.classList.remove('hidden');
   fetchRecipes(currentParams)
     .then(({ data }) => {
       if (!data.results.length) {
@@ -116,7 +121,8 @@ function handleChange() {
       elements.pagination = createPagination(data);
       elements.pagination.on('afterMove', handleMove);
     })
-    .catch(e => Notify.failure(e.message));
+    .catch(e => Notify.failure(e.message))
+    .finally(() => elements.loader.classList.add('hidden'));
 }
 
 // Pagination
