@@ -55,7 +55,7 @@
   color: var(--secondary-bg-color)
 }
 .categoris-wrapper{
-  padding-top: 40px;
+  padding-top: 21px;
 }
 @media screen and (min-width: 768px) {
 .all-categoris {
