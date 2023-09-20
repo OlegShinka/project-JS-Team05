@@ -43,15 +43,14 @@
 .mod-title {
   display: block;
   margin-bottom: 28px;
-  font-family: 'Roboto';
+
+  color: #050505;
+  font-family: Inter;
+  font-size: 18px;
   font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  text-align: center;
-  letter-spacing: 0.02em;
-  /* NAVY BLUE */
-  color: #2e2f42;
+  font-weight: 600;
+  line-height: 1.22; /* 122.222% */
+  text-transform: uppercase;
 }
 
 .close-modwin-btn {
@@ -68,6 +67,7 @@
 .mod-inp {
   display: block;
   margin: auto;
+  padding: 14px 18px;
   border-radius: 20px;
   width: 100%;
   height: 46px;

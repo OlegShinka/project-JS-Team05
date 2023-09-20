@@ -1,19 +1,32 @@
 // завантажуємо скріпт пагінації
 import { createSwiper } from '../api/swiper-lib';
 import { getEvent } from '../api/hero-fetch';
+import { postOrderNow } from '../api/ordernow-modal-fetch';
+import Notiflix from 'notiflix';
+
 const swiperConteinerEl = document.querySelector('.swiper-wrapper');
 const btnNewOrder = document.querySelector('.btn-hero');
 const modal = document.querySelector('[data-modal-overnow]');
 
 const closeWindowMob = document.querySelector('[data-modal-close]');
-const sendWindowModal = document.querySelector('.btn-send');
-console.log(sendWindowModal);
-sendWindowModal.addEventListener('submit', onSabmit);
+const form = document.querySelector('[name = subscribe-orderNow]');
+
 btnNewOrder.addEventListener('click', onClick);
 closeWindowMob.addEventListener('click', onClick);
-function onSabmit(e) {
-  e.preventDefault();
-  console.log('submit');
+form.addEventListener('submit', onSabmit);
+function onSabmit(event) {
+  event.preventDefault();
+  const data = event.currentTarget;
+  const order = {
+    name: data.name_customers.value,
+    phone: data.tel_customers.value,
+    email: data.email_customers.value,
+    comment: data.comment_customers.value,
+  };
+
+  postOrderNow(order).catch(error => {
+    Notiflix.Notify.failure('Error order now!');
+  });
 }
 function onClick() {
   modal.classList.toggle('is-hidden');
@@ -26,7 +39,7 @@ function getMasterClassArray() {
       addImage(arrayCook);
     })
     .catch(error => {
-      console.log(error);
+      Notiflix.Notify.failure(error);
     });
 }
 //викликаємо функцію для відмальовки  майстер класів
