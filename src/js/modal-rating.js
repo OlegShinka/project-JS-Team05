@@ -1,5 +1,6 @@
 import debounce from 'lodash.debounce';
 import { modalRating } from './modal-rec';
+import { patchRating } from '../api/rating-patch';
 
 const modalBackdropRating = document.querySelector('.modal-rating-backdrop');
 const form = document.querySelector('.js-modal-rating-form');
@@ -31,6 +32,26 @@ let num = 0;
 function hahdlerRadio(evt) {
   num = evt.target.value;
   number.textContent = `${num}.0`;
+
+  let star = form.querySelector('.star-radio-label');
+  for (let i = 1; i <= 5; i += 1) {
+    if (
+      star
+        .querySelector('.rating-icon')
+        .classList.contains('rating-icon-orange')
+    ) {
+      star.querySelector('.rating-icon').classList.remove('rating-icon-orange');
+    }
+    star = star.nextElementSibling;
+  }
+
+  star = form.querySelector('.star-radio-label');
+  for (let i = 1; i <= num; i += 1) {
+    if (star.querySelector('.star-radio').value == i) {
+      star.querySelector('.rating-icon').classList.add('rating-icon-orange');
+    }
+    star = star.nextElementSibling;
+  }
 }
 
 let email = '';
@@ -44,21 +65,26 @@ function handlerInput() {
 function handlerSend(evt) {
   evt.preventDefault();
 
+  // const recipeId = '6462a8f74c3d0ddd28897fc1';
+
   if (!num) {
     alert('Rate this recipe!');
   } else {
     if (!inputEmail.value) {
       alert('Enter your email!');
     } else {
-      fetchRating();
+      // patchRating(recipeId, num)
+      //   .then(data => {
+      //     console.log(data);
+      //     return data;
+      //   })
+      //   .catch(err => console.log(err));
     }
   }
 
   evt.currentTarget.reset();
   localStorage.removeItem(STORAGE_KEY);
 }
-
-function fetchRating() {}
 
 export function showModalRating() {
   modalBackdropRating.classList.remove('is-hidden');

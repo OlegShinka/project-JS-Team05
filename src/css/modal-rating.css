@@ -96,6 +96,24 @@
   line-height: 150%;
 }
 
+.rating-icon {
+  stroke: var(--star-bg-color);
+  fill: rgba(248, 248, 248, 0.2);
+}
+
+.rating-icon:hover,
+.rating-icon:focus {
+  fill: var(--star-bg-color);
+}
+
+.rating-icon-orange {
+  fill: var(--star-bg-color);
+}
+
+.star-radio {
+  display: none;
+}
+
 .modal-rating-input-flex {
   width: 100%;
   display: flex;

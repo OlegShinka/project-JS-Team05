@@ -239,6 +239,7 @@ div.custom-select-option.has-focus {
 
 .rating-icon-orange {
   fill: var(--star-bg-color);
+  background-color: #fff;
 }
 
 .rating-icon-grey {
