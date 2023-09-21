@@ -1,8 +1,6 @@
-// const switch = document.querySelector('.sw-chbox');
-const switchhDark = document.querySelector('.sw-chbox');
+const switchhDarkMenu = document.querySelector('.sw-chbox');
 const bodyEl = document.querySelector('body');
-console.log(bodyEl);
-const swRefs = {
+const swRefsMenu = {
   switchOn: document.querySelector('.icon-onswitch-mob'),
   switchOff: document.querySelector('.icon-switch-mob'),
 };
@@ -15,17 +13,20 @@ const swRefsHed = {
 function setThema() {
   console.log(localStorage.getItem('thema'));
   if (localStorage.getItem('thema') === 'dark') {
+    console.log('tnema dark');
     //якщо тема в локалі записана темна
-    // bodyEl.classList.add('dark');
-    // switchhDark.checked = true;
+    switchhDarkHeder.checked = true;
+    changeSwitch(switchhDarkHeder, swRefsHed, switchhDarkMenu, swRefsMenu);
+    bodyEl.classList.toggle('dark');
   } else {
-    //  if (bodyEl.classList.contains('dark')){}
+    console.log('tnema light');
   }
 }
 setThema();
-switchhDark.addEventListener('change', onClickSwitch);
+switchhDarkMenu.addEventListener('change', onClickSwitchMenu);
 switchhDarkHeder.addEventListener('change', onClickSwitchHeder);
-function changeSwitch(switchhD, swRf) {
+
+function changeSVGSvitch(switchhD, swRf) {
   if (switchhD.checked) {
     swRf.switchOn.classList.remove('is-hidden');
     swRf.switchOff.classList.add('is-hidden');
@@ -34,20 +35,31 @@ function changeSwitch(switchhD, swRf) {
     swRf.switchOff.classList.remove('is-hidden');
   }
 }
+//У нас два залежник чекбокса. Синхронізуємо їх.
+//В залежності від стну чекбоксів скриваємо або показуєом відповідну картинку повзунок
+function changeSwitch(switchhD, swRf, switchhD2, swRf2) {
+  switchhD2.checked = switchhD.checked;
+  //в залежносты від стану свіча змінюємо положення ползунка
+  changeSVGSvitch(switchhD, swRf);
+  changeSVGSvitch(switchhD2, swRf2);
+}
 function SetTemsLocStorage() {
+  console.log('thems');
   if (bodyEl.classList.contains('dark')) {
+    // console.log('thems dark');
     localStorage.setItem('thema', 'dark');
   } else {
     localStorage.setItem('thema', 'light');
+    // console.log('thems light');
   }
 }
-function onClickSwitch() {
-  changeSwitch(switchhDark, swRefs);
+function onClickSwitchMenu() {
+  changeSwitch(switchhDarkMenu, swRefsMenu, switchhDarkHeder, swRefsHed);
   bodyEl.classList.toggle('dark');
   SetTemsLocStorage();
 }
 function onClickSwitchHeder() {
-  changeSwitch(switchhDarkHeder, swRefsHed);
+  changeSwitch(switchhDarkHeder, swRefsHed, switchhDarkMenu, swRefsMenu);
   bodyEl.classList.toggle('dark');
   SetTemsLocStorage();
 }
