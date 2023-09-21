@@ -79,6 +79,11 @@ body {
   font-weight: 400;
 }
 
+body.dark {
+  --primary-text-color: #ffff;
+  --primary-bg-color: #050505;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
