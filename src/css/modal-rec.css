@@ -195,11 +195,6 @@ body.dark .modal-rec-tag-text {
   gap: 1px;
 }
 
-.modal-star-icon {
-  fill: var(--star-bg-color);
-  stroke: var(--star-bg-color);
-}
-
 .modal-rec-rat-text,
 .modal-rec-rat-time {
   color: rgba(5, 5, 5, 0.5);

@@ -98,13 +98,13 @@
   color: var(--primary-text-color);
 }
 
-.rating-icon {
+.rating-icon-modal {
   stroke: var(--star-bg-color);
   fill: rgba(248, 248, 248, 0.2);
 }
 
-.rating-icon:hover,
-.rating-icon:focus {
+.rating-icon-modal:hover,
+.rating-icon-modal:focus {
   fill: var(--star-bg-color);
 }
 

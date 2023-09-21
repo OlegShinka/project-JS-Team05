@@ -44,10 +44,10 @@ function clearStars() {
   for (let i = 1; i <= 5; i += 1) {
     if (
       star
-        .querySelector('.rating-icon')
+        .querySelector('.rating-icon-modal')
         .classList.contains('rating-icon-orange')
     ) {
-      star.querySelector('.rating-icon').classList.remove('rating-icon-orange');
+      star.querySelector('.rating-icon-modal').classList.remove('rating-icon-orange');
     }
     star = star.nextElementSibling;
   }
@@ -57,7 +57,7 @@ function fillStars(num) {
   star = form.querySelector('.star-radio-label');
   for (let i = 1; i <= num; i += 1) {
     if (star.querySelector('.star-radio').value == i) {
-      star.querySelector('.rating-icon').classList.add('rating-icon-orange');
+      star.querySelector('.rating-icon-modal').classList.add('rating-icon-orange');
     }
     star = star.nextElementSibling;
   }
