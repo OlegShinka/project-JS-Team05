@@ -8,7 +8,6 @@ Swiper.use([Navigation, Pagination]);
 function createSwiper() {
   const swiper = new Swiper('.swiper', {
     // Optional parameters
-    // direction: 'vertical',
     spaceBetween: 300,
     loop: true,
     // If we need pagination
@@ -23,13 +22,8 @@ function createSwiper() {
     },
     touchRatio: 1,
     //форма курсора
-    // grabCursor: true,
+
     slideToClickedSlide: true,
-    //slidesPerView: 1.8,
-    // And if we need scrollbar
-    // scrollbar: {
-    //   el: '.swiper-scrollbar',
-    // },
   });
 }
 
