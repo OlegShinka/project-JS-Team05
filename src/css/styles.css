@@ -63,11 +63,14 @@
 }
 
 :root {
-  --bcg-color-lt: #f6f6f6;
-  --bcg-color-drk: #1e1e1e;
+  --bcg-color: #f6f6f6;
+
   --primary-text-color: #050505;
+  --primary-text-color_const: #050505;
   --primary-bg-color: #ffff;
+  --primary-bg-color-const: #ffff;
   --secondary-bg-color: #9bb537;
+  --secondary-bg-color-const: #9bb537;
   --non-active-text-color: #05050580;
   --description-text-color: #f8f8f8;
   --star-bg-color: #eea10c;
@@ -79,13 +82,13 @@ body {
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-  background-color: var(--bcg-color-lt);
+  background-color: var(--bcg-color);
 }
 
 body.dark {
   --primary-text-color: #ffff;
   --primary-bg-color: #050505;
-  background-color: var(--bcg-color-drk);
+  --bcg-color: #1e1e1e;
 }
 
 .visually-hidden {
