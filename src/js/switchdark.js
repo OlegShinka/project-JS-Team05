@@ -1,8 +1,7 @@
-// const switch = document.querySelector('.sw-chbox');
-const switchhDark = document.querySelector('.sw-chbox');
+const switchhDarkMenu = document.querySelector('.sw-chbox');
 const bodyEl = document.querySelector('body');
-console.log(bodyEl);
-const swRefs = {
+// console.log(bodyEl);
+const swRefsMenu = {
   switchOn: document.querySelector('.icon-onswitch-mob'),
   switchOff: document.querySelector('.icon-switch-mob'),
 };
@@ -23,9 +22,10 @@ function setThema() {
   }
 }
 setThema();
-switchhDark.addEventListener('change', onClickSwitch);
+switchhDarkMenu.addEventListener('change', onClickSwitchMenu);
 switchhDarkHeder.addEventListener('change', onClickSwitchHeder);
-function changeSwitch(switchhD, swRf) {
+
+function changeSVGSvitch(switchhD, swRf) {
   if (switchhD.checked) {
     swRf.switchOn.classList.remove('is-hidden');
     swRf.switchOff.classList.add('is-hidden');
@@ -34,6 +34,14 @@ function changeSwitch(switchhD, swRf) {
     swRf.switchOff.classList.remove('is-hidden');
   }
 }
+//У нас два залежник чекбокса. Синхронізуємо їх.
+//В залежності від стну чекбоксів скриваємо або показуєом відповідну картинку повзунок
+function changeSwitch(switchhD, swRf, switchhD2, swRf2) {
+  switchhD2.checked = switchhD.checked;
+  //в залежносты від стану свіча змінюємо положення ползунка
+  changeSVGSvitch(switchhD, swRf);
+  changeSVGSvitch(switchhD2, swRf2);
+}
 function SetTemsLocStorage() {
   if (bodyEl.classList.contains('dark')) {
     localStorage.setItem('thema', 'dark');
@@ -41,13 +49,13 @@ function SetTemsLocStorage() {
     localStorage.setItem('thema', 'light');
   }
 }
-function onClickSwitch() {
-  changeSwitch(switchhDark, swRefs);
+function onClickSwitchMenu() {
+  changeSwitch(switchhDarkMenu, swRefsMenu, switchhDarkHeder, swRefsHed);
   bodyEl.classList.toggle('dark');
   SetTemsLocStorage();
 }
 function onClickSwitchHeder() {
-  changeSwitch(switchhDarkHeder, swRefsHed);
+  changeSwitch(switchhDarkHeder, swRefsHed, switchhDarkMenu, swRefsMenu);
   bodyEl.classList.toggle('dark');
   SetTemsLocStorage();
 }
