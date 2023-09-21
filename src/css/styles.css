@@ -64,7 +64,7 @@
 
 :root {
   --bcg-color: #f6f6f6;
-
+  --color-categories: rgba(5, 5, 5, 0.5);
   --primary-text-color: #050505;
   --primary-text-color_const: #050505;
   --primary-bg-color: #ffff;
@@ -89,6 +89,7 @@ body.dark {
   --primary-text-color: #ffff;
   --primary-bg-color: #050505;
   --bcg-color: #1e1e1e;
+  --color-categories: #ffff;
 }
 
 .scroll-box {

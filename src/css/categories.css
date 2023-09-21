@@ -5,7 +5,7 @@
   height: 50px;
   background-color: transparent;
   cursor: pointer;
-  color: rgba(5, 5, 5, 0.5);
+  color: var(--color-categories);
   font-family: 'Inter';
   font-size: 18px;
   font-weight: 500;
@@ -13,9 +13,9 @@
 }
 
 .all-categoris.activ {
-  background-color:var(--secondary-bg-color);
+  background-color: var(--secondary-bg-color);
   color: var(--description-text-color);
-  border:var(--secondary-bg-color);
+  border: var(--secondary-bg-color);
 }
 .all-categoris:hover,
 .all-categoris:focus {
@@ -43,24 +43,21 @@
   background: transparent;
   border: none;
   margin-bottom: 18px;
-  color: rgba(5, 5, 5, 0.3);
+  color: var(--color-categories);
 }
 .categoris-btn:hover,
-.categoris-btn:focus
-{
+.categoris-btn:focus {
   color: var(--secondary-bg-color);
-
 }
-.categoris-btn.activ{
-  color: var(--secondary-bg-color)
+.categoris-btn.activ {
+  color: var(--secondary-bg-color);
 }
-.categoris-wrapper{
+.categoris-wrapper {
   padding-top: 21px;
 }
 @media screen and (min-width: 768px) {
-.all-categoris {
+  .all-categoris {
     margin-bottom: 30px;
-
   }
   .categoris-btn {
     margin-bottom: 24px;
