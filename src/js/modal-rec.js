@@ -82,14 +82,14 @@ function handlerAddBtn(evt) {
     });
   } else {
     addToFav(recipeId);
-    Notiflix.Notify.info('Recipe added to Favorites!', {
+    Notiflix.Notify.success('Recipe added to Favorites!', {
       width: '300px',
       distance: '40px',
       cssAnimationStyle: 'from-top',
       borderRadius: '15px',
       fontFamily: 'Inter',
       fontSize: '14px',
-      info: {
+      success: {
         background: '#9BB537',
         textColor: '#fff',
         notiflixIconColor: '#000',
