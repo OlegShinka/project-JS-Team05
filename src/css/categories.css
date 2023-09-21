@@ -1,11 +1,11 @@
 .all-categoris {
-  border: 1px solid rgba(5, 5, 5, 0.2);
+  border: 1px solid var(--all-categoris-color-bord);
   border-radius: 15px;
   width: 174px;
   height: 50px;
   background-color: transparent;
   cursor: pointer;
-  color: rgba(5, 5, 5, 0.5);
+  color: var(--all-categoris-color-btn);
   font-family: 'Inter';
   font-size: 18px;
   font-weight: 500;
@@ -34,7 +34,7 @@
   width: 8px;
 }
 .categoris-list::-webkit-scrollbar-thumb {
-  background-color: rgba(5, 5, 5, 0.18);
+  background-color: var(--categoris-scroll-color);
   border-radius: 12px;
 }
 
@@ -43,7 +43,7 @@
   background: transparent;
   border: none;
   margin-bottom: 18px;
-  color: rgba(5, 5, 5, 0.3);
+  color: var(--categoris-btn-color)
 }
 .categoris-btn:hover,
 .categoris-btn:focus
