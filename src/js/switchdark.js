@@ -1,6 +1,5 @@
 const switchhDarkMenu = document.querySelector('.sw-chbox');
 const bodyEl = document.querySelector('body');
-// console.log(bodyEl);
 const swRefsMenu = {
   switchOn: document.querySelector('.icon-onswitch-mob'),
   switchOff: document.querySelector('.icon-switch-mob'),
@@ -14,11 +13,13 @@ const swRefsHed = {
 function setThema() {
   console.log(localStorage.getItem('thema'));
   if (localStorage.getItem('thema') === 'dark') {
+    console.log('tnema dark');
     //якщо тема в локалі записана темна
-    // bodyEl.classList.add('dark');
-    // switchhDark.checked = true;
+    switchhDarkHeder.checked = true;
+    changeSwitch(switchhDarkHeder, swRefsHed, switchhDarkMenu, swRefsMenu);
+    bodyEl.classList.toggle('dark');
   } else {
-    //  if (bodyEl.classList.contains('dark')){}
+    console.log('tnema light');
   }
 }
 setThema();
@@ -43,10 +44,13 @@ function changeSwitch(switchhD, swRf, switchhD2, swRf2) {
   changeSVGSvitch(switchhD2, swRf2);
 }
 function SetTemsLocStorage() {
+  console.log('thems');
   if (bodyEl.classList.contains('dark')) {
+    // console.log('thems dark');
     localStorage.setItem('thema', 'dark');
   } else {
     localStorage.setItem('thema', 'light');
+    // console.log('thems light');
   }
 }
 function onClickSwitchMenu() {
