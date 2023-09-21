@@ -15,10 +15,10 @@ btnNewOrder.addEventListener('click', onClick);
 closeWindowMob.addEventListener('click', onClick);
 form.addEventListener('submit', onSabmit);
 // console.log(form);
-// form.name_customers.value = 'Ivetta';
-// form.tel_customers.value = '+380000000000';
-// form.email_customers.value = 'test@gmail.com';
-// form.comment_customers.value = 'So delicious';
+form.name_customers.value = 'Ivetta';
+form.tel_customers.value = '+380000000000';
+form.email_customers.value = 'test@gmail.com';
+form.comment_customers.value = 'So delicious';
 //Відправка форми заявки заказу клієнта
 function onSabmit(event) {
   event.preventDefault();

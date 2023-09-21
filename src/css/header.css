@@ -20,6 +20,9 @@
     margin-bottom: 60px;
   }
 }
+.swith-header {
+  padding-bottom: 15px;
+}
 
 /* header styles */
 .btn-cart-header {

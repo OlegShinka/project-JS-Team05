@@ -58,7 +58,13 @@
   line-height: normal;
 }
 .icon-switch-mob-menu {
+  width: 100%;
+  height: 100%;
+}
+.div-switch {
   position: absolute;
   left: 20px;
   bottom: 20px;
+  width: 46px;
+  height: 46px;
 }
