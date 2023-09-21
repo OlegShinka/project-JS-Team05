@@ -28,7 +28,7 @@
   height: 254px;
   padding: 32px;
   border-radius: 15px;
-  background: var(--primary-bg-color);
+  background: var(--primary-bg-color-const);
 }
 
 @media screen and (min-width: 769px) and (max-width: 1110px) {
@@ -49,7 +49,7 @@
 .modal-rating-close {
   padding: 0;
   border: none;
-  background-color: var(--primary-bg-color);
+  background-color: var(--primary-bg-color-const);
 
   position: absolute;
   z-index: 10;
@@ -166,5 +166,5 @@
 
 .modal-rating-btn-send:hover,
 .modal-rating-btn-send:focus {
-  color: var(--primary-text-color);
+  color: var(--primary-text-color_const);
 }

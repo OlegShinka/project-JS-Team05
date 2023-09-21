@@ -30,7 +30,7 @@
   min-height: 600px;
   padding: 32px;
   border-radius: 15px;
-  background: var(--primary-bg-color);
+  background: var(--primary-bg-color-const);
 }
 
 @media screen and (min-width: 769px) and (max-width: 1110px) {
@@ -52,7 +52,7 @@
 .modal-rec-close {
   padding: 0;
   border: none;
-  background-color: var(--primary-bg-color);
+  background-color: var(--primary-bg-color-const);
 
   position: absolute;
   z-index: 10;
@@ -72,7 +72,7 @@
 }
 
 .modal-close-icon {
-  stroke: var(--primary-text-color);
+  stroke: var(--primary-text-color_const);
 }
 
 .modal-close-icon:hover,
@@ -81,7 +81,7 @@
 }
 
 .modal-rec-title {
-  color: var(--primary-text-color);
+  color: var(--primary-text-color_const);
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
@@ -148,7 +148,7 @@
   gap: 4px;
   margin-right: auto;
 
-  color: var(--primary-text-color);
+  color: var(--primary-text-color_const);
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -162,7 +162,7 @@
 }
 
 .modal-rec-tag-text {
-  color: var(--primary-text-color) 5;
+  color: var(--primary-text-color_const) 5;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -236,7 +236,7 @@
 }
 
 .modal-rec-ingr-name {
-  color: var(--primary-text-color);
+  color: var(--primary-text-color-const);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -289,7 +289,7 @@
 }
 
 .modal-rec-btn-add {
-  color: var(--description-text-color);
+  color: var(--description-text-color-const);
   background: var(--secondary-bg-color);
   border: 0px;
   margin-right: 10px;
@@ -297,7 +297,7 @@
 
 .modal-rec-btn-add:hover,
 .modal-rec-btn-add:focus {
-  color: var(--primary-text-color);
+  color: var(--primary-text-color_const);
 }
 
 @media screen and (max-width: 768px) {
@@ -307,7 +307,7 @@
 }
 
 .modal-rec-btn-rating {
-  color: var(--primary-text-color);
+  color: var(--primary-text-color_const);
   border: 1px solid var(--secondary-bg-color);
 }
 
