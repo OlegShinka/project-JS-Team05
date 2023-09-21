@@ -68,7 +68,7 @@ elements.clearForm.addEventListener('click', function () {
   elements.search.value = '';
   elements.cstSel.forEach(sel => {
     sel.value = '0';
-    sel.opener.style.color = 'rgba(5, 5, 5, 0.5)';
+    sel.opener.style.color = '';
   });
   handleChange();
 });
@@ -79,7 +79,7 @@ elements.search.addEventListener('input', debounceCallback);
 elements.cstSel.forEach(sel =>
   sel.select.addEventListener('change', () => {
     if (sel.value === '') {
-      sel.opener.style.color = 'rgba(5, 5, 5, 0.5)';
+      sel.opener.style.color = '';
     } else {
       sel.opener.style.color = 'var(--primary-text-color)';
     }
