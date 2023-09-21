@@ -28,7 +28,7 @@
   height: 254px;
   padding: 32px;
   border-radius: 15px;
-  background: var(--primary-bg-color-const);
+  background: var(--primary-bg-color);
 }
 
 @media screen and (min-width: 769px) and (max-width: 1110px) {
@@ -49,7 +49,7 @@
 .modal-rating-close {
   padding: 0;
   border: none;
-  background-color: var(--primary-bg-color-const);
+  background-color: var(--primary-bg-color);
 
   position: absolute;
   z-index: 10;
@@ -74,6 +74,7 @@
   font-weight: 600;
   line-height: 128.6%;
   margin-bottom: 4px;
+  color: var(--primary-text-color);
 }
 
 .modal-rating-flex {
@@ -94,6 +95,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
+  color: var(--primary-text-color);
 }
 
 .rating-icon {
@@ -135,6 +137,12 @@
   padding: 14px 18px;
   border-radius: 15px;
   border: 1px solid rgba(5, 5, 5, 0.2);
+  color: var(--primary-text-color);
+  background-color: var(--primary-bg-color);
+}
+
+body.dark .modal-rating-input {
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .modal-rating-input:focus {
@@ -166,5 +174,10 @@
 
 .modal-rating-btn-send:hover,
 .modal-rating-btn-send:focus {
+  color: var(--primary-text-color);
+}
+
+body.dark .modal-rating-btn-send:hover,
+body.dark .modal-rating-btn-send:focus {
   color: var(--primary-text-color_const);
 }
