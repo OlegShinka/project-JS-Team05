@@ -101,6 +101,6 @@ body {
 @media screen and (min-width: 1110px) {
   .wrapper-all {
     display: flex;
-    /* gap: 15px; */
+    gap: 15px;
   }
 }
