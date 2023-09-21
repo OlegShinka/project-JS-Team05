@@ -14,19 +14,44 @@ const form = document.querySelector('[name = subscribe-orderNow]');
 btnNewOrder.addEventListener('click', onClick);
 closeWindowMob.addEventListener('click', onClick);
 form.addEventListener('submit', onSabmit);
+// console.log(form);
+form.name_customers.value = 'Ivetta';
+form.tel_customers.value = '+380000000000';
+form.email_customers.value = 'test@gmail.com';
+form.comment_customers.value = 'So delicious';
+//Відправка форми заявки заказу клієнта
 function onSabmit(event) {
   event.preventDefault();
-  const data = event.currentTarget;
+  const { name_customers, tel_customers, email_customers, comment_customers } =
+    event.currentTarget;
+
   const order = {
-    name: data.name_customers.value,
-    phone: data.tel_customers.value,
-    email: data.email_customers.value,
-    comment: data.comment_customers.value,
+    name: name_customers.value,
+    phone: tel_customers.value,
+    email: email_customers.value,
+    comment: comment_customers.value,
   };
 
-  postOrderNow(order).catch(error => {
-    Notiflix.Notify.failure('Error order now!');
-  });
+  document.addEventListener('keydown', onClKeyboard);
+
+  function onClKeyboard(e) {
+    console.log('111', e.key);
+    // Отменяем ввод не цифр
+    //   if (!/d/.test(e.key)) {
+    //     e.preventDefault();
+
+    // }
+  }
+
+  postOrderNow(order)
+    .then(data => {
+      console.log(data);
+      Notiflix.Notify.info(data.message);
+    })
+    .catch(error => {
+      Notiflix.Notify.failure('Error order now!');
+      Notiflix.Notify.failure(error.toString());
+    });
 }
 function onClick() {
   modal.classList.toggle('is-hidden');
@@ -39,6 +64,7 @@ function getMasterClassArray() {
       addImage(arrayCook);
     })
     .catch(error => {
+      console.log(error);
       Notiflix.Notify.failure(error);
     });
 }

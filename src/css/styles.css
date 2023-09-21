@@ -63,6 +63,8 @@
 }
 
 :root {
+  --bcg-color-lt: #f6f6f6;
+  --bcg-color-drk: #1e1e1e;
   --primary-text-color: #050505;
   --primary-bg-color: #ffff;
   --secondary-bg-color: #9bb537;
@@ -77,6 +79,13 @@ body {
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
+  background-color: var(--bcg-color-lt);
+}
+
+body.dark {
+  --primary-text-color: #ffff;
+  --primary-bg-color: #050505;
+  background-color: var(--bcg-color-drk);
 }
 
 .visually-hidden {
