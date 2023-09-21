@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <title>Favorites</title>
-    <script type="module" crossorigin src="/project-JS-Team05/assets/favorites-9abb36e5.js"></script>
-    <link rel="modulepreload" crossorigin href="/project-JS-Team05/assets/ordernow-modal-fetch-b0f1f584.js">
-    <link rel="stylesheet" href="/project-JS-Team05/assets/ordernow-modal-fetch-b684b1be.css">
+    <script type="module" crossorigin src="/project-JS-Team05/assets/favorites-76642076.js"></script>
+    <link rel="modulepreload" crossorigin href="/project-JS-Team05/assets/ordernow-modal-fetch-e1f5d2e8.js">
+    <link rel="stylesheet" href="/project-JS-Team05/assets/ordernow-modal-fetch-0002273f.css">
   </head>
 
   <body>
@@ -35,14 +35,20 @@
       <button type="button" class="btn-cart-header">
         <div>
           <svg class="cart" height="24" width="24">
-            <use href="/project-JS-Team05/assets/symbol-defs-a0105c02.svg#icon-shopping-cart02"></use>
+            <use href="/project-JS-Team05/assets/symbol-defs-0c61a49b.svg#icon-shopping-cart02"></use>
           </svg>
         </div>
       </button>
-
-      <svg class="icon-switch" height="20" width="46">
-        <use href="/project-JS-Team05/assets/symbol-defs-a0105c02.svg#icon-switch"></use>
-      </svg>
+      <div class="swith-header">
+        <svg class="icon-switch" height="20" width="46">
+          <use href="/project-JS-Team05/assets/symbol-defs-0c61a49b.svg#icon-switch"></use>
+        </svg>
+        <svg class="icon-onswitch is-hidden" height="20" width="46">
+          <use href="/project-JS-Team05/assets/symbol-defs-0c61a49b.svg#icon-onswitch"></use>
+        </svg>
+        </svg>
+       <input type="checkbox" class="sw-chbox-heder" name="sheck_switch"  value="">
+      </div>
     </div>
 
     <button
@@ -52,7 +58,7 @@
       data-modal-open
     >
       <svg class="icon-burger" width="32" height="32">
-        <use href="/project-JS-Team05/assets/symbol-defs-a0105c02.svg#icon-burger"></use>
+        <use href="/project-JS-Team05/assets/symbol-defs-0c61a49b.svg#icon-burger"></use>
       </svg>
     </button>
   </div>
@@ -75,7 +81,7 @@
         </svg>
         <div class="no-fav hidden">
           <svg class="favorites-icon">
-            <use href="/project-JS-Team05/assets/symbol-defs-a0105c02.svg#icon-hat-cook"></use>
+            <use href="/project-JS-Team05/assets/symbol-defs-0c61a49b.svg#icon-hat-cook"></use>
           </svg>
           <p class="favorites-txt">
             It appears that you haven't added any recipes to your favorites yet.
@@ -93,7 +99,7 @@
   <div class="modal-rec-window">
     <button type="button" class="modal-rec-close">
       <svg class="modal-close-icon" width="24" height="24">
-        <use href="/project-JS-Team05/assets/symbol-defs-a0105c02.svg#icon-x"></use>
+        <use href="/project-JS-Team05/assets/symbol-defs-0c61a49b.svg#icon-x"></use>
       </svg>
     </button>
     <div class="js-modal-rec"></div>
@@ -108,7 +114,7 @@
   <div class="mobile-menu-window">
     <button type="button" class="mob-menu-close" data-menu-close>
       <svg class="mob-menu-svg" width="32" height="32">
-        <use href="/project-JS-Team05/assets/symbol-defs-a0105c02.svg#icon-x"></use>
+        <use href="/project-JS-Team05/assets/symbol-defs-0c61a49b.svg#icon-x"></use>
       </svg>
     </button>
     <div class="js-modal-rec"></div>
@@ -123,9 +129,17 @@
         >
       </li>
     </ul>
-    <svg class="icon-switch-mob-menu" height="20" width="46">
-      <use href="/project-JS-Team05/assets/symbol-defs-a0105c02.svg#icon-switch"></use>
+    <div class="div-switch">
+     <svg class="icon-switch-mob ">
+      <use href="/project-JS-Team05/assets/symbol-defs-0c61a49b.svg#icon-switch"></use>
     </svg>
+     <svg class="icon-onswitch-mob is-hidden">
+      <use href="/project-JS-Team05/assets/symbol-defs-0c61a49b.svg#icon-onswitch"></use>
+    </svg>
+       <input type="checkbox" class="sw-chbox" name="sheck_switch"  value="">
+   
+</div>
+    </div>
   </div>
 </div>
 
@@ -134,7 +148,7 @@
   <div class="modal-rating-window">
     <button type="button" class="modal-rating-close">
       <svg class="modal-close-icon" width="24" height="24">
-        <use href="/project-JS-Team05/assets/symbol-defs-a0105c02.svg#icon-x"></use>
+        <use href="/project-JS-Team05/assets/symbol-defs-0c61a49b.svg#icon-x"></use>
       </svg>
     </button>
     <form action="submit" class="js-modal-rating-form">
@@ -195,16 +209,14 @@
   <div class="modal-ordernow">
     <button type="button" class="close-modwin-btn" data-modal-close>
       <svg class="close-modwin-icon" width="20" height="20">
-        <use href="/project-JS-Team05/assets/symbol-defs-a0105c02.svg#icon-x"></use>
+        <use href="/project-JS-Team05/assets/symbol-defs-0c61a49b.svg#icon-x"></use>
       </svg>
     </button>
-    <!-- <fieldset>
-          <legend>Leave your contacts and we will call you back</legend> -->
+
     <h2 class="mod-title">ORDER NOW</h2>
-    <form name="subscribe-orderNow">
+    <form action="submit" name="subscribe-orderNow">
       <label class="name-mod label-ordernow" for="name-mod">Name</label>
 
-      <!-- <div class="wrap-div-iconsvg"> -->
       <input
         class="name-mod-inp mod-inp"
         type="text"
@@ -213,7 +225,6 @@
         required
         autofocus
       />
-      <!-- </div> -->
 
       <label class="tel-mod label-ordernow" for="tel-mod">Phone number</label>
 
@@ -247,11 +258,10 @@
         cols="30"
         rows="10"
       ></textarea>
-      <!-- visually-hidden -->
+
       <button class="btn btn-send btn-modal" type="submit">Send</button>
 
     </form>
-    <!-- </fieldset> -->
   </div>
 </div>
 
