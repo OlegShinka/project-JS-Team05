@@ -75,6 +75,10 @@
   --description-text-color: #f8f8f8;
   --star-bg-color: #eea10c;
   --area-color: #f8f8f833;
+  --categoris-btn-color:rgba(5, 5, 5, 0.3);
+  --all-categoris-color-btn:rgba(5, 5, 5, 0.5);
+  --all-categoris-color-bord:rgba(5, 5, 5, 0.2);
+  --categoris-scroll-color:rgba(5, 5, 5, 0.18)
 }
 
 body {
@@ -89,6 +93,11 @@ body.dark {
   --primary-text-color: #ffff;
   --primary-bg-color: #050505;
   --bcg-color: #1e1e1e;
+  --all-categoris-color-btn:rgba(255,255,255,0.5);
+  --all-categoris-color-bord:rgba(255,255,255,0.5);
+  --categoris-btn-color:#ffff;
+  --categoris-scroll-color: rgba(255,255,255,0.5);
+
   --color-categories: #ffff;
 }
 
