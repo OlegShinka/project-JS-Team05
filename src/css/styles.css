@@ -64,7 +64,7 @@
 
 :root {
   --bcg-color: #f6f6f6;
-
+  --color-categories: rgba(5, 5, 5, 0.5);
   --primary-text-color: #050505;
   --primary-text-color_const: #050505;
   --primary-bg-color: #ffff;
@@ -97,6 +97,24 @@ body.dark {
   --all-categoris-color-bord:rgba(255,255,255,0.5);
   --categoris-btn-color:#ffff;
   --categoris-scroll-color: rgba(255,255,255,0.5);
+
+  --color-categories: #ffff;
+}
+
+.scroll-box {
+  position: fixed;
+  bottom: 35px;
+  right: 25px;
+  z-index: 12;
+  transform: rotate(90deg) scale(1.4);
+
+}
+
+.scroll-icon {
+  fill: #9bb537;
+  /* border: 0.5px solid; */
+  border-radius: 45px;
+  box-shadow: 0 0 8px #9bb537;
 }
 
 .visually-hidden {

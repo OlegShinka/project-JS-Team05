@@ -130,7 +130,7 @@
   border-radius: 20px;
   padding-top: 58px;
   /*  #050505; */
-  background-color: var(--primary-text-color-const);
+  background-color: var(--primary-text-color_const);
 }
 @media only screen and (min-width: 768px) {
   .hero-img-div {
@@ -169,7 +169,7 @@
   object-fit: cover;
   border-radius: 20px;
   /* #050505 */
-  background-color: var(--primary-text-color);
+  background-color: var(--primary-text-color_const);
 }
 @media only screen and (min-width: 768px) {
   .hero-tried-img-flll {

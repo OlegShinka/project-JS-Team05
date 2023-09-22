@@ -4,5 +4,5 @@ import './js/header.js';
 import './js/modal-rec.js';
 import './js/favorites.js';
 import './js/pagination.js';
-
+import './js/switchdark.js';
 import './js/modal-rating.js';
