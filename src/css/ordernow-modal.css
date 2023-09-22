@@ -89,3 +89,9 @@
   line-height: 1.28;
   margin-bottom: 8px;
 }
+.tel-mod:invalid,
+.email-mod:invalid {
+  border-color: red;
+  color: red;
+  box-shadow: none;
+}
