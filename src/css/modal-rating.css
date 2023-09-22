@@ -74,6 +74,7 @@
   font-weight: 600;
   line-height: 128.6%;
   margin-bottom: 4px;
+  color: var(--primary-text-color);
 }
 
 .modal-rating-flex {
@@ -94,15 +95,16 @@
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
+  color: var(--primary-text-color);
 }
 
-.rating-icon {
+.rating-icon-modal {
   stroke: var(--star-bg-color);
   fill: rgba(248, 248, 248, 0.2);
 }
 
-.rating-icon:hover,
-.rating-icon:focus {
+.rating-icon-modal:hover,
+.rating-icon-modal:focus {
   fill: var(--star-bg-color);
 }
 
@@ -135,6 +137,12 @@
   padding: 14px 18px;
   border-radius: 15px;
   border: 1px solid rgba(5, 5, 5, 0.2);
+  color: var(--primary-text-color);
+  background-color: var(--primary-bg-color);
+}
+
+body.dark .modal-rating-input {
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .modal-rating-input:focus {
@@ -167,4 +175,9 @@
 .modal-rating-btn-send:hover,
 .modal-rating-btn-send:focus {
   color: var(--primary-text-color);
+}
+
+body.dark .modal-rating-btn-send:hover,
+body.dark .modal-rating-btn-send:focus {
+  color: var(--primary-text-color_const);
 }

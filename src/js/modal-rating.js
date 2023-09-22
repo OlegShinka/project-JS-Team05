@@ -1,4 +1,5 @@
 import debounce from 'lodash.debounce';
+import Notiflix from 'notiflix';
 import { modalRating } from './modal-rec';
 import { patchRating } from '../api/rating-patch';
 
@@ -43,10 +44,10 @@ function clearStars() {
   for (let i = 1; i <= 5; i += 1) {
     if (
       star
-        .querySelector('.rating-icon')
+        .querySelector('.rating-icon-modal')
         .classList.contains('rating-icon-orange')
     ) {
-      star.querySelector('.rating-icon').classList.remove('rating-icon-orange');
+      star.querySelector('.rating-icon-modal').classList.remove('rating-icon-orange');
     }
     star = star.nextElementSibling;
   }
@@ -56,7 +57,7 @@ function fillStars(num) {
   star = form.querySelector('.star-radio-label');
   for (let i = 1; i <= num; i += 1) {
     if (star.querySelector('.star-radio').value == i) {
-      star.querySelector('.rating-icon').classList.add('rating-icon-orange');
+      star.querySelector('.rating-icon-modal').classList.add('rating-icon-orange');
     }
     star = star.nextElementSibling;
   }
@@ -82,15 +83,28 @@ function handlerSend(evt) {
     } else {
       patchRating(recipeId, num)
         .then(data => {
+          modalRating.close();
+          modalBackdropRating.classList.add('is-hidden');
+          localStorage.removeItem(STORAGE_KEY);
+          inputEmail.value = '';
+          number.textContent = `0.0`;
+          clearStars();
           return data;
         })
-        .catch(err => console.error(err));
-      modalRating.close();
-      modalBackdropRating.classList.add('is-hidden');
-      localStorage.removeItem(STORAGE_KEY);
-      evt.currentTarget.reset();
-      number.textContent = `0.0`;
-      clearStars();
+        .catch(err => {
+          Notiflix.Notify.failure(`${err}`, {
+            width: '300px',
+            distance: '40px',
+            cssAnimationStyle: 'from-top',
+            borderRadius: '15px',
+            fontFamily: 'Inter',
+            fontSize: '14px',
+            failure: {
+              textColor: '#fff',
+              notiflixIconColor: '#000',
+            },
+          });
+        });
     }
   }
 }
