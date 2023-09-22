@@ -110,12 +110,19 @@ body.dark {
 
 }
 
+.scroll-box :hover,
+.scroll-box :focus {
+  background-color: var(--secondary-bg-color);
+  fill: var(--primary-bg-color);
+}
+
 .scroll-icon {
   fill: #9bb537;
-  /* border: 0.5px solid; */
   border-radius: 45px;
   box-shadow: 0 0 8px #9bb537;
 }
+
+
 
 .visually-hidden {
   position: absolute;
