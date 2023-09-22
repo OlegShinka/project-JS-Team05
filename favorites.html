@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/project-JS-Team05/assets/treats-favicon-e7ea82f7.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <title>Favorites</title>
-    <script type="module" crossorigin src="/project-JS-Team05/assets/favorites-7b390919.js"></script>
-    <link rel="modulepreload" crossorigin href="/project-JS-Team05/assets/switchdark-6f680719.js">
-    <link rel="stylesheet" href="/project-JS-Team05/assets/switchdark-7b8a13ab.css">
-  </head>
 
-  <body>
-    <header id="home" class="header container">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/project-JS-Team05/assets/treats-favicon-e7ea82f7.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Favorites</title>
+  <script type="module" crossorigin src="/project-JS-Team05/assets/favorites-7b390919.js"></script>
+  <link rel="modulepreload" crossorigin href="/project-JS-Team05/assets/switchdark-6f680719.js">
+  <link rel="stylesheet" href="/project-JS-Team05/assets/switchdark-7b8a13ab.css">
+</head>
+
+<body>
+  <header id="home" class="header container">
   <div class="header-logo-container">
     <!-- Navigation -->
     <ul class="nav-list list">
@@ -64,37 +65,42 @@
   </div>
 </header>
 
-    <main>
-      <div class="container">
-        <div class="favorites-img"></div>
-        <!-- Categories -->
-        <div class="categories-filter">
-          <button type="button" class="category-btn active" data-cat="all">
-            All categories
-          </button>
-          <div class="other-categories"></div>
-        </div>
-        <div class="recipes-container"></div>
+  <main>
+    <div class="container">
+      <div class="favorites-img"></div>
+      <!-- Categories -->
+      <div class="categories-filter">
+        <button type="button" class="category-btn active" data-cat="all">
+          All categories
+        </button>
+        <div class="other-categories"></div>
+      </div>
+      <div class="recipes-container"></div>
 
-        <svg class="visually-hidden" width="14" height="14">
-          <use href="/project-JS-Team05/assets/recipes-e952d6a9.svg" class="href-ico"></use>
+      <svg class="visually-hidden" width="14" height="14">
+        <use href="/project-JS-Team05/assets/recipes-e952d6a9.svg" class="href-ico"></use>
+      </svg>
+      <div class="no-fav hidden">
+        <svg class="favorites-icon">
+          <use href="/project-JS-Team05/assets/symbol-defs-dc4eecc5.svg#icon-hat-cook"></use>
         </svg>
-        <div class="no-fav hidden">
-          <svg class="favorites-icon">
-            <use href="/project-JS-Team05/assets/symbol-defs-dc4eecc5.svg#icon-hat-cook"></use>
-          </svg>
-          <p class="favorites-txt">
-            It appears that you haven't added any recipes to your favorites yet.
-            To get started, you can add recipes that you like to your favorites
-            for easier access in the future.
-          </p>
-        </div>
+        <p class="favorites-txt">
+          It appears that you haven't added any recipes to your favorites yet.
+          To get started, you can add recipes that you like to your favorites
+          for easier access in the future.
+        </p>
       </div>
-      <div class="container">
-        <div id="tui-pagination-container" class="tui-pagination"></div>
-      </div>
-    </main>
-    <!-- modal window recipe -->
+    </div>
+    <div class="container">
+      <div id="tui-pagination-container" class="tui-pagination"></div>
+    </div>
+    <a href="#home" class="scroll-box">
+      <svg class="scroll-icon" width="32" height="32">
+        <use href="/project-JS-Team05/assets/recipes-e952d6a9.svg#icon-arrow"></use>
+      </svg>
+    </a>
+  </main>
+  <!-- modal window recipe -->
 <div class="modal-rec-backdrop is-hidden">
   <div class="modal-rec-window">
     <button type="button" class="modal-rec-close">
@@ -108,7 +114,7 @@
   </div>
 </div>
 
-    <!-- modbile menu-->
+  <!-- modbile menu-->
 <!-- modbile menu-->
 <div class="mobile-menu-backdrop is-hidden" data-menu>
   <div class="mobile-menu-window">
@@ -143,7 +149,7 @@
   </div>
 </div>
 
-    <!-- modal window add rating -->
+  <!-- modal window add rating -->
 <div class="modal-rating-backdrop is-hidden">
   <div class="modal-rating-window">
     <button type="button" class="modal-rating-close">
@@ -205,7 +211,7 @@
 </div>
 
 
-    <div class="backdrop-ordernow is-hidden" data-modal-overnow>
+  <div class="backdrop-ordernow is-hidden" data-modal-overnow>
   <div class="modal-ordernow">
     <button type="button" class="close-modwin-btn" data-modal-close>
       <svg class="close-modwin-icon" width="20" height="20">
@@ -265,6 +271,7 @@
   </div>
 </div>
 
-    
-  </body>
+  
+</body>
+
 </html>
