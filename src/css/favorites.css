@@ -96,9 +96,17 @@
   transition-duration: 300ms;
 }
 
+body.dark .category-btn {
+  color: rgba(248, 248, 248, 0.5);
+  border-color: rgba(248, 248, 248, 0.5);
+}
+
 .category-btn:hover,
 .category-btn:focus,
-.category-btn.active {
+.category-btn.active,
+body.dark .category-btn:hover,
+body.dark .category-btn:focus,
+body.dark .category-btn.active {
   background-color: var(--secondary-bg-color);
   color: var(--description-text-color);
   border-color: var(--secondary-bg-color);
