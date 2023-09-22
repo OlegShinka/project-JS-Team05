@@ -9,6 +9,7 @@
 .popular-recipes-title {
   margin: 0 auto;
   font-family: Inter, sans-serif;
+  color: var(--primary-text-color);
   font-size: 24px;
   font-weight: 600;
   line-height: 28px;
