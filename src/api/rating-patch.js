@@ -1,9 +1,10 @@
-export async function patchRating(recipeId, num) {
+export async function patchRating(recipeId, num, mail) {
   const BASE_URL = 'https://tasty-treats-backend.p.goit.global/api';
   const END_POINT = `/recipes/${recipeId}/rating`;
 
   const updateData = {
-    rating: num,
+    rate: Number(num),
+    email: mail,
   };
 
   const options = {

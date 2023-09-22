@@ -81,8 +81,22 @@ function handlerSend(evt) {
     if (!inputEmail.value) {
       alert('Enter your email!');
     } else {
-      patchRating(recipeId, num)
+      email = inputEmail.value;
+      patchRating(recipeId, num, email)
         .then(data => {
+          Notiflix.Notify.success('Rating add!', {
+            width: '300px',
+            distance: '40px',
+            cssAnimationStyle: 'from-top',
+            borderRadius: '15px',
+            fontFamily: 'Inter',
+            fontSize: '14px',
+            success: {
+              background: '#9BB537',
+              textColor: '#fff',
+              notiflixIconColor: '#000',
+            },
+          });
           modalRating.close();
           modalBackdropRating.classList.add('is-hidden');
           localStorage.removeItem(STORAGE_KEY);
