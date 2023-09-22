@@ -11,15 +11,11 @@ const swRefsHed = {
   switchOff: document.querySelector('.icon-switch'),
 };
 function setThema() {
-  console.log(localStorage.getItem('thema'));
   if (localStorage.getItem('thema') === 'dark') {
-    console.log('tnema dark');
     //якщо тема в локалі записана темна
     switchhDarkHeder.checked = true;
     changeSwitch(switchhDarkHeder, swRefsHed, switchhDarkMenu, swRefsMenu);
     bodyEl.classList.toggle('dark');
-  } else {
-    console.log('tnema light');
   }
 }
 setThema();

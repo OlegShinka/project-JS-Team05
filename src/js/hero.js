@@ -32,20 +32,8 @@ function onSabmit(event) {
     comment: comment_customers.value,
   };
 
-  document.addEventListener('keydown', onClKeyboard);
-
-  function onClKeyboard(e) {
-    console.log('111', e.key);
-    // Отменяем ввод не цифр
-    //   if (!/d/.test(e.key)) {
-    //     e.preventDefault();
-
-    // }
-  }
-
   postOrderNow(order)
     .then(data => {
-      console.log(data);
       Notiflix.Notify.info(data.message);
     })
     .catch(error => {

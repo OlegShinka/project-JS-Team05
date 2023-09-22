@@ -24,6 +24,8 @@
       <input
         class="tel-mod mod-inp"
         type="tel"
+        pattern="[\+]38\d{10}"
+        title="Використовуйте формат: +380000000000"
         name="tel_customers"
         id="tel-mod"
         required
@@ -37,6 +39,8 @@
         class="email-mod mod-inp"
         type="email"
         id="email-mod"
+        pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})"
+        title="Використовуйте формат: test@gmail.com"
         name="email_customers"
         required
       />
