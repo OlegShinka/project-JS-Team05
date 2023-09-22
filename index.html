@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>tastytreats</title>
   
-  <script type="module" crossorigin src="/project-JS-Team05/assets/index-583b0364.js"></script>
-  <link rel="modulepreload" crossorigin href="/project-JS-Team05/assets/switchdark-9e85a2a8.js">
-  <link rel="stylesheet" href="/project-JS-Team05/assets/switchdark-0bc28c33.css">
+  <script type="module" crossorigin src="/project-JS-Team05/assets/index-ccd755b6.js"></script>
+  <link rel="modulepreload" crossorigin href="/project-JS-Team05/assets/switchdark-5d1aa277.js">
+  <link rel="stylesheet" href="/project-JS-Team05/assets/switchdark-38609cf3.css">
   <link rel="stylesheet" href="/project-JS-Team05/assets/index-6cd154f5.css">
 </head>
 
@@ -337,6 +337,8 @@
       <input
         class="tel-mod mod-inp"
         type="tel"
+        pattern="[\+]38\d{10}"
+        title="Використовуйте формат: +380000000000"
         name="tel_customers"
         id="tel-mod"
         required
@@ -350,6 +352,8 @@
         class="email-mod mod-inp"
         type="email"
         id="email-mod"
+        pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})"
+        title="Використовуйте формат: test@gmail.com"
         name="email_customers"
         required
       />
